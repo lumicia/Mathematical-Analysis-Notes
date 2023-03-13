@@ -2,13 +2,191 @@
 
 %——————————————————————————————————%
 
-\section{}
+\section{导数和微分}
+\begin{definition}{导数}
+    设 $f$ 是定义在 $[a, b]$ 上的函数，$x\in (a, b)$。若 $x$ 从 $x_0$ 变化到 $x_0 + \Delta x$，存在 $a\in \mathbb{R}$ 使得
+    \[\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = \lim_{\Delta x\to 0}\frac{\Delta f(x)}{\Delta x} = a\]
+    则称 $f$ 在 $x_0$ 处可导（derivable），$a$ 称为 $f$ 在 $x_0$ 处的导数（derivative），记为 $f'(x_0) = a$。
+\end{definition}
+
+令 $x = x_0 + \Delta x$，则 $f'(x_0)$ 的等价定义
+
+\[f'(x_0) := \lim_{x\to x_0}\frac{f(x) - f(x_0)}{x - x_0}\]
+
+\begin{definition}
+    若曲线 $y = f(x)$ 在 $x_0$ 处可导，则过点 $P(x_0, f(x_0))$ 的斜率为 $f'(x_0)$ 的直线
+    \[y = f(x_0) + f'(x_0)(x - x_0)\]
+    称为曲线 $y = f(x)$ 在点 $P$ 处的切线（tangent line）。
+
+    过点 $P$ 且垂直于切线的直线称为曲线 $y = f(x)$ 在点 $P$ 处的法线（normal line）。
+
+    切线和法线斜率的乘积等于 $-1$。
+\end{definition}
 
 
+\begin{definition}{左导数和右导数}
+    设函数 $f$。
+    \begin{enumerate}
+        \item 若 $f$ 在 $x_0$ 的左邻域 $N_r^-(x_0)$ 有定义，且存在 $a\in \mathbb{R}$ 使得
+              \[\lim_{\Delta x\to 0-}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = a\]
+              则称函数 $f$ 在 $x_0$ 的左侧可导，$a$ 称为 $f(x)$ 在 $x_0$ 处的左导数（left derivative），记为 $f_{-}'(x_0)$。
+        \item 若 $f$ 在 $x_0$ 的右邻域 $N_r^+(x_0)$ 有定义，且存在 $a\in \mathbb{R}$ 使得
+              \[\lim_{\Delta x\to 0+}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = a\]
+              则称函数 $f$ 在 $x_0$ 的右侧可导，$a$ 称为 $f(x)$ 在 $x_0$ 处的右导数（left derivative），记为 $f_{+}'(x_0)$。
+    \end{enumerate}
+    左导数和右导数统称为单侧导数（one-sided derivative）。
+\end{definition}
 
+\begin{proposition}
+    设函数 $f$ 在邻域 $N_r(x_0)$ 有定义。则 $f(x)$ 在 $x_0$ 处可导且 $f'(x_0) = a$ 当且仅当
+    \[f_{-}'(x_0) = f_{+}'(x_0) = a\]
+\end{proposition}
 
+\begin{theorem}{可导和连续的关系}
+    设函数 $f$ 在 $x_0$ 处可导，则 $f(x)$ 在 $x_0$ 处连续。
+\end{theorem}
+\begin{remark}
+    函数在某处连续是在该处可导的必要条件，但不是充分条件，即函数连续不一定可导。
+\end{remark}
 
+\hfill
 
+\begin{example}
+    函数 $f(x) = |x|$ 在 $x = 0$ 处不可导。
+\end{example}
+
+\hfill
+
+设函数 $f$ 在 $x_0$ 处可导。由导数定义，和 Landau 记号，
+\[\lim_{\Delta x\to 0}\frac{\Delta f(x_0)}{\Delta x} = f'(x_0) \iff \frac{\Delta f(x_0)}{\Delta x} - f'(x_0) = o(1),\, \Delta x\to 0\]
+则得
+\begin{equation}
+    \Delta f(x_0) = f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
+\end{equation}
+或写成
+\begin{equation}
+    f(x_0 + \Delta x) = f(x_0) + f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
+\end{equation}
+这两个等式都可称为函数的\textbf{无穷小增量公式}。$f'(x_0)\Delta x$ 称为 $\Delta f(x)$ 的线性主部（linear principal part），它的系数恰是 $f(x)$ 在 $x_0$ 处的导数。
+
+\begin{definition}
+    设函数 $f$ 在 $x_0$ 处的一个邻域 $N(x_0)$ 上有定义。若存在 $\lambda\in \mathbb{R}$ 使得
+    \[\Delta f(x_0) = \lambda\Delta x + o(\Delta x),\, \Delta x\to 0\]
+    则称函数 $f$ 在 $x_0$ 处可微（differentiable）。关于 $\Delta x$ 的线性函数 $\lambda\Delta x$ 称为函数 $f$ 在 $x_0$ 处的微分（differential），记为
+    \[\mathrm{d}f(x_0) = \lambda\Delta x\]
+    其中 $\lambda = f'(x_0)$。特别地，对于正比例函数 $g(x) = x$，由于 $g'(x) = 1$，故
+    \[\mathrm{d}g(x) = \mathrm{d}x = \Delta x\]
+    于是 $\mathrm{d}f(x_0) = f'(x_0)\Delta x$。
+\end{definition}
+
+对一元函数来说，可导和可微等价，但多元函数并非如此。
+
+由于 $\mathrm{d}f(x) = f'(x)\mathrm{d}x$，故导数可以记为
+\begin{equation}
+    f'(x) = \frac{\mathrm{d}f(x)}{\mathrm{d}x}
+\end{equation}
+
+左边称为 Lagrange 记号，右边称为 Leibniz 记号。
+
+若将 $\displaystyle \frac{\mathrm{d}}{\mathrm{d}x}$ 视为算子（operator），则导数还可以记为
+\[\frac{\mathrm{d}}{\mathrm{d}x}f(x) = D_{x}f(x)\]
+
+右边的记号称为 Euler 记号。
+
+函数微分的几何意义：函数 $f$ 在 $x_0$ 处的微分就是曲线 $y = f(x)$ 在 $x_0$ 处的“切线函数”的增量。
+
+\begin{theorem}{微分最佳逼近定理}
+    设函数 $f$ 在 $x_0$ 处可微，$l$ 是 $f$ 在 $x_0$ 处的切线，有
+    \[l(x) = f(x_0) + f'(x_0)(x - x_0),\, x\to x_0\]
+
+    则对于任一不等于 $l(x)$ 的一次多项式 $L(x)$ 都存在 $\delta > 0$ 使得当 $0 < |x - x_0| < \delta$ 时，有
+    \[|f(x) - l(x)| < |f(x) - L(x)|\]
+\end{theorem}
+函数的微分是在局部逼近效果最佳的一次多项式。
+
+\begin{theorem}{导数的四则运算}
+    设函数 $f$ 和 $g$ 在 $x$ 处可导，则 $f \pm g$，$fg$ 在 $x$ 处也可导。若 $g \ne 0$，则函数 $\dfrac{f}{g}$ 在 $x$ 处也可导，
+    \begin{enumerate}
+        \item $(f \pm g)'(x) = f'(x) \pm g'(x)$
+        \item $(fg)'(x) = f'(x)g(x) + f(x)g'(x)$
+        \item $\left(\dfrac{f}{g}\right)'(x) = \dfrac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}{复合函数的链式求导法则}
+    设函数 $f$ 在 $x_0$ 处可导，函数 $g$ 在 $t_0 = f(x_0)$ 处可导，则函数 $g \circ f$ 在 $x_0$ 处可导，且
+    \[(g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)\]
+\end{theorem}
+
+\begin{theorem}
+    设函数 $y = f(x)$ 在区间 $I$ 上连续且严格单调，若 $f(x)$ 在 $x_0\in I$ 处可导，且 $f'(x_0) \ne 0$，则 $f(x)$ 的反函数 $x = f^{-1}(y)$ 在 $y_0 = f(x_0)$ 处可导，且
+    \[\left(f^{-1}\right)'(y_0) = \dfrac{1}{f'(x_0)}\]
+\end{theorem}
+
+\begin{table}
+    \centering
+    \caption{初等函数导函数表}
+    \renewcommand\arraystretch{2.2}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        类型                        & 原函数                                              & 导函数                       & 备注                                           \\
+        \hline
+        常值函数                    & $C$                                                 & $0$                          & $C\in \mathbb{R}$                              \\
+        \hline
+        \multirow{3}{*}{幂函数}     & $x^m$                                               & $mx^{m - 1}$                 & $m \in \mathbb{N}$                             \\
+                                    & $x^{-m}$                                            & $-mx^{-m - 1}$               & $m \in \mathbb{N},x \ne 0$                     \\
+                                    & $x^\mu$                                             & $\mu x^{\mu - 1}$            & $\mu \in \mathbb{R}, x > 0$                    \\
+        \hline
+        \multirow{2}{*}{指数函数}   & $e^x$                                               & $e^x$                        &                                                \\
+                                    & $a^x$                                               & $a^x\ln a$                   & $a > 0, a \ne 1$                               \\
+        \hline
+        \multirow{2}{*}{对数函数}   & $\ln |x|$                                           & $\dfrac{1}{x}$               & $x \ne 0$                                      \\[8pt]
+                                    & $\log_a|x|$                                         & $\dfrac{1}{x\ln a}$          & $a > 0, a \ne 1, x \ne 0$                      \\[8pt]
+        \hline
+        \multirow{4}{*}{三角函数}   & $\sin x$                                            & $\cos x$                     &                                                \\
+                                    & $\cos x$                                            & $-\sin x$                    &                                                \\
+                                    & $\tan x$                                            & $\dfrac{1}{\cos^{2}x}$       & $x \ne k\pi + \dfrac{\pi}{2}, k\in \mathbb{Z}$ \\
+                                    & $\cot x$                                            & $-\dfrac{1}{\sin^{2}x}$      & $x \ne k\pi, k\in \mathbb{Z}$                  \\[8pt]
+        \hline
+        \multirow{4}{*}{反三角函数} & $\arcsin x$                                         & $\dfrac{1}{\sqrt{1 - x^2}}$  & $|x| < 1$                                      \\
+                                    & $\arccos x$                                         & $-\dfrac{1}{\sqrt{1 - x^2}}$ & $|x| < 1$                                      \\
+                                    & $\arctan x$                                         & $\dfrac{1}{1 + x^2}$         &                                                \\
+                                    & $\mathrm{arccot}\, x$                               & $-\dfrac{1}{1 + x^2}$        &                                                \\[8pt]
+        \hline
+        \multirow{3}{*}{双曲函数}   & $\sinh x$                                           & $\cosh x$                    &                                                \\
+                                    & $\cosh x$                                           & $\sinh x$                    &                                                \\
+                                    & $\tanh x$                                           & $\dfrac{1}{\cosh^{2}x}$      &                                                \\[8pt]
+        \hline
+        \multirow{3}{*}{反双曲函数} & $\ln (x + \sqrt{x^2 + 1})$                          & $\dfrac{1}{\sqrt{x^2 + 1}}$  &                                                \\
+                                    & $\ln (x + \sqrt{x^2 - 1})$                          & $\dfrac{1}{\sqrt{x^2 - 1}}$  & $x \geqslant 1$                                \\
+                                    & $\dfrac{1}{2}\ln \left(\dfrac{1 + x}{1 - x}\right)$ & $\dfrac{1}{1 - x^2}$         & $|x| < 1$                                      \\[10pt]
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{definition}{高阶导数}
+    设函数 $f$ 在区间 $I$ 上可导，则 $f'(x)\,(\forall \in I)$ 称为 $f(x)$ 的导函数。若 $f'(x)$ 在 $I$ 上仍可导，则 $f'(x)$ 的导函数称为 $f(x)$ 的二阶导函数（second order derivative），记为 $f''(x)$。以此类推，定义 $f(x)$ 的 $n$ 阶导函数（$n$-order derivatve），记为 $f^{(n)}(x)$。
+\end{definition}
+
+设函数 $y = f(x)$，$y$ 的二阶微分记为 $\mathrm{d}^2$，则
+\[\mathrm{d}^2f(x) = \mathrm{d}[\mathrm{d}f(x)] = \mathrm{d}[f'(x)]\mathrm{d}x = [f'(x)\mathrm{d}x]'\mathrm{d}x = [f''(x)\mathrm{d}x + f'(x)(\mathrm{d}x)']\mathrm{d}x = f''(x)(\mathrm{d}x)^2\]
+
+约定 $(\mathrm{d}x)^ = \mathrm{d}x^2$，则
+\[f''(x) = \frac{\mathrm{d}^{2}f(x)}{\mathrm{d}x^2} = \frac{\mathrm{d}^{2}y}{\mathrm{d}x^2}\]
+
+类似地，$n$ 阶导数的微分形式为
+\[f^{(n)}(x) = \frac{\mathrm{d}^{n}y}{\mathrm{d}x^n}\]
+
+\begin{definition}{光滑函数}
+    设区间 $I$。所有在 $I$ 上连续的函数组成的集合记为 $C(I)$ 或 $C^0(I)$。所有在 $I$ 上 $n$ 次连续可导的函数组成的集合记为 $C^{(n)}(I)$。所有在 $I$ 上任意次可导的函数组成的集合记为 $C^\infty(I)$。这样的函数称为 $I$ 上的光滑函数（smooth function）。在不强调区间 $I$ 时可以记为 $C^{(n)}$。 
+\end{definition}
+
+\begin{theorem}{Leibniz 公式}
+    设函数 $f, g \in C^{(n)}(I)$，则 $fg \in C^{(n)}(I)$，且
+    \[(fg)^{(n)} = \sum_{k = 0}^{n} \mathrm{C}_{n}^{k}f^{(n - k)}g^{(k)} \]
+
+    规定 $f^{(0)} = f, g^{(0)} = g$。
+\end{theorem}
 %——————————————————————————————————%
 
 \section{}

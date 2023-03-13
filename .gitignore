@@ -9,5 +9,6 @@
 *.out
 *.pdf
 *.toc
+*.xdv
 *.xml
 .vscode
