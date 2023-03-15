@@ -126,7 +126,7 @@
 \begin{table}
     \centering
     \caption{初等函数导函数表}
-    \renewcommand\arraystretch{2.2}
+    \renewcommand\arraystretch{1.8}
     \begin{tabular}{|c|c|c|c|}
         \hline
         类型                        & 原函数                                              & 导函数                       & 备注                                           \\
@@ -141,25 +141,25 @@
                                     & $a^x$                                               & $a^x\ln a$                   & $a > 0, a \ne 1$                               \\
         \hline
         \multirow{2}{*}{对数函数}   & $\ln |x|$                                           & $\dfrac{1}{x}$               & $x \ne 0$                                      \\[8pt]
-                                    & $\log_a|x|$                                         & $\dfrac{1}{x\ln a}$          & $a > 0, a \ne 1, x \ne 0$                      \\[8pt]
+                                    & $\log_a|x|$                                         & $\dfrac{1}{x\ln a}$          & $a > 0, a \ne 1, x \ne 0$                      \\[5pt]
         \hline
         \multirow{4}{*}{三角函数}   & $\sin x$                                            & $\cos x$                     &                                                \\
                                     & $\cos x$                                            & $-\sin x$                    &                                                \\
                                     & $\tan x$                                            & $\dfrac{1}{\cos^{2}x}$       & $x \ne k\pi + \dfrac{\pi}{2}, k\in \mathbb{Z}$ \\
-                                    & $\cot x$                                            & $-\dfrac{1}{\sin^{2}x}$      & $x \ne k\pi, k\in \mathbb{Z}$                  \\[8pt]
+                                    & $\cot x$                                            & $-\dfrac{1}{\sin^{2}x}$      & $x \ne k\pi, k\in \mathbb{Z}$                  \\[5pt]
         \hline
         \multirow{4}{*}{反三角函数} & $\arcsin x$                                         & $\dfrac{1}{\sqrt{1 - x^2}}$  & $|x| < 1$                                      \\
                                     & $\arccos x$                                         & $-\dfrac{1}{\sqrt{1 - x^2}}$ & $|x| < 1$                                      \\
                                     & $\arctan x$                                         & $\dfrac{1}{1 + x^2}$         &                                                \\
-                                    & $\mathrm{arccot}\, x$                               & $-\dfrac{1}{1 + x^2}$        &                                                \\[8pt]
+                                    & $\mathrm{arccot}\, x$                               & $-\dfrac{1}{1 + x^2}$        &                                                \\[5pt]
         \hline
         \multirow{3}{*}{双曲函数}   & $\sinh x$                                           & $\cosh x$                    &                                                \\
                                     & $\cosh x$                                           & $\sinh x$                    &                                                \\
-                                    & $\tanh x$                                           & $\dfrac{1}{\cosh^{2}x}$      &                                                \\[8pt]
+                                    & $\tanh x$                                           & $\dfrac{1}{\cosh^{2}x}$      &                                                \\[5pt]
         \hline
         \multirow{3}{*}{反双曲函数} & $\ln (x + \sqrt{x^2 + 1})$                          & $\dfrac{1}{\sqrt{x^2 + 1}}$  &                                                \\
                                     & $\ln (x + \sqrt{x^2 - 1})$                          & $\dfrac{1}{\sqrt{x^2 - 1}}$  & $x \geqslant 1$                                \\
-                                    & $\dfrac{1}{2}\ln \left(\dfrac{1 + x}{1 - x}\right)$ & $\dfrac{1}{1 - x^2}$         & $|x| < 1$                                      \\[10pt]
+                                    & $\dfrac{1}{2}\ln \left(\dfrac{1 + x}{1 - x}\right)$ & $\dfrac{1}{1 - x^2}$         & $|x| < 1$                                      \\[5pt]
         \hline
     \end{tabular}
 \end{table}
@@ -178,7 +178,7 @@
 \[f^{(n)}(x) = \frac{\mathrm{d}^{n}y}{\mathrm{d}x^n}\]
 
 \begin{definition}{光滑函数}
-    设区间 $I$。所有在 $I$ 上连续的函数组成的集合记为 $C(I)$ 或 $C^0(I)$。所有在 $I$ 上 $n$ 次连续可导的函数组成的集合记为 $C^{(n)}(I)$。所有在 $I$ 上任意次可导的函数组成的集合记为 $C^\infty(I)$。这样的函数称为 $I$ 上的光滑函数（smooth function）。在不强调区间 $I$ 时可以记为 $C^{(n)}$。 
+    设区间 $I$。所有在 $I$ 上连续的函数组成的集合记为 $C(I)$ 或 $C^0(I)$。所有在 $I$ 上 $n$ 次连续可导的函数组成的集合记为 $C^{(n)}(I)$。所有在 $I$ 上任意次可导的函数组成的集合记为 $C^\infty(I)$。这样的函数称为 $I$ 上的光滑函数（smooth function）。在不强调区间 $I$ 时可以记为 $C^{(n)}$。
 \end{definition}
 
 \begin{theorem}{Leibniz 公式}
@@ -189,7 +189,62 @@
 \end{theorem}
 %——————————————————————————————————%
 
-\section{}
+\section{中值定理}
+
+\begin{definition}{极大值和极小值}
+    设函数 $f:(a,b)\to \mathbb{R}$。
+    \begin{enumerate}
+        \item 若对点 $x_0 \in (a,b)$ 存在 $\delta > 0$，使得 $\Delta = (x_0 - \delta,x_0 + \delta) \subseteq (a,b)$，并且当 $x \in \Delta$ 时，$f(x_0)\geqslant f(x)$，那么称 $f(x_0)$ 是 $f$ 在 $(a,b)$ 上的局部极大值（local maximum），$x_0$ 称为 $f$ 的极大值点（local maximum point）。
+        \item 若对点 $x_0 \in (a,b)$ 存在 $\delta > 0$，使得 $\Delta = (x_0 - \delta,x_0 + \delta) \subseteq (a,b)$，并且当 $x \in \Delta$ 时，$f(x_0)\leqslant f(x)$，那么称 $f(x_0)$ 是 $f$ 在 $(a,b)$ 上的极小值（local minimum），$x_0$ 称为 $f$ 的极小值点（local minimum point）。
+    \end{enumerate}
+    局部极大值和局部极小值统称为局部极值（local extremum），局部极大值点和局部极小值点统称为局部极值点（local extremum point）。
+\end{definition}
+
+\begin{theorem}{Fermat 引理}
+    若函数 $f:(a,b)\to \mathbb{R}$ 在其局部极值点 $x_0 \in (a,b)$ 处可导，则必有 $f'(x) = 0$。
+\end{theorem}
+
+\begin{definition}{驻点}
+    满足 $x_0 \in (a,b)$ 且 $f'(x) = 0$ 的点 $x_0$ 称为函数 $f$ 的驻点（critical point）。
+\end{definition}
+
+\begin{theorem}{Rolle 中值定理}
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $f(a) = f(b)$，则存在点 $\xi \in (a,b)$，使得 $f'(\xi) = 0$。
+\end{theorem}
+
+\begin{lemma}
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $\lambda(a) = 1, \lambda(b) = 0$，则必存在点 $\xi \in (a,b)$，使得
+    \[f'(\xi) = \lambda'(\xi)(f(a) - f(b))\]
+\end{lemma}
+
+\begin{theorem}{Lagrange 中值定理}
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则存在点 $\xi \in (a,b)$，使得
+    \[\frac{f(b) - f(a)}{b - a} = f'(\xi)\]
+\end{theorem}
+
+\begin{corollary}
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上为常数的充分必要条件是 $f' = 0$ 在 $(a,b)$ 上成立。
+\end{corollary}
+
+\begin{theorem}{Cauchy 中值定理}
+    设函数 $f$ 和 $g$ 在区间 $[a,b]$ 上连续，在区间 $(a,b)$ 上可导，且当 $x \in (a,b)$ 时，$g'(x) \ne 0$，此时必存在一点 $\xi \in (a,b)$，使得
+    \[\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)}\]
+\end{theorem}
+
+\begin{theorem}{Darbux 定理}
+    若 $f$ 在 $[a,b]$ 上可导，则：
+    \begin{enumerate}
+        \item 导函数 $f'$ 可以取到 $f'(a)$ 与 $f'(b)$ 之间的一切值；
+        \item $f'$ 没有第一类间断点。
+    \end{enumerate}
+\end{theorem}
+
+
+
+
+%——————————————————————————————————%
+
+\section{函数的单调性、极值和凸性}
 
 
 
@@ -198,7 +253,7 @@
 
 %——————————————————————————————————%
 
-\section{}
+\section{L'Hospital 法则}
 
 
 
@@ -207,7 +262,7 @@
 
 %——————————————————————————————————%
 
-\section{}
+\section{Taylor 定理}
 
 
 
@@ -215,74 +270,3 @@
 
 
 %——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
