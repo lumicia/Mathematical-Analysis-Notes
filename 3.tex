@@ -245,12 +245,83 @@
 %——————————————————————————————————%
 
 \section{函数的单调性、极值和凸性}
+\subsection{单调性}
 
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上递增（递减）的充分必要条件是 $f' \geqslant 0\, (\leqslant 0)$ 在区间 $(a,b)$ 上成立。
+\end{theorem}
 
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，若 $f' > 0\, (f' < 0)$ 在 $(a,b)$ 上成立，则 $f$ 在 $[a,b]$ 上是严格递增（严格递减）的。
+\end{theorem}
 
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内除了有限个点以外，有正（负）的导数，则 $f$ 在 $[a,b]$ 上严格递增（严格递减）。
+\end{theorem}
 
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上严格递增（严格递减）的充分必要条件是
+    \begin{enumerate}
+        \item 当 $x \in (a,b)$ 时，$f' \geqslant 0\, (\leqslant 0)$；
+        \item 在 $(a,b)$ 的任意开子区间上，$f' \ne 0$。
+    \end{enumerate}
+\end{theorem}
 
+\subsection{极值}
 
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，$x_0 \in (a,b)$。
+  \begin{enumerate}
+    \item 若 $\exists \delta > 0$，使得在 $(x_0 - \delta,x_0)$ 上 $f' > 0$，而在 $x_0,x_0 + \delta$ 上 $f' < 0$，则 $f(x_0)$ 是 $f$ 的一个严格极大值。即当 $0 < |x - x_0| < \delta$ 时，$f(x) < f(x_0)$。 
+    \item 若 $\exists \delta > 0$，使得在 $(x_0 - \delta,x_0)$ 上 $f' < 0$，而在 $x_0,x_0 + \delta$ 上 $f' > 0$，则 $f(x_0)$ 是 $f$ 的一个严格极大值。即当 $0 < |x - x_0| < \delta$ 时，$f(x) > f(x_0)$。 
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，$x_0 \in (a,b)$ 是 $f$ 的一个驻点。设 $f''$ 存在，则
+  \begin{enumerate}
+    \item 当 $f''(x_0) < 0$ 时，$f(x_0)$ 是 $f$ 的一个严格极大值；
+    \item 当 $f''(x_0) > 0$ 时，$f(x_0)$ 是 $f$ 的一个严格极小值；
+  \end{enumerate}
+\end{theorem}
+
+\subsection{凸性}
+
+\begin{definition}
+  设函数 $f$ 在区间 $I$ 上有定义。若对 $\forall x_1,x_2 \in I, x_1 \ne x_2$，以及对 $\forall \lambda_1 \lambda_2 > 0$，且 $\lambda_1 + \lambda_2 = 1$ 都有
+  \[f(\lambda_{1}x_1 + \lambda_{2}x_2) \leqslant \lambda_{1}f(x_1) + \lambda_{2}f(x_2)\]
+  则称 $f$ 是 $I$ 上的凸函数（convec function）。
+
+  如果上述不等式对任意 $x_1 \ne x_2$ 以及 $\lambda_1,\lambda_2 > 0(\lambda_1 + \lambda_2 = 1)$ 不等号总成立，则 $f$ 上 $I$ 上的严格凸函数。
+\end{definition}
+
+\begin{theorem}
+  设函数 $f$ 是区间 $I$ 上的凸函数，则对 $\forall x_1,x_2, \ldots ,x_n \in I$ 及 $\lambda_1,\lambda_2, \ldots ,\lambda_n > 0$，且 $\lambda_1 + \lambda_2 + \cdots + \lambda_n = 1$ 都有
+  \[f(\sum_{i = 1}^{n}\lambda_{i}x_i) \leqslant \sum_{i = 1}^{n}\lambda_{i}f(x_i)\]
+    若 $f$ 是 $I$ 上的严格凸函数，则当 $x_1,x_2, \ldots ,x_n$ 不全相等时，有
+  \[f(\sum_{i = 1}^{n}\lambda_{i}x_i) < \sum_{i = 1}^{n}\lambda_{i}f(x_i)\]
+\end{theorem}
+
+\begin{theorem}{Jensen 不等式}
+  设函数 $f$ 是区间 $I$ 上的凸函数，则对 $\forall x_1,x_2, \ldots ,x_n \in I$ 及 $\beta_1,\beta_2, \ldots ,\beta_n >0$，有 
+  \[f(\sum_{i = 1}^{n}\beta_{i}x_{i}/\sum_{i = 1}^{n}\beta_i) \leqslant \frac{\displaystyle \sum_{i = 1}^{n}\beta_{i}f(x_i)}{\displaystyle \sum_{i = 1}^{n}\beta_i}\]
+\end{theorem}
+
+\begin{theorem}
+  设函数 $f$ 是区间 $I$ 上的凸函数，当且仅当对任意 $(x_1,x_2) \subseteq I$ 及对任意 $x \in (x_1,x_2)$，有
+  \[\frac{f(x) - f(x_1)}{x - x_1} \leqslant \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leqslant \frac{f(x_2) - f(x)}{x_2 - x}\]
+  $f$ 是 $I$ 上的严格凸函数，当且仅当上式中出现的都是严格的不等号。
+\end{theorem}
+
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上为凸函数（严格凸函数）的充分必要条件是 $f'$ 在 $(a,b)$ 上递增（严格递增）。
+\end{theorem}
+
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上有二阶导数，则 $f$ 在 $[a,b]$ 上为凸函数的充分必要条件是 $f'' \geqslant 0$ 在 $(a,b)$ 上成立。
+
+  $f$ 在 $[a,b]$ 上为严格凸函数的充分必要条件是 $f'' \geqslant 0$ 在 $(a,b)$ 上成立，且在 $(a,b)$ 的任意开子区间内 $f''$ 不恒等于 $0$。
+\end{theorem}
 %——————————————————————————————————%
 
 \section{L'Hospital 法则}
