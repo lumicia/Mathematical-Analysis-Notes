@@ -1,0 +1,136 @@
+\chapter{Riemann 积分}
+
+%——————————————————————————————————%
+
+\section{函数的积分}
+
+\begin{definition}
+    闭区间 $[a,b]$ 的一个分割 $P$，指在 $a$ 在 $b$ 之间插入的有限个分点
+    \[P : a = x_0 < x_1 < \cdots < x_n = b\]
+    这些分点将 $[a,b]$ 分成 $m$ 个闭子区间
+    \[[x_0,x_1],[x_1,x_2],\cdots,[x_{n -1},x_n]\]
+    其中第 $i$ 个闭子区间的长度为
+    \[\Delta x_i = x_i - x_{i - 1}\]
+    我们把
+    \[|P| = \max\{\Delta x_1,\Delta x_2,\cdots,\Delta x_n\}\]
+    称为分割 $P$ 的模。
+\end{definition}
+
+\begin{definition}
+    若在 $[a,b]$ 的一个分割 $P$ 的每个闭区间 $[x_{i - 1}, x_i]$ 上都选定一个标记点 $\xi_i \in [x_{i -1}, x_i](i = 1,2,\cdots,n)$，则称标记点 $\xi_1,\xi_2,\cdots,\xi_n$ 给出闭区间 $[a,b]$ 的一个标记分割 $(P,\xi)$。
+
+    其中把这些标记点的集合记为 $\xi$。
+\end{definition}
+
+\begin{definition}{Riemann 积分}
+    设函数 $f$ 在闭区间 $[a,b]$ 上有定义。若 $I \in \mathbb{R}$ 使得对 $\forall \varepsilon > 0$，$\exists \delta > 0$，只要闭区间 $[a,b]$ 的分割 $P$ 满足 $|P| < \delta$，而不管如何选择 $\xi \in [x_{i - 1}, x_i](1 \leqslant i \leqslant n)$，都有
+    \[|I - \sum_{i =1}^{n}f(\xi_i)\Delta x_i| < \varepsilon\]
+    则称 $f$ 在 $[a,b]$ 上 Riemann 可积，称 $I$ 为 $f$ 在 $[a,b]$ 上的 Riemann 积分。即
+    \[I = \lim_{|P| \to 0}\sum_{i = 1}^{n}f(\xi_i)\Delta x_i\]
+    称和式
+    \[\sum_{i = 1}^{n}f(\xi_i)\Delta x_i\]
+    为 $f$ 的 Riemann 和（或积分和）。
+    函数 $f(x)$ 在 $[a,b]$ 上的积分记为
+    \[\int_a^b f(x)\mathrm{d}x\]
+    其中 $a,b$ 分别称为积分下限和积分上限，$f$ 称为被积函数，$f(x)\mathrm{d}x$ 称为被积表达式，$x$ 称为积分变量。从而
+    \[\int_a^b f(x)\mathrm{d}x := \lim_{|P| \to 0}\sum_{i = 1}^{n}f(\xi_i)\Delta x_i\]
+\end{definition}
+
+\begin{theorem}{Riemann 积分的性质}
+    \begin{enumerate}
+        \item 设 $f$ 在 $[a,b]$ 上可积且非负，则
+              \[\int_a^b f(x)\mathrm{d}x > 0\]
+        \item 设 $f$ 和 $g$ 在 $[a,b]$ 上可积，且 $f \geqslant g$ 在 $[a,b]$ 上成立，则
+              \[\int_a^b f(x)\mathrm{d}x \geqslant \int_a^b g(x)\mathrm{d}x\]
+        \item 若 $f$ 和 $g$ 在 $[a,b]$ 上可积，则 $f \pm g$ 在 $[a,b]$ 上也可积，且
+              \[\int_a^b(f(x)\pm g(x))\mathrm{d}x = \int_a^b f(x)\mathrm{d}x \pm \int_a^b g(x)\mathrm{d}x\]
+        \item 若 $f$ 在 $[a,b]$ 上可积，则对 $\forall c$，$cf$ 在 $[a,b]$ 上也可积，且
+              \[\int_a^b cf(x)\mathrm{d}x = c\int_{a}^{b} f(x)\mathrm{d}x\]
+    \end{enumerate}
+\end{theorem}
+
+\hfill
+
+\begin{example}
+    \[\int_{a}^{b} c \mathrm{d}x = c(b - a)\]
+\end{example}
+
+\hfill
+
+\begin{example}
+    \[\int_{a}^{b} x \mathrm{d}x = \frac{b^2 - a^2}{2}\]
+\end{example}
+
+\begin{theorem}{Newton-Leibniz 公式}
+    设函数 $f$ 在 $[a,b]$ 上可积，且在 $(a,b)$ 上有原函数 $F$。若 $F$ 在 $[a,b]$ 是连续，则必有
+    \[\int_{a}^{b} f(x) \mathrm{d}x = F(b) - F(a)\]
+\end{theorem}
+令
+\[F(x)\bigg|_a^b := F(b) - F(a)\]
+则
+\[\int_a^b f(x)\mathrm{d}x = F(x)\bigg|_a^b = \int f(x)\mathrm{d}x\bigg|_a^b\]
+注意到
+\[\mathrm{d}F(x) = f(x)\mathrm{d}x\]
+从而有
+\[\int_a^b \mathrm{d}F(x) = F(x)\bigg|_a^b\]
+
+%——————————————————————————————————%
+
+\section{可积函数的性质}
+
+
+%——————————————————————————————————%
+
+\section{微积分基本定理}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{分部积分与换元}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{可积性理论}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{Lebesgue 定理}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{反常积分}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{数值积分}
+
+
+
+
+
+
+%——————————————————————————————————%

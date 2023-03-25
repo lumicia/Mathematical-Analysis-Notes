@@ -69,8 +69,9 @@
 \begin{theorem}{导数的四则运算}
   设函数 $f$ 和 $g$ 在 $x$ 处可导，则 $f \pm g$，$fg$ 在 $x$ 处也可导。若 $g \ne 0$，则函数 $\dfrac{f}{g}$ 在 $x$ 处也可导，
   \begin{enumerate}
-    \item $(f \pm g)'(x) = f'(x) \pm g'(x)$
-    \item $(fg)'(x) = f'(x)g(x) + f(x)g'(x)$
+    \item $(f \pm g)'(x) = f'(x) \pm g'(x)$；
+    \item $(fg)'(x) = f'(x)g(x) + f(x)g'(x)$；
+    \item $(cf)'(x) = cf'(x)$，其中 $c$ 为常数；
     \item $\left(\dfrac{f}{g}\right)'(x) = \dfrac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$
   \end{enumerate}
 \end{theorem}
@@ -319,9 +320,9 @@
 \end{equation}
 或写成
 \begin{equation}
-  f(x_0 + \Delta x) = f(x_0) + f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
+  f(x_0 + \Delta x) - f(x_0) = f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
 \end{equation}
-这两个等式都可称为函数的\textbf{无穷小增量公式}。$f'(x_0)\Delta x$ 称为 $\Delta f(x)$ 的线性主部（linear principal part），它的系数恰是 $f(x)$ 在 $x_0$ 处的导数。
+这两个等式都可称为函数的\textbf{无穷小增量公式}。$f'(x_0)\Delta x$ 称为 $\Delta f(x)$ 的线性主部，它的系数恰是 $f(x)$ 在 $x_0$ 处的导数。
 
 \begin{definition}
   设函数 $f$ 在 $x_0$ 处的一个邻域 $N(x_0)$ 上有定义。若存在 $\lambda\in \mathbb{R}$ 使得
@@ -354,6 +355,7 @@
   \begin{enumerate}
     \item $\mathrm{d}(f \pm g) = \mathrm{d}f \pm \mathrm{d}g$；
     \item $\mathrm{d}(fg) = g\mathrm{d}f + f\mathrm{d}g$；
+    \item $\mathrm{d}(cf) = c\mathrm{d}f$，其中 $c$ 为常数；
     \item $\mathrm{d}\left(\dfrac{f}{g}\right) = \dfrac{g\mathrm{d}f - f\mathrm{d}g}{g^2}$，其中 $g \ne 0$。
   \end{enumerate}
 \end{theorem}
