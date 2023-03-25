@@ -1,0 +1,92 @@
+\chapter{不定积分}
+
+%——————————————————————————————————%
+
+\section{原函数}
+\begin{definition}{原函数}
+    若两个函数 $F$ 和 $f$ 满足关系式
+    \[F'(x) = f(x)\]
+    则 $F$ 称为 $f$ 在 $x$ 所在区间上的原函数（primitive function）。
+\end{definition}
+
+\begin{definition}{不定积分}
+    $f$ 的全体原函数组成的集合 $\{F + c : c \in \mathbb{R}\}$ 称为 $f(x)$ 的不定积分，记为
+    \[\int f(x)\mathrm{d}x\]
+    其中 $\int$ 称为积分号，$f(x)$ 称为被积函数，$f(x)\mathrm{d}x$ 称为被积表达式。
+\end{definition}
+
+
+\begin{proposition}
+    设函数 $f(x)$，$f(x)$ 在区间 $I$ 上的原函数为 $F(x)$，则
+    \begin{enumerate}
+        \item $\displaystyle \left(\int f(x)\mathrm{d}x\right)' = f(x)$；
+        \item $\displaystyle \int F'(x)\mathrm{d}x = F(x) + C$;
+        \item $\displaystyle \int (f(x) + g(x))\mathrm{d}x = \int f(x)\mathrm{d}x + \int g(x)\mathrm{d}x$；
+        \item $\displaystyle \int cf(x)\mathrm{d}x = c\int f(x)\mathrm{d}x,\, c \ne 0$
+    \end{enumerate}
+\end{proposition}
+
+%——————————————————————————————————%
+
+\section{分部积分法和换元法}
+
+\begin{proposition}{分部积分公式}
+    \[\int u(x)v'(x)\mathrm{d}x = uv - \int u'(x)v(x)\mathrm{d}x\]
+    或
+    \[\int u\mathrm{d}v = uv - \int v\mathrm{d}u\]
+\end{proposition}
+
+
+\begin{proposition}{换元法}
+    设可导函数 $\varphi(x)$，$f(\varphi(x))$，令 $u = \varphi(x)$，则
+    \[\int f(\varphi(x))\varphi'(x)\mathrm{d}x = \int f(u)du\]
+\end{proposition}
+
+
+%——————————————————————————————————%
+
+\section{有理函数的原函数}
+
+\begin{definition}
+    有理函数是形如
+    \[R(x) = \frac{P(x)}{Q(x)}\]
+    的函数。其中 $P(x),Q(x)$ 都是多项式，并且没有共同的零点。
+
+    若 $P$ 的次数小于 $Q$，则称 $R$ 为真分式，否则称为假分式。
+\end{definition}
+
+\begin{theorem}{部分分式分解定理}
+    设 $R(x) = \frac{P(x)}{Q(x)}$ 是一个真分式，分母 $Q(x)$ 有分解式
+    \[Q(x) = (x - a)^\alpha \cdots (x - b)^\beta(x^2 + px + q)^\mu \cdots (x^2 + rx + s)^\nu\]
+    其中 $a, \ldots b,p,q, \ldots ,r,s \in \mathbb{R}$；$p^2 - 4q < 0, \ldots ,r^2 - 4s < 0$；$\alpha, \ldots \beta,\mu, \ldots \nu \in \mathbb{N}^*$。有
+    \begin{align*}
+        R(x) = & \frac{A_\alpha}{(x - a)^\alpha} + \frac{A_{\alpha - 1}}{(x - a)^{\alpha - 1}} + \cdots \frac{A_1}{x - a} + \cdots \\
+               & + \frac{B_\beta}{(x - b)^\beta} + \frac{B_{\beta - 1}}{(x - b)^{\beta - 1}} + \cdots + \frac{B_1}{x - b}          \\
+               & + \frac{K_{\mu}x + L_\mu}{(x^2 + px + q)^\mu} + \cdots + \frac{K_{1}x + L_1}{x^2 + px + q} + \cdots               \\
+               & + \frac{M_{\nu}x + N_\nu}{(x^2 + rx + s)^\nu} + \cdots + \frac{M_{1}x + N_1}{x^2 + rx + s}
+    \end{align*}
+    其中 $A_i, \ldots ,B_i,K_i,L_i, \ldots ,M_i,N_i \in \mathbb{R}$，并且此分解式的所有系数都是唯一确定的。
+\end{theorem}
+
+%——————————————————————————————————%
+
+\section{可有理化函数的原函数}
+
+\begin{proposition}
+    三种可以转化为有理函数的函数：
+    \begin{enumerate}
+        \item $\int R(\cos x,\sin x)\mathrm{d}x$。
+
+              形如
+              \[\sum_{i = 0}^{m}\sum_{j = 0}^{n}a_{ij}x^{i}y^{j}\]
+              的表达式称为 $x$ 与 $y$ 的二元多项式，其中 $a_ij \in \mathbb{R}$ 称为多项式的系数。若 $R(x,y)$ 是两个二元多项式的商，则称 $R$ 为二元有理函数。$R(\cos x,\sin x)$ 经过适当换元之后可以变成一元有理函数。
+        \item $\int R(x,\sqrt[n]{\frac{ax + b}{cx +d}})\mathrm{d}x$；
+        \item $\int x^{\alpha}(a + bx^{\beta})^{\gamma}\mathrm{d}x$，其中 $a,b \in \mathbb{R}$，$\alpha,\beta,\gamma \in \mathbb{Q}$。且 $\gamma,\frac{\alpha + 1}{\beta},\frac{\alpha + 1}{\beta} + \gamma$ 三个数中有一个是整数。
+    \end{enumerate}
+\end{proposition}
+
+
+
+
+
+%——————————————————————————————————%
