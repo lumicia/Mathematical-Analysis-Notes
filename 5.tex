@@ -121,22 +121,22 @@
 \end{theorem}
 
 \begin{theorem}{微积分基本定理}
-  设函数 $f$ 在 $[a,b]$ 上连续，则
-  \[\frac{\mathrm{d}}{\mathrm{d}x}\int_{a}^{x}f(t)\mathrm{d}t = f(x)\quad (a \leqslant x \leqslant b)\]
+    设函数 $f$ 在 $[a,b]$ 上连续，则
+    \[\frac{\mathrm{d}}{\mathrm{d}x}\int_{a}^{x}f(t)\mathrm{d}t = f(x)\quad (a \leqslant x \leqslant b)\]
 \end{theorem}
 
 \begin{corollary}
-  $[a,b]$ 上的连续函数一定有原函数。
+    $[a,b]$ 上的连续函数一定有原函数。
 \end{corollary}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，$G$ 是 $f$ 在 $[a,b]$ 上的任一原函数，则
-  \[\int_{a}^{b}f(x)\mathrm{d}x = G(b) - G(a)\]
+    设函数 $f$ 在 $[a,b]$ 上连续，$G$ 是 $f$ 在 $[a,b]$ 上的任一原函数，则
+    \[\int_{a}^{b}f(x)\mathrm{d}x = G(b) - G(a)\]
 \end{theorem}
 
 \begin{theorem}{Newton-Leibniz 公式}
-  若函数 $G$ 在 $[a,b]$ 上有连续的导函数，则
-  \[\int_{a}^{x}G'(t)\mathrm{d}t = G(x) - G(a)\quad (a \leqslant x \leqslant b)\]
+    若函数 $G$ 在 $[a,b]$ 上有连续的导函数，则
+    \[\int_{a}^{x}G'(t)\mathrm{d}t = G(x) - G(a)\quad (a \leqslant x \leqslant b)\]
 \end{theorem}
 
 %——————————————————————————————————%
@@ -144,17 +144,17 @@
 \section{分部积分与换元}
 
 \begin{proposition}{分部积分法}
-  对等式
-  \[u\mathrm{d}v = \mathrm{d}(uv) - v\mathrm{d}u\]
-  两边作积分，得
-  \[\int_{a}^{b}u(x)v'(x)\mathrm{d}x = u(x)v(x)\left|_{a}^{b}\right. - \int_{a}^{b}v(x)u'(x)\mathrm{d}x\]
+    对等式
+    \[u\mathrm{d}v = \mathrm{d}(uv) - v\mathrm{d}u\]
+    两边作积分，得
+    \[\int_{a}^{b}u(x)v'(x)\mathrm{d}x = u(x)v(x)\left|_{a}^{b}\right. - \int_{a}^{b}v(x)u'(x)\mathrm{d}x\]
 \end{proposition}
 
 \begin{theorem}{Taylor 公式的积分余项}
-  设函数 $f$ 在 $(a,b)$ 上有直到 $n + 1$ 阶的连续导函数，则对任意固定的 $x_0 \in (a,b)$，有
-  \[f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)\]
-  其中
-  \[R_n(x) = \frac{1}{n!}\int_{x_0}^{x}(x - t)^{n}f^{(n + 1)}(t)\mathrm{d}t\quad (a < x < b)\]
+    设函数 $f$ 在 $(a,b)$ 上有直到 $n + 1$ 阶的连续导函数，则对任意固定的 $x_0 \in (a,b)$，有
+    \[f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)\]
+    其中
+    \[R_n(x) = \frac{1}{n!}\int_{x_0}^{x}(x - t)^{n}f^{(n + 1)}(t)\mathrm{d}t\quad (a < x < b)\]
 \end{theorem}
 
 考虑积分
@@ -165,8 +165,8 @@
 \[R_n(x) = \frac{f^{(n + 1)}(\xi)}{n!}(x - \xi)^{n}(x - x_0)\]
 
 \begin{theorem}{换元公式}
-  设函数 $f$ 在区间 $I$ 上连续，$a,b \in I$，函数 $\varphi$ 在区间 $[\alpha,\beta]$ 上有连续的导函数，$\varphi([\alpha,\beta]) \subseteq I$，且 $\varphi(\alpha) = a,\varphi(\beta) = b$，则
-  \[\int_{a}^{b}f(x)\mathrm{d}x = \int_{\alpha}^{\beta}f \circ\varphi(t)\varphi'(t)\mathrm{d}t\]
+    设函数 $f$ 在区间 $I$ 上连续，$a,b \in I$，函数 $\varphi$ 在区间 $[\alpha,\beta]$ 上有连续的导函数，$\varphi([\alpha,\beta]) \subseteq I$，且 $\varphi(\alpha) = a,\varphi(\beta) = b$，则
+    \[\int_{a}^{b}f(x)\mathrm{d}x = \int_{\alpha}^{\beta}f \circ\varphi(t)\varphi'(t)\mathrm{d}t\]
 \end{theorem}
 
 
@@ -175,24 +175,156 @@
 
 \section{可积性理论}
 
+\begin{definition}
+    设函数 $f$ 在 $[a,b]$ 上有界，上确界为 $M$，下确界为 $m$。令 $\omega = M - m$，称为 $f$ 在 $[a,b]$ 上的振幅。
 
+    对 $[a,b]$ 的一个分割 $P$，在 $P$ 的第 $i$ 个子区间 $[x_{i - 1},x_i](i = 1,2, \ldots n)$ 上 $f$ 的上确界与下确界分部记为 $M_i$ 和 $m_i$，并令 $\omega_i = M_i - m_i$，称 $\omega_i$ 为 $f$ 在 $[x_{i - 1},x_i]$ 上的振幅。
+\end{definition}
 
+\begin{definition}
+    $f$ 关于分割 $P$ 的上和
+    \[\overline{S}(f,P) = \sum_{i = 1}^{n}M_{i}\Delta x_i\]
+    以及下和
+    \[\underline{S}(f,P) = \sum_{i = 1}^{n}m_{i}\Delta x_i\]
+    取定分割 $P$ 后，积分和被上和与下和所界定，即
+    \[\overline{S}(f,P) \leqslant  \sum_{i = 1}^{n}f(\xi_{i})\Delta x_i \leqslant \underline{S}(f,P)\]
+    其中 $\xi_i \in [x_{i - 1},x_i](i = 1,2, \ldots ,n)$ 是任取的。
+\end{definition}
 
+\begin{theorem}
+    设 $P$ 与 $P'$ 是 $[a,b]$ 的两个分割，其中 $P'$ 是在 $p$ 的分点上多加 $k$ 个分点而成。则
+    \[\underline{S}(f,P) \leqslant \underline{S}(f,P') \leqslant \underline{S}(f,P) + k\omega|P|\]
+    \[\overline{S}(f,P) \geqslant \overline{S}(f,P') \geqslant \overline{S}(f,P) - k\omega|P|\]
+\end{theorem}
 
+\begin{definition}{上积分与下积分}
+    上和的下确界记为 $\overline{I}$，称为 $f$ 在 $[a,b]$ 上的上积分。下和的上确界记为 $\underline{I}$，称为 $f$ 在 $[a,b]$ 上的下积分。
+
+    任何有界函数 $f$ 的上积分与下积分都存在，且
+    \[\underline{S}(f,P_1) \leqslant \underline{I} \leqslant \overline{I} \leqslant \overline{S}(f,P_2)\]
+    其中 $P_1$ 与 $P_2$ 是 $[a,b]$ 的任意分割。
+\end{definition}
+
+\begin{theorem}{Darboux 定理}
+    对 $[a,b]$ 上的任意有界函数，有
+    \begin{align*}
+        \lim_{|P| \to 0}\overline{S}(f,P) = \overline{I} \\
+        \lim_{|P| \to 0}\underline{S}(f,P) = \underline{I}
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}
+    设函数 $f:[a,b] \to \mathbb{R}$ 有界，则以下三个条件等价：
+    \begin{enumerate}
+        \item  $f$ 在 $[a,b]$ 上可积；
+        \item $\lim_{|P| \to 0}\sum_{i = 1}^{n}\omega_i \Delta_i = 0$，其中 $\omega_i = M_i - m_i$ 是 $f$ 在 $[x_{i - 1},x_i](i = 1,2, \ldots n)$ 上的振幅。
+        \item $\underline{I} = \overline{I}$。
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    设 $f$ 是定义在 $[a,b]$ 上的单调函数，则 $f$ 在 $[a,b]$ 上可积。
+\end{theorem}
+
+\begin{theorem}
+    设 $f:[a,b] \to \mathbb{R}$ 是连续函数，则 $f$ 在 $[a,b]$ 上可积。
+\end{theorem}
 
 %——————————————————————————————————%
 
 \section{Lebesgue 定理}
 
+\begin{definition}
+    设集合 $A$ 由实数组成。若对任意给定的 $\varepsilon > 0$，存在至多可数个开区间 $\{I_n : n \in \mathbb{N}^*\}$ 组成 $A$ 的一个开覆盖，且 $\displaystyle \sum_{n = 1}^{\infty} |I_n| \leqslant \varepsilon$，则称 $A$ 为零测度集，简称零测集。其中 $|I_n|$ 表示开区间 $I_n$ 的长度。
+\end{definition}
 
+\hfill
 
+\begin{example}
+    若 $A$ 是至多可数集，则 $A$ 一定是零测集。
+\end{example}
 
+\hfill
 
+\begin{example}
+    任何长度不为 $0$ 的区间都不是零测集。
+\end{example}
+
+\hfill
+
+\begin{proposition}{零测集的性质}
+    \begin{enumerate}
+        \item 至多可数个零测集的并集是零测集；
+        \item 设 $A$ 是零测集。若 $B \subseteq A$，则 $B$ 也是零测集。
+    \end{enumerate}
+\end{proposition}
+
+\begin{lemma}
+    设 $\omega$ 是有界函数 $f$ 在 $[a,b]$ 上的振幅，则
+    \[\omega = \sup\{|f(y_1) - f(y_2)|:y_1,y_2 \in [a,b]\}\]
+\end{lemma}
+
+\begin{lemma}
+    函数 $f$ 在点 $x \in I$ 处连续的充分必要条件是 $\omega_f(x) = 0$。
+\end{lemma}
+
+\begin{definition}
+    函数 $f$ 在 $[a,b]$ 上不连续点的全体记为 $D(f)$，即
+    \[D(f) = \{x \in [a,b] : f\, \text{在}\, x\, \text{处不连续}\}\]
+    对 $\delta > 0$，将 $\omega(x) \geqslant \delta$ 的集合记为 $D_{\delta}$，即
+    \[D_{\delta} = \{x \in [a,b] : \omega_{f}(x) \geqslant \delta\}\]
+\end{definition}
+
+\begin{lemma}
+    令 $\delta = \dfrac{1}{n}$，则
+    \[D(f) = \bigcup_{n = 1}^{\infty}D_{1/n}\]
+\end{lemma}
+
+\begin{lemma}
+    设函数 $f : [a,b] \to \mathbb{R}$。若存在一列区间 $(\alpha_j,\beta_j)(j = 1,2, \ldots ,n)$，使得 $D(f) \subseteq \cup_{j = 1}^{\infty}(\alpha_j,\beta_j)$，记 $K = [a,b]\\ \cup_{j = 1}^{\infty}(\alpha_j,\beta_j)$，则对 $\forall \varepsilon > 0$，一定 $\exists \delta > 0$，当 $x \in K, y\in [a,b]$ 且 $|x - y| < \delta$ 时，有
+    \[|f(x) - f(y)| < \varepsilon\]
+\end{lemma}
+
+\begin{theorem}{Lebesgue 定理}
+    设函数 $f$ 在 $[a,b]$ 上有界，则 $f$ 在 $[a,b]$ 上 Riemann 可积的充分必要条件是 $D(f)$ 为零测集。
+\end{theorem}
+
+\begin{corollary}
+    若 $f$ 在 $[a,b]$ 上有界，且在 $[a,b]$ 上只有至多可数个简短点，则 $f$ 在 $[a,b]$ 上 Riemann 可积。
+\end{corollary}
+
+\begin{corollary}
+    若 $f$ 在 $[a,b]$ 上可积，则 $|f|$ 在 $[a,b]$ 上也可积。
+\end{corollary}
+
+\begin{corollary}
+    若 $f,g$ 在 $[a,b]$ 上可积，则 $fg$ 在 $[a,b]$ 上也可积。
+\end{corollary}
+
+\begin{corollary}
+    若 $f$ 在 $[a,b]$ 上可积，$\dfrac{1}{f}$ 在 $[a,b]$ 上有定义且有界，则 $\dfrac{1}{f}$ 在 $[a,b]$ 上也可积。
+\end{corollary}
+
+\begin{corollary}
+    若 $f$ 在 $[a,b]$ 上可积，则对任意 $[c,d] \subseteq [a,b]$， $f$ 在 $[c,d]$ 上也可积。
+\end{corollary}
+
+\begin{corollary}
+    若 $c \in (a,b)$，则当 $f$ 在 $[a,c]$ 与 $[c,b]$ 上都可积时，$f$ 在 $[a,b]$ 上可积。
+\end{corollary}
+
+\begin{corollary}
+    设 $f$ 在 $[a,b]$ 上可积。若 $g$ 在 $[a,b]$ 上除去有限个点 $x_1,x_2, \ldots x_n$ 外和 $f$ 相等，则 $g$ 在 $[a,b]$ 上也可积，且
+    \[\int_{a}^{b}f(x)\mathrm{d}x = \int_{a}^{b}g(x)\mathrm{d}x\]
+\end{corollary}
+
+\begin{corollary}
+    设 $f$ 在 $[a,b]$ 上连续，$\varphi$ 在 $[c,d]$ 上可积，且 $\varphi([c,d]) \subseteq [a,b]$，则 $f\circ\varphi$ 在 $[c,d]$ 上可积。
+\end{corollary}
 
 %——————————————————————————————————%
 
 \section{反常积分}
-
 
 
 
