@@ -143,8 +143,31 @@
 
 \section{分部积分与换元}
 
+\begin{proposition}{分部积分法}
+  对等式
+  \[u\mathrm{d}v = \mathrm{d}(uv) - v\mathrm{d}u\]
+  两边作积分，得
+  \[\int_{a}^{b}u(x)v'(x)\mathrm{d}x = u(x)v(x)\left|_{a}^{b}\right. - \int_{a}^{b}v(x)u'(x)\mathrm{d}x\]
+\end{proposition}
 
+\begin{theorem}{Taylor 公式的积分余项}
+  设函数 $f$ 在 $(a,b)$ 上有直到 $n + 1$ 阶的连续导函数，则对任意固定的 $x_0 \in (a,b)$，有
+  \[f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)\]
+  其中
+  \[R_n(x) = \frac{1}{n!}\int_{x_0}^{x}(x - t)^{n}f^{(n + 1)}(t)\mathrm{d}t\quad (a < x < b)\]
+\end{theorem}
 
+考虑积分
+\[\int_{x_0}^{x}(x -t)^{n}f^{(n + 1)}(t)\mathrm{d}t\]
+利用积分中值定理，可得 Taylor 公式的 Lagrange 余项
+\[R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!}(x - x_0)^{n + 1}\]
+以及 Cauchy 余项
+\[R_n(x) = \frac{f^{(n + 1)}(\xi)}{n!}(x - \xi)^{n}(x - x_0)\]
+
+\begin{theorem}{换元公式}
+  设函数 $f$ 在区间 $I$ 上连续，$a,b \in I$，函数 $\varphi$ 在区间 $[\alpha,\beta]$ 上有连续的导函数，$\varphi([\alpha,\beta]) \subseteq I$，且 $\varphi(\alpha) = a,\varphi(\beta) = b$，则
+  \[\int_{a}^{b}f(x)\mathrm{d}x = \int_{\alpha}^{\beta}f \circ\varphi(t)\varphi'(t)\mathrm{d}t\]
+\end{theorem}
 
 
 
