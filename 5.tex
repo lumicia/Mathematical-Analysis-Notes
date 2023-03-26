@@ -111,10 +111,33 @@
 
 \section{微积分基本定理}
 
+\begin{theorem}
+    设函数 $f$ 在 $[a,b]$ 上可积，则上限变动的积分 $F(x) = \displaystyle \int_a^x f(t)\mathrm{d}t$ 在 $[a,b]$ 上连续。
+\end{theorem}
 
+\begin{theorem}
+    设函数 $f$ 在 $[a,b]$ 上可积，在一点 $x_0 \in [a,b]$ 处连续，则 $F$ 在 $x_0$ 处可导，且
+    \[F'(x_0) = f(x_0)\]
+\end{theorem}
 
+\begin{theorem}{微积分基本定理}
+  设函数 $f$ 在 $[a,b]$ 上连续，则
+  \[\frac{\mathrm{d}}{\mathrm{d}x}\int_{a}^{x}f(t)\mathrm{d}t = f(x)\quad (a \leqslant x \leqslant b)\]
+\end{theorem}
 
+\begin{corollary}
+  $[a,b]$ 上的连续函数一定有原函数。
+\end{corollary}
 
+\begin{theorem}
+  设函数 $f$ 在 $[a,b]$ 上连续，$G$ 是 $f$ 在 $[a,b]$ 上的任一原函数，则
+  \[\int_{a}^{b}f(x)\mathrm{d}x = G(b) - G(a)\]
+\end{theorem}
+
+\begin{theorem}{Newton-Leibniz 公式}
+  若函数 $G$ 在 $[a,b]$ 上有连续的导函数，则
+  \[\int_{a}^{x}G'(t)\mathrm{d}t = G(x) - G(a)\quad (a \leqslant x \leqslant b)\]
+\end{theorem}
 
 %——————————————————————————————————%
 
