@@ -374,15 +374,94 @@ Riemann 积分的推广称为反常积分或广义积分。反常积分分为两
     若极限不存在，则称该瑕积分发散，称 $a$ 为瑕点。
 \end{definition}
 
-
-
 %——————————————————————————————————%
 
 \section{数值积分}
 
+当可积函数的原函数过于复杂，或根本没有原函数时，使用数值计算的方式来求出积分的近似值，这就是数值积分。
 
+数值积分常用方法：梯形法。
 
+\begin{theorem}
+    设 $f$ 在 $[a, b]$ 上有二阶连续导数，令
+    \[M = \max_{a \leqslant x \leqslant b}|f''(x)|\]
+    以及
+    \[x_i = a + \frac{i}{n}(b - a)\quad (i = 0,1,2, \ldots ,n)\]
+    则
+    \[\left|\ \int_{a}^{b}f(x)\mathrm{d}x - \left(\frac{y_0 + y_n}{2} + \sum_{i = 1}^{n - 1}y_i\right)\frac{b - a}{n}\ \right| \leqslant \frac{(b - a)^3}{12n^2}M\]
+\end{theorem}
 
+%——————————————————————————————————%
 
+\section{Riemann 积分的应用}
 
+在几何学中的应用
+\begin{enumerate}
+    \item 计算平面图形的面积；
+    \item 计算空间曲线的弧长；
+    \item 计算空间区域的体积；
+    \item 计算旋转曲面的面积。
+\end{enumerate}
+
+在物理学中的应用
+\begin{enumerate}
+    \item 计算引力；
+    \item 计算做功。
+\end{enumerate}
+
+面积原理就是用积分来估计和式。
+
+\begin{theorem}
+    若 $x \geqslant m \in \mathbb{N}^*$ 时，$f$ 是一个非负的递增函数，则当 $\xi \geqslant m$ 时，有
+    \[\left|\ \sum_{k = m}^{[\xi]}f(k) - \int_{m}^{\xi}f(x)\mathrm{d}x\ \right| \leqslant f(\xi)\]
+\end{theorem}
+
+\begin{theorem}
+    若 $x \geqslant m \in \mathbb{N}^*$ 时，$f$ 是一个非负的递减函数，则极限
+    \[\lim_{n \to \infty}\left(\sum_{k = m}^{n}f(k) - \int_{m}^{n}f(x)\mathrm{d}x\right) = \alpha\]
+    存在，且 $0 \leqslant \alpha \leqslant f(m)$。进一步地，若 $\displaystyle \lim_{x \to +\infty}f(x) = 0$，则
+    \[\left|\ \sum_{k = m}^{[\xi]}f(k) - \int_{m}^{\xi}f(x)\mathrm{d}x -\alpha\ \right| \leqslant f(\xi - 1)\]
+    其中 $\xi \geqslant m + 1$。
+\end{theorem}
+
+\begin{theorem}{Young 不等式}
+    设连续函数 $\varphi$ 在 $[0, +\infty)$ 上严格递增，且 $\varphi(0) = 0$，则必存在连续的反函数 $\varphi^{-1}$ 在 $[0, \varphi(+\infty))$ 上严格递增，且 $\varphi^{-1}(0) = 0$。对 $\forall a > 0, 0 < b < \varphi(+\infty)$，下面的不等式成立
+    \[ab \leqslant \int_{0}^{a}\varphi(x)\mathrm{d}x + \int_{0}^{b}\varphi^{-1}(y)\mathrm{d}y\]
+    等号成立当且仅当 $b = \varphi(a)$（即 $a = \varphi^{-1}(b)$）。
+\end{theorem}
+
+令函数 $\varphi(x) = x^{p - 1}$，它的反函数 $\varphi^{-1}(y) = y^{q - 1}$，其中 $q = \dfrac{p}{p - 1} > 1$。利用 Young 不等式，得
+\[ab \leqslant \frac{1}{p}a^p + \frac{1}{q}b^q \quad (\frac{1}{p} +\frac{1}{q} = 1)\]
+不等式中等号成立当且仅当 $a^p = b^q$。
+
+设 $a = A^{1/p}, b = B^{1/q} (p, q > 0)$，得
+\[A^{1/p}B^{1/q} \leqslant \frac{A}{p} + \frac{B}{q} \quad (\frac{1}{p} +\frac{1}{q} = 1)\]
+不等式中等号成立当且仅当 $A = B$。
+
+\begin{theorem}{Hölder 不等式}
+    设 $a_1, a_2, \ldots ,a_n$ 和 $b_1, b_2, \ldots ,b_n$ 是两组不全为零的非负实数，则下面的不等式成立
+    \[\sum_{i = 1}^{n}a_{i}b_{i} \leqslant \left(\sum_{i = 1}^{n}a_{i}^{p}\right)^{1/p}\left(\sum_{i = 1}^{n}b_{i}^{q}\right)^{1/q}\]
+    其中 $p, q > 1$，且 $\frac{1}{p} + \frac{1}{q} = 1$。不等式中等号成立的充分必要条件是存在常数 $\lambda$，使得
+    \[a_{i}^{p} = \lambda b_{i}^{q}\quad (i = 1,2,\cdots,n)\]
+\end{theorem}
+
+\begin{theorem}{Cauchy-Schwarz 不等式}
+    当 Hölder 不等式中 $p = q = 2$ 时，
+    \[\left(\sum_{i = 1}^{n}a_{i}b_{i}\right)^2 \leqslant \sum_{i = 1}^{n}a_{i}^{2}\sum_{i = 1}^{n}b_{i}^{2}\]
+    等号成立的充分必要条件是 $a_i = \lambda b_i(i = 1,2,\cdots,n)$。
+\end{theorem}
+
+\begin{theorem}{Wallis 公式}
+    \[\lim_{n \to \infty}\frac{1}{2n + 1}\left(\frac{2 \cdot 4 \cdots (2n)}{1 \cdot 3 \cdots (2n - 1)}\right)^2 = \frac{\pi}{2}\]
+    或
+    \[\sqrt{\pi} = \lim_{n \to \infty}\frac{(n!)^{2}2^{2n}}{(2n)!\sqrt{n}}\]
+\end{theorem}
+
+\begin{theorem}{Stirling 公式}
+    对数列 $a_n = \dfrac{n!e^n}{n^{n + \frac{1}{2}}}(n = 1,2, \cdots )$ 应用 Wallis 公式，得
+    \[n! \sim \sqrt{2n\pi}\left(\frac{n}{e}\right)^n \quad (n \to \infty)\]
+    或一个更精确的形式
+    \[n! = \left(\frac{n}{e}\right)^{n}\sqrt{2\pi n}e^{\frac{\theta_n}{4n}}\]
+    其中 $\theta_n = 4n \ln\dfrac{n!}{\frac{n}{e}\sqrt{2\pi n}}(0 < \theta_n < 1)$。
+\end{theorem}
 %——————————————————————————————————%
