@@ -5,9 +5,9 @@
 \section{函数的积分}
 
 \begin{definition}
-    闭区间 $[a,b]$ 的一个分割 $P$，指在 $a$ 在 $b$ 之间插入的有限个分点
+    闭区间 $[a, b]$ 的一个分割 $P$，指在 $a$ 在 $b$ 之间插入的有限个分点
     \[P : a = x_0 < x_1 < \cdots < x_n = b\]
-    这些分点将 $[a,b]$ 分成 $m$ 个闭子区间
+    这些分点将 $[a, b]$ 分成 $m$ 个闭子区间
     \[[x_0,x_1],[x_1,x_2],\cdots,[x_{n -1},x_n]\]
     其中第 $i$ 个闭子区间的长度为
     \[\Delta x_i = x_i - x_{i - 1}\]
@@ -17,34 +17,34 @@
 \end{definition}
 
 \begin{definition}
-    若在 $[a,b]$ 的一个分割 $P$ 的每个闭区间 $[x_{i - 1}, x_i]$ 上都选定一个标记点 $\xi_i \in [x_{i -1}, x_i](i = 1,2,\cdots,n)$，则称标记点 $\xi_1,\xi_2,\cdots,\xi_n$ 给出闭区间 $[a,b]$ 的一个标记分割 $(P,\xi)$。
+    若在 $[a, b]$ 的一个分割 $P$ 的每个闭区间 $[x_{i - 1}, x_i]$ 上都选定一个标记点 $\xi_i \in [x_{i -1}, x_i](i = 1,2,\cdots,n)$，则称标记点 $\xi_1,\xi_2,\cdots,\xi_n$ 给出闭区间 $[a, b]$ 的一个标记分割 $(P,\xi)$。
 
     其中把这些标记点的集合记为 $\xi$。
 \end{definition}
 
 \begin{definition}{Riemann 积分}
-    设函数 $f$ 在闭区间 $[a,b]$ 上有定义。若 $I \in \mathbb{R}$ 使得对 $\forall \varepsilon > 0$，$\exists \delta > 0$，只要闭区间 $[a,b]$ 的分割 $P$ 满足 $|P| < \delta$，而不管如何选择 $\xi \in [x_{i - 1}, x_i](1 \leqslant i \leqslant n)$，都有
+    设函数 $f$ 在闭区间 $[a, b]$ 上有定义。若 $I \in \mathbb{R}$ 使得对 $\forall \varepsilon > 0$，$\exists \delta > 0$，只要闭区间 $[a, b]$ 的分割 $P$ 满足 $|P| < \delta$，而不管如何选择 $\xi \in [x_{i - 1}, x_i](1 \leqslant i \leqslant n)$，都有
     \[|I - \sum_{i =1}^{n}f(\xi_i)\Delta x_i| < \varepsilon\]
-    则称 $f$ 在 $[a,b]$ 上 Riemann 可积，称 $I$ 为 $f$ 在 $[a,b]$ 上的 Riemann 积分。即
+    则称 $f$ 在 $[a, b]$ 上 Riemann 可积，称 $I$ 为 $f$ 在 $[a, b]$ 上的 Riemann 积分。即
     \[I = \lim_{|P| \to 0}\sum_{i = 1}^{n}f(\xi_i)\Delta x_i\]
     称和式
     \[\sum_{i = 1}^{n}f(\xi_i)\Delta x_i\]
     为 $f$ 的 Riemann 和（或积分和）。
-    函数 $f(x)$ 在 $[a,b]$ 上的积分记为
+    函数 $f(x)$ 在 $[a, b]$ 上的积分记为
     \[\int_a^b f(x)\mathrm{d}x\]
-    其中 $a,b$ 分别称为积分下限和积分上限，$f$ 称为被积函数，$f(x)\mathrm{d}x$ 称为被积表达式，$x$ 称为积分变量。从而
+    其中 $a, b$ 分别称为积分下限和积分上限，$f$ 称为被积函数，$f(x)\mathrm{d}x$ 称为被积表达式，$x$ 称为积分变量。从而
     \[\int_a^b f(x)\mathrm{d}x := \lim_{|P| \to 0}\sum_{i = 1}^{n}f(\xi_i)\Delta x_i\]
 \end{definition}
 
 \begin{theorem}{Riemann 积分的性质}
     \begin{enumerate}
-        \item 设 $f$ 在 $[a,b]$ 上可积且非负，则
+        \item 设 $f$ 在 $[a, b]$ 上可积且非负，则
               \[\int_a^b f(x)\mathrm{d}x > 0\]
-        \item 设 $f$ 和 $g$ 在 $[a,b]$ 上可积，且 $f \geqslant g$ 在 $[a,b]$ 上成立，则
+        \item 设 $f$ 和 $g$ 在 $[a, b]$ 上可积，且 $f \geqslant g$ 在 $[a, b]$ 上成立，则
               \[\int_a^b f(x)\mathrm{d}x \geqslant \int_a^b g(x)\mathrm{d}x\]
-        \item 若 $f$ 和 $g$ 在 $[a,b]$ 上可积，则 $f \pm g$ 在 $[a,b]$ 上也可积，且
+        \item 若 $f$ 和 $g$ 在 $[a, b]$ 上可积，则 $f \pm g$ 在 $[a, b]$ 上也可积，且
               \[\int_a^b(f(x)\pm g(x))\mathrm{d}x = \int_a^b f(x)\mathrm{d}x \pm \int_a^b g(x)\mathrm{d}x\]
-        \item 若 $f$ 在 $[a,b]$ 上可积，则对 $\forall c$，$cf$ 在 $[a,b]$ 上也可积，且
+        \item 若 $f$ 在 $[a, b]$ 上可积，则对 $\forall c$，$cf$ 在 $[a, b]$ 上也可积，且
               \[\int_a^b cf(x)\mathrm{d}x = c\int_{a}^{b} f(x)\mathrm{d}x\]
     \end{enumerate}
 \end{theorem}
@@ -62,7 +62,7 @@
 \end{example}
 
 \begin{theorem}{Newton-Leibniz 公式}
-    设函数 $f$ 在 $[a,b]$ 上可积，且在 $(a,b)$ 上有原函数 $F$。若 $F$ 在 $[a,b]$ 是连续，则必有
+    设函数 $f$ 在 $[a, b]$ 上可积，且在 $(a, b)$ 上有原函数 $F$。若 $F$ 在 $[a, b]$ 是连续，则必有
     \[\int_{a}^{b} f(x) \mathrm{d}x = F(b) - F(a)\]
 \end{theorem}
 令
@@ -79,31 +79,31 @@
 \section{可积函数的性质}
 
 \begin{theorem}
-    设函数 $f$ 在 $[a,b]$ 上可积，则 $f$ 在 $[a,b]$ 上有界。
+    设函数 $f$ 在 $[a, b]$ 上可积，则 $f$ 在 $[a, b]$ 上有界。
 \end{theorem}
 
 \begin{theorem}{积分的可加性}
-    设 $c \in (a,b)$，函数 $f$ 在 $[a,c],[c,b]$ 上可积，则 $f$ 在 $[a,b]$ 也上可积，且
+    设 $c \in (a, b)$，函数 $f$ 在 $[a,c],[c, b]$ 上可积，则 $f$ 在 $[a, b]$ 也上可积，且
     \[\int_{a}^{b} f(x) \mathrm{d}x = \int_{a}^{c} f(x) \mathrm{d}x + \int_{c}^{b} f(x) \mathrm{d}x\]
 \end{theorem}
 
 \begin{theorem}
-    若 $f$ 在 $[a,b]$ 上连续且非负，但 $f$ 不恒等于 $0$，则
+    若 $f$ 在 $[a, b]$ 上连续且非负，但 $f$ 不恒等于 $0$，则
     \[\int_{a}^{b} f(x) \mathrm{d}x > 0\]
 \end{theorem}
 
 \begin{theorem}
-    设函数 $f$ 在 $[a,b]$ 上可积，则 $|f|$ 在 $[a,b]$ 上也可积，且
+    设函数 $f$ 在 $[a, b]$ 上可积，则 $|f|$ 在 $[a, b]$ 上也可积，且
     \[\left|\int_{a}^{b} f(x) \mathrm{d}x\right| \leqslant \int_{a}^{b} |f(x)| \mathrm{d}x\]
 \end{theorem}
 
 \begin{theorem}{积分的平均值定理}
-    设函数 $f,g$ 在 $[a,b]$ 上连续，$g$ 在 $[a,b]$ 上不改变符号，则 $\exists \xi \in [a,b]$，使得
+    设函数 $f,g$ 在 $[a, b]$ 上连续，$g$ 在 $[a, b]$ 上不改变符号，则 $\exists \xi \in [a, b]$，使得
     \[\int_{a}^{b} f(x)g(x) \mathrm{d}x = f(\xi)\int_{a}^{b} g(x) \mathrm{d}x\]
 \end{theorem}
 
 \begin{corollary}
-    设函数 $f$ 在 $[a,b]$ 上连续，则存在一个点 $\xi \in [a,b]$，使得
+    设函数 $f$ 在 $[a, b]$ 上连续，则存在一个点 $\xi \in [a, b]$，使得
     \[\int_{a}^{b} f(x) \mathrm{d}x = f(\xi)(b - a)\]
 \end{corollary}
 
@@ -112,30 +112,30 @@
 \section{微积分基本定理}
 
 \begin{theorem}
-    设函数 $f$ 在 $[a,b]$ 上可积，则上限变动的积分 $F(x) = \displaystyle \int_a^x f(t)\mathrm{d}t$ 在 $[a,b]$ 上连续。
+    设函数 $f$ 在 $[a, b]$ 上可积，则上限变动的积分 $F(x) = \displaystyle \int_a^x f(t)\mathrm{d}t$ 在 $[a, b]$ 上连续。
 \end{theorem}
 
 \begin{theorem}
-    设函数 $f$ 在 $[a,b]$ 上可积，在一点 $x_0 \in [a,b]$ 处连续，则 $F$ 在 $x_0$ 处可导，且
+    设函数 $f$ 在 $[a, b]$ 上可积，在一点 $x_0 \in [a, b]$ 处连续，则 $F$ 在 $x_0$ 处可导，且
     \[F'(x_0) = f(x_0)\]
 \end{theorem}
 
 \begin{theorem}{微积分基本定理}
-    设函数 $f$ 在 $[a,b]$ 上连续，则
+    设函数 $f$ 在 $[a, b]$ 上连续，则
     \[\frac{\mathrm{d}}{\mathrm{d}x}\int_{a}^{x}f(t)\mathrm{d}t = f(x)\quad (a \leqslant x \leqslant b)\]
 \end{theorem}
 
 \begin{corollary}
-    $[a,b]$ 上的连续函数一定有原函数。
+    $[a, b]$ 上的连续函数一定有原函数。
 \end{corollary}
 
 \begin{theorem}
-    设函数 $f$ 在 $[a,b]$ 上连续，$G$ 是 $f$ 在 $[a,b]$ 上的任一原函数，则
+    设函数 $f$ 在 $[a, b]$ 上连续，$G$ 是 $f$ 在 $[a, b]$ 上的任一原函数，则
     \[\int_{a}^{b}f(x)\mathrm{d}x = G(b) - G(a)\]
 \end{theorem}
 
 \begin{theorem}{Newton-Leibniz 公式}
-    若函数 $G$ 在 $[a,b]$ 上有连续的导函数，则
+    若函数 $G$ 在 $[a, b]$ 上有连续的导函数，则
     \[\int_{a}^{x}G'(t)\mathrm{d}t = G(x) - G(a)\quad (a \leqslant x \leqslant b)\]
 \end{theorem}
 
@@ -151,7 +151,7 @@
 \end{proposition}
 
 \begin{theorem}{Taylor 公式的积分余项}
-    设函数 $f$ 在 $(a,b)$ 上有直到 $n + 1$ 阶的连续导函数，则对任意固定的 $x_0 \in (a,b)$，有
+    设函数 $f$ 在 $(a, b)$ 上有直到 $n + 1$ 阶的连续导函数，则对任意固定的 $x_0 \in (a, b)$，有
     \[f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)\]
     其中
     \[R_n(x) = \frac{1}{n!}\int_{x_0}^{x}(x - t)^{n}f^{(n + 1)}(t)\mathrm{d}t\quad (a < x < b)\]
@@ -165,7 +165,7 @@
 \[R_n(x) = \frac{f^{(n + 1)}(\xi)}{n!}(x - \xi)^{n}(x - x_0)\]
 
 \begin{theorem}{换元公式}
-    设函数 $f$ 在区间 $I$ 上连续，$a,b \in I$，函数 $\varphi$ 在区间 $[\alpha,\beta]$ 上有连续的导函数，$\varphi([\alpha,\beta]) \subseteq I$，且 $\varphi(\alpha) = a,\varphi(\beta) = b$，则
+    设函数 $f$ 在区间 $I$ 上连续，$a, b \in I$，函数 $\varphi$ 在区间 $[\alpha,\beta]$ 上有连续的导函数，$\varphi([\alpha,\beta]) \subseteq I$，且 $\varphi(\alpha) = a,\varphi(\beta) = b$，则
     \[\int_{a}^{b}f(x)\mathrm{d}x = \int_{\alpha}^{\beta}f \circ\varphi(t)\varphi'(t)\mathrm{d}t\]
 \end{theorem}
 
@@ -176,9 +176,9 @@
 \section{可积性理论}
 
 \begin{definition}
-    设函数 $f$ 在 $[a,b]$ 上有界，上确界为 $M$，下确界为 $m$。令 $\omega = M - m$，称为 $f$ 在 $[a,b]$ 上的振幅。
+    设函数 $f$ 在 $[a, b]$ 上有界，上确界为 $M$，下确界为 $m$。令 $\omega = M - m$，称为 $f$ 在 $[a, b]$ 上的振幅。
 
-    对 $[a,b]$ 的一个分割 $P$，在 $P$ 的第 $i$ 个子区间 $[x_{i - 1},x_i](i = 1,2, \ldots n)$ 上 $f$ 的上确界与下确界分部记为 $M_i$ 和 $m_i$，并令 $\omega_i = M_i - m_i$，称 $\omega_i$ 为 $f$ 在 $[x_{i - 1},x_i]$ 上的振幅。
+    对 $[a, b]$ 的一个分割 $P$，在 $P$ 的第 $i$ 个子区间 $[x_{i - 1},x_i](i = 1,2, \ldots n)$ 上 $f$ 的上确界与下确界分部记为 $M_i$ 和 $m_i$，并令 $\omega_i = M_i - m_i$，称 $\omega_i$ 为 $f$ 在 $[x_{i - 1},x_i]$ 上的振幅。
 \end{definition}
 
 \begin{definition}
@@ -192,21 +192,21 @@
 \end{definition}
 
 \begin{theorem}
-    设 $P$ 与 $P'$ 是 $[a,b]$ 的两个分割，其中 $P'$ 是在 $p$ 的分点上多加 $k$ 个分点而成。则
+    设 $P$ 与 $P'$ 是 $[a, b]$ 的两个分割，其中 $P'$ 是在 $p$ 的分点上多加 $k$ 个分点而成。则
     \[\underline{S}(f,P) \leqslant \underline{S}(f,P') \leqslant \underline{S}(f,P) + k\omega|P|\]
     \[\overline{S}(f,P) \geqslant \overline{S}(f,P') \geqslant \overline{S}(f,P) - k\omega|P|\]
 \end{theorem}
 
 \begin{definition}{上积分与下积分}
-    上和的下确界记为 $\overline{I}$，称为 $f$ 在 $[a,b]$ 上的上积分。下和的上确界记为 $\underline{I}$，称为 $f$ 在 $[a,b]$ 上的下积分。
+    上和的下确界记为 $\overline{I}$，称为 $f$ 在 $[a, b]$ 上的上积分。下和的上确界记为 $\underline{I}$，称为 $f$ 在 $[a, b]$ 上的下积分。
 
     任何有界函数 $f$ 的上积分与下积分都存在，且
     \[\underline{S}(f,P_1) \leqslant \underline{I} \leqslant \overline{I} \leqslant \overline{S}(f,P_2)\]
-    其中 $P_1$ 与 $P_2$ 是 $[a,b]$ 的任意分割。
+    其中 $P_1$ 与 $P_2$ 是 $[a, b]$ 的任意分割。
 \end{definition}
 
 \begin{theorem}{Darboux 定理}
-    对 $[a,b]$ 上的任意有界函数，有
+    对 $[a, b]$ 上的任意有界函数，有
     \begin{align*}
         \lim_{|P| \to 0}\overline{S}(f,P) = \overline{I} \\
         \lim_{|P| \to 0}\underline{S}(f,P) = \underline{I}
@@ -214,20 +214,20 @@
 \end{theorem}
 
 \begin{theorem}
-    设函数 $f:[a,b] \to \mathbb{R}$ 有界，则以下三个条件等价：
+    设函数 $f:[a, b] \to \mathbb{R}$ 有界，则以下三个条件等价：
     \begin{enumerate}
-        \item  $f$ 在 $[a,b]$ 上可积；
+        \item  $f$ 在 $[a, b]$ 上可积；
         \item $\lim_{|P| \to 0}\sum_{i = 1}^{n}\omega_i \Delta_i = 0$，其中 $\omega_i = M_i - m_i$ 是 $f$ 在 $[x_{i - 1},x_i](i = 1,2, \ldots n)$ 上的振幅。
         \item $\underline{I} = \overline{I}$。
     \end{enumerate}
 \end{theorem}
 
 \begin{theorem}
-    设 $f$ 是定义在 $[a,b]$ 上的单调函数，则 $f$ 在 $[a,b]$ 上可积。
+    设 $f$ 是定义在 $[a, b]$ 上的单调函数，则 $f$ 在 $[a, b]$ 上可积。
 \end{theorem}
 
 \begin{theorem}
-    设 $f:[a,b] \to \mathbb{R}$ 是连续函数，则 $f$ 在 $[a,b]$ 上可积。
+    设 $f:[a, b] \to \mathbb{R}$ 是连续函数，则 $f$ 在 $[a, b]$ 上可积。
 \end{theorem}
 
 %——————————————————————————————————%
@@ -260,8 +260,8 @@
 \end{proposition}
 
 \begin{lemma}
-    设 $\omega$ 是有界函数 $f$ 在 $[a,b]$ 上的振幅，则
-    \[\omega = \sup\{|f(y_1) - f(y_2)|:y_1,y_2 \in [a,b]\}\]
+    设 $\omega$ 是有界函数 $f$ 在 $[a, b]$ 上的振幅，则
+    \[\omega = \sup\{|f(y_1) - f(y_2)|:y_1,y_2 \in [a, b]\}\]
 \end{lemma}
 
 \begin{lemma}
@@ -269,10 +269,10 @@
 \end{lemma}
 
 \begin{definition}
-    函数 $f$ 在 $[a,b]$ 上不连续点的全体记为 $D(f)$，即
-    \[D(f) = \{x \in [a,b] : f\, \text{在}\, x\, \text{处不连续}\}\]
+    函数 $f$ 在 $[a, b]$ 上不连续点的全体记为 $D(f)$，即
+    \[D(f) = \{x \in [a, b] : f\, \text{在}\, x\, \text{处不连续}\}\]
     对 $\delta > 0$，将 $\omega(x) \geqslant \delta$ 的集合记为 $D_{\delta}$，即
-    \[D_{\delta} = \{x \in [a,b] : \omega_{f}(x) \geqslant \delta\}\]
+    \[D_{\delta} = \{x \in [a, b] : \omega_{f}(x) \geqslant \delta\}\]
 \end{definition}
 
 \begin{lemma}
@@ -281,52 +281,98 @@
 \end{lemma}
 
 \begin{lemma}
-    设函数 $f : [a,b] \to \mathbb{R}$。若存在一列区间 $(\alpha_j,\beta_j)(j = 1,2, \ldots ,n)$，使得 $D(f) \subseteq \cup_{j = 1}^{\infty}(\alpha_j,\beta_j)$，记 $K = [a,b]\\ \cup_{j = 1}^{\infty}(\alpha_j,\beta_j)$，则对 $\forall \varepsilon > 0$，一定 $\exists \delta > 0$，当 $x \in K, y\in [a,b]$ 且 $|x - y| < \delta$ 时，有
+    设函数 $f : [a, b] \to \mathbb{R}$。若存在一列区间 $(\alpha_j,\beta_j)(j = 1,2, \ldots ,n)$，使得 $D(f) \subseteq \cup_{j = 1}^{\infty}(\alpha_j,\beta_j)$，记 $K = [a, b]\\ \cup_{j = 1}^{\infty}(\alpha_j,\beta_j)$，则对 $\forall \varepsilon > 0$，一定 $\exists \delta > 0$，当 $x \in K, y\in [a, b]$ 且 $|x - y| < \delta$ 时，有
     \[|f(x) - f(y)| < \varepsilon\]
 \end{lemma}
 
 \begin{theorem}{Lebesgue 定理}
-    设函数 $f$ 在 $[a,b]$ 上有界，则 $f$ 在 $[a,b]$ 上 Riemann 可积的充分必要条件是 $D(f)$ 为零测集。
+    设函数 $f$ 在 $[a, b]$ 上有界，则 $f$ 在 $[a, b]$ 上 Riemann 可积的充分必要条件是 $D(f)$ 为零测集。
 \end{theorem}
 
 \begin{corollary}
-    若 $f$ 在 $[a,b]$ 上有界，且在 $[a,b]$ 上只有至多可数个简短点，则 $f$ 在 $[a,b]$ 上 Riemann 可积。
+    若 $f$ 在 $[a, b]$ 上有界，且在 $[a, b]$ 上只有至多可数个简短点，则 $f$ 在 $[a, b]$ 上 Riemann 可积。
 \end{corollary}
 
 \begin{corollary}
-    若 $f$ 在 $[a,b]$ 上可积，则 $|f|$ 在 $[a,b]$ 上也可积。
+    若 $f$ 在 $[a, b]$ 上可积，则 $|f|$ 在 $[a, b]$ 上也可积。
 \end{corollary}
 
 \begin{corollary}
-    若 $f,g$ 在 $[a,b]$ 上可积，则 $fg$ 在 $[a,b]$ 上也可积。
+    若 $f,g$ 在 $[a, b]$ 上可积，则 $fg$ 在 $[a, b]$ 上也可积。
 \end{corollary}
 
 \begin{corollary}
-    若 $f$ 在 $[a,b]$ 上可积，$\dfrac{1}{f}$ 在 $[a,b]$ 上有定义且有界，则 $\dfrac{1}{f}$ 在 $[a,b]$ 上也可积。
+    若 $f$ 在 $[a, b]$ 上可积，$\dfrac{1}{f}$ 在 $[a, b]$ 上有定义且有界，则 $\dfrac{1}{f}$ 在 $[a, b]$ 上也可积。
 \end{corollary}
 
 \begin{corollary}
-    若 $f$ 在 $[a,b]$ 上可积，则对任意 $[c,d] \subseteq [a,b]$， $f$ 在 $[c,d]$ 上也可积。
+    若 $f$ 在 $[a, b]$ 上可积，则对任意 $[c,d] \subseteq [a, b]$， $f$ 在 $[c,d]$ 上也可积。
 \end{corollary}
 
 \begin{corollary}
-    若 $c \in (a,b)$，则当 $f$ 在 $[a,c]$ 与 $[c,b]$ 上都可积时，$f$ 在 $[a,b]$ 上可积。
+    若 $c \in (a, b)$，则当 $f$ 在 $[a,c]$ 与 $[c, b]$ 上都可积时，$f$ 在 $[a, b]$ 上可积。
 \end{corollary}
 
 \begin{corollary}
-    设 $f$ 在 $[a,b]$ 上可积。若 $g$ 在 $[a,b]$ 上除去有限个点 $x_1,x_2, \ldots x_n$ 外和 $f$ 相等，则 $g$ 在 $[a,b]$ 上也可积，且
+    设 $f$ 在 $[a, b]$ 上可积。若 $g$ 在 $[a, b]$ 上除去有限个点 $x_1,x_2, \ldots x_n$ 外和 $f$ 相等，则 $g$ 在 $[a, b]$ 上也可积，且
     \[\int_{a}^{b}f(x)\mathrm{d}x = \int_{a}^{b}g(x)\mathrm{d}x\]
 \end{corollary}
 
 \begin{corollary}
-    设 $f$ 在 $[a,b]$ 上连续，$\varphi$ 在 $[c,d]$ 上可积，且 $\varphi([c,d]) \subseteq [a,b]$，则 $f\circ\varphi$ 在 $[c,d]$ 上可积。
+    设 $f$ 在 $[a, b]$ 上连续，$\varphi$ 在 $[c,d]$ 上可积，且 $\varphi([c,d]) \subseteq [a, b]$，则 $f\circ\varphi$ 在 $[c,d]$ 上可积。
 \end{corollary}
 
 %——————————————————————————————————%
 
 \section{反常积分}
 
+Riemann 积分的推广称为反常积分或广义积分。反常积分分为两大类：积分无界的反常积分简称为无穷积分；无界函数的积分称为瑕积分。
 
+\begin{definition}{无穷积分}
+    \begin{enumerate}
+        \item 设函数 $f$ 在 $[a, +\infty)$ 上有定义，对 $\forall b > a$，$f$ 在 $[a, b]$ 上可积。上限 $b$ 变动的积分
+              \[\int_{a}^{b}f(x)\mathrm{d}x\]
+              定义了 $[a, +\infty)$ 上的一个函数。若极限
+              \[\lim_{b \to +\infty}\int_{a}^{b}f(x)\mathrm{d}x\]
+              存在且有限，就把该极限记为
+              \[\int_{a}^{+\infty}f(x)\mathrm{d}x\]
+              并称上述积分收敛，称 $f$ 在 $[a,+\infty)$ 上可积。若极限不存在，也用该记号表示，但称积分发散。
+        \item 设函数 $f$ 在 $(-\infty, b]$ 上有定义，对 $\forall b > a$，$f$ 在 $[a, b]$ 上可积。下限 $a$ 变动的积分
+              \[\int_{a}^{b}f(x)\mathrm{d}x\]
+              定义了 $(-\infty, b]$ 上的一个函数。若极限
+              \[\lim_{a \to -\infty}\int_{a}^{b}f(x)\mathrm{d}x\]
+              存在且有限，就把该极限记为
+              \[\int_{-\infty}^{b}f(x)\mathrm{d}x\]
+              并称上述积分收敛，称 $f$ 在 $(-\infty, b]$ 上可积。若极限不存在，也用该记号表示，但称积分发散。
+        \item 若无穷积分 $\displaystyle \int_{-\infty}^{b}f(x)\mathrm{d}x$ 和 $\displaystyle \int_{a}^{+\infty}f(x)\mathrm{d}x$ 都收敛，则称无穷积分
+              \[\int_{-\infty}^{+\infty}f(x)\mathrm{d}x\]
+              收敛，并规定
+              \[\int_{-\infty}^{+\infty}f(x)\mathrm{d}x = \int_{-\infty}^{b}f(x)\mathrm{d}x + \int_{a}^{+\infty}f(x)\mathrm{d}x\]
+              称 $f$ 在 $(-\infty, +\infty)$ 上可积。
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}{无穷积分的 Newton-Leibniz 公式}
+    设函数 $f$ 在 $[a,+\infty)$ 上可积，且有原函数 $F$，则
+    \[\int_{a}^{+\infty}f(x)\mathrm{d}x = F(+\infty) - F(a)\]
+    若 $f$ 在 $(-\infty, b]$ 上可积，且有原函数 $F$，则
+    \[\int_{-\infty}^{b}f(x)\mathrm{d}x = F(b) - F(-\infty)\]
+    若 $f$ 在 $(-\infty, +\infty)$ 上可积，且有原函数 $F$，则
+    \[\int_{-\infty}^{+\infty}f(x)\mathrm{d}x = F(+\infty) - F(-\infty)\]
+    其中 $F(-\infty) = \lim_{x \to -\infty}F(x), F(+\infty) = \lim_{x \to +\infty}F(x)$。
+\end{theorem}
+
+\begin{definition}{瑕积分}
+    设函数 $f$ 在 $(a,b]$ 上有定义，且
+    \[\lim_{\varepsilon \to a^{+}}f(x) = \infty\]
+    但对 $\varepsilon \in (0, b - a)$，$f$ 在 $[a + \varepsilon, b]$ 上可积。若极限
+    \[\lim_{\varepsilon \to a^{+}}\int_{a + \varepsilon}^{b}f(x)\mathrm{d}x\]
+    存在且有限，则称瑕积分
+    \[\int_{a}^{b}f(x)\mathrm{d}x\]
+    收敛，并定义
+    \[\int_{a}^{b}f(x)\mathrm{d}x := \lim_{\varepsilon \to a^{+}}\int_{a + \varepsilon}^{b}f(x)\mathrm{d}x\]
+    若极限不存在，则称该瑕积分发散，称 $a$ 为瑕点。
+\end{definition}
 
 
 
