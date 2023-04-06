@@ -4,9 +4,9 @@
 
 \section{函数的导数}
 \begin{definition}{导数}
-  设 $f$ 是定义在 $[a, b]$ 上的函数，$x\in (a, b)$。若 $x$ 从 $x_0$ 变化到 $x_0 + \Delta x$，存在 $a\in \mathbb{R}$ 使得
-  \[\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = \lim_{\Delta x\to 0}\frac{\Delta f(x)}{\Delta x} = a\]
-  则称 $f$ 在 $x_0$ 处可导（derivable），$a$ 称为 $f$ 在 $x_0$ 处的导数（derivative），记为 $f'(x_0) = a$。
+    设 $f$ 是定义在 $[a, b]$ 上的函数，$x\in (a, b)$。若 $x$ 从 $x_0$ 变化到 $x_0 + \Delta x$，存在 $a\in \mathbb{R}$ 使得
+    \[\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = \lim_{\Delta x\to 0}\frac{\Delta f(x)}{\Delta x} = a\]
+    则称 $f$ 在 $x_0$ 处可导（derivable），$a$ 称为 $f$ 在 $x_0$ 处的导数（derivative），记为 $f'(x_0) = a$。
 \end{definition}
 
 令 $x = x_0 + \Delta x$，则 $f'(x_0)$ 的等价定义
@@ -14,184 +14,184 @@
 \[f'(x_0) := \lim_{x\to x_0}\frac{f(x) - f(x_0)}{x - x_0}\]
 
 \begin{definition}
-  若曲线 $y = f(x)$ 在 $x_0$ 处可导，则过点 $P(x_0, f(x_0))$ 的斜率为 $f'(x_0)$ 的直线
-  \[y = f(x_0) + f'(x_0)(x - x_0)\]
-  称为曲线 $y = f(x)$ 在点 $P$ 处的切线（tangent line）。
+    若曲线 $y = f(x)$ 在 $x_0$ 处可导，则过点 $P(x_0, f(x_0))$ 的斜率为 $f'(x_0)$ 的直线
+    \[y = f(x_0) + f'(x_0)(x - x_0)\]
+    称为曲线 $y = f(x)$ 在点 $P$ 处的切线（tangent line）。
 
-  过点 $P$ 且垂直于切线的直线称为曲线 $y = f(x)$ 在点 $P$ 处的法线（normal line）。
+    过点 $P$ 且垂直于切线的直线称为曲线 $y = f(x)$ 在点 $P$ 处的法线（normal line）。
 
-  切线和法线斜率的乘积等于 $-1$。
+    切线和法线斜率的乘积等于 $-1$。
 \end{definition}
 
 
 \begin{definition}{左导数和右导数}
-  设函数 $f$。
-  \begin{enumerate}
-    \item 若 $f$ 在 $x_0$ 的左邻域 $N_r^-(x_0)$ 有定义，且存在 $a\in \mathbb{R}$ 使得
-          \[\lim_{\Delta x\to 0-}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = a\]
-          则称函数 $f$ 在 $x_0$ 的左侧可导，$a$ 称为 $f(x)$ 在 $x_0$ 处的左导数（left derivative），记为 $f_{-}'(x_0)$。
-    \item 若 $f$ 在 $x_0$ 的右邻域 $N_r^+(x_0)$ 有定义，且存在 $a\in \mathbb{R}$ 使得
-          \[\lim_{\Delta x\to 0+}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = a\]
-          则称函数 $f$ 在 $x_0$ 的右侧可导，$a$ 称为 $f(x)$ 在 $x_0$ 处的右导数（left derivative），记为 $f_{+}'(x_0)$。
-  \end{enumerate}
-  左导数和右导数统称为单侧导数（one-sided derivative）。
+    设函数 $f$。
+    \begin{enumerate}
+        \item 若 $f$ 在 $x_0$ 的左邻域 $N_r^-(x_0)$ 有定义，且存在 $a\in \mathbb{R}$ 使得
+              \[\lim_{\Delta x\to 0-}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = a\]
+              则称函数 $f$ 在 $x_0$ 的左侧可导，$a$ 称为 $f(x)$ 在 $x_0$ 处的左导数（left derivative），记为 $f_{-}'(x_0)$。
+        \item 若 $f$ 在 $x_0$ 的右邻域 $N_r^+(x_0)$ 有定义，且存在 $a\in \mathbb{R}$ 使得
+              \[\lim_{\Delta x\to 0+}\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = a\]
+              则称函数 $f$ 在 $x_0$ 的右侧可导，$a$ 称为 $f(x)$ 在 $x_0$ 处的右导数（left derivative），记为 $f_{+}'(x_0)$。
+    \end{enumerate}
+    左导数和右导数统称为单侧导数（one-sided derivative）。
 \end{definition}
 
 \begin{proposition}
-  设函数 $f$ 在邻域 $N_r(x_0)$ 有定义。则 $f(x)$ 在 $x_0$ 处可导且 $f'(x_0) = a$ 当且仅当
-  \[f_{-}'(x_0) = f_{+}'(x_0) = a\]
+    设函数 $f$ 在邻域 $N_r(x_0)$ 有定义。则 $f(x)$ 在 $x_0$ 处可导且 $f'(x_0) = a$ 当且仅当
+    \[f_{-}'(x_0) = f_{+}'(x_0) = a\]
 \end{proposition}
 
 \begin{theorem}{可导和连续的关系}
-  设函数 $f$ 在 $x_0$ 处可导，则 $f(x)$ 在 $x_0$ 处连续。
+    设函数 $f$ 在 $x_0$ 处可导，则 $f(x)$ 在 $x_0$ 处连续。
 \end{theorem}
 \begin{remark}
-  函数在某处连续是在该处可导的必要条件，但不是充分条件，即函数连续不一定可导。
+    函数在某处连续是在该处可导的必要条件，但不是充分条件，即函数连续不一定可导。
 \end{remark}
 
 \hfill
 
 \begin{example}
-  函数 $f(x) = |x|$ 在 $x = 0$ 处不可导。
+    函数 $f(x) = |x|$ 在 $x = 0$ 处不可导。
 \end{example}
 
 \hfill
 
 \begin{theorem}{微分最佳逼近定理}
-  设函数 $f$ 在 $x_0$ 处可微，$l$ 是 $f$ 在 $x_0$ 处的切线，有
-  \[l(x) = f(x_0) + f'(x_0)(x - x_0),\, x\to x_0\]
+    设函数 $f$ 在 $x_0$ 处可微，$l$ 是 $f$ 在 $x_0$ 处的切线，有
+    \[l(x) = f(x_0) + f'(x_0)(x - x_0),\, x\to x_0\]
 
-  则对于任一不等于 $l(x)$ 的一次多项式 $L(x)$ 都存在 $\delta > 0$ 使得当 $0 < |x - x_0| < \delta$ 时，有
-  \[|f(x) - l(x)| < |f(x) - L(x)|\]
+    则对于任一不等于 $l(x)$ 的一次多项式 $L(x)$ 都存在 $\delta > 0$ 使得当 $0 < |x - x_0| < \delta$ 时，有
+    \[|f(x) - l(x)| < |f(x) - L(x)|\]
 \end{theorem}
 函数的微分是在局部逼近效果最佳的一次多项式。
 
 \begin{theorem}{导数的四则运算}
-  设函数 $f$ 和 $g$ 在 $x$ 处可导，则 $f \pm g$，$fg$ 在 $x$ 处也可导。若 $g \ne 0$，则函数 $\dfrac{f}{g}$ 在 $x$ 处也可导，
-  \begin{enumerate}
-    \item $(f \pm g)'(x) = f'(x) \pm g'(x)$；
-    \item $(fg)'(x) = f'(x)g(x) + f(x)g'(x)$；
-    \item $(cf)'(x) = cf'(x)$，其中 $c$ 为常数；
-    \item $\left(\dfrac{f}{g}\right)'(x) = \dfrac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$
-  \end{enumerate}
+    设函数 $f$ 和 $g$ 在 $x$ 处可导，则 $f \pm g$，$fg$ 在 $x$ 处也可导。若 $g \ne 0$，则函数 $\dfrac{f}{g}$ 在 $x$ 处也可导，
+    \begin{enumerate}
+        \item $(f \pm g)'(x) = f'(x) \pm g'(x)$；
+        \item $(fg)'(x) = f'(x)g(x) + f(x)g'(x)$；
+        \item $(cf)'(x) = cf'(x)$，其中 $c$ 为常数；
+        \item $\left(\dfrac{f}{g}\right)'(x) = \dfrac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$
+    \end{enumerate}
 \end{theorem}
 
 \begin{theorem}{复合函数的链式求导法则}
-  设函数 $f$ 在 $x_0$ 处可导，函数 $g$ 在 $t_0 = f(x_0)$ 处可导，则函数 $g \circ f$ 在 $x_0$ 处可导，且
-  \[(g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)\]
+    设函数 $f$ 在 $x_0$ 处可导，函数 $g$ 在 $t_0 = f(x_0)$ 处可导，则函数 $g \circ f$ 在 $x_0$ 处可导，且
+    \[(g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)\]
 \end{theorem}
 
 \begin{theorem}
-  设函数 $y = f(x)$ 在区间 $I$ 上连续且严格单调，若 $f(x)$ 在 $x_0\in I$ 处可导，且 $f'(x_0) \ne 0$，则 $f(x)$ 的反函数 $x = f^{-1}(y)$ 在 $y_0 = f(x_0)$ 处可导，且
-  \[\left(f^{-1}\right)'(y_0) = \dfrac{1}{f'(x_0)}\]
+    设函数 $y = f(x)$ 在区间 $I$ 上连续且严格单调，若 $f(x)$ 在 $x_0\in I$ 处可导，且 $f'(x_0) \ne 0$，则 $f(x)$ 的反函数 $x = f^{-1}(y)$ 在 $y_0 = f(x_0)$ 处可导，且
+    \[\left(f^{-1}\right)'(y_0) = \dfrac{1}{f'(x_0)}\]
 \end{theorem}
 
 \begin{table}
-  \centering
-  \caption{初等函数导函数表}
-  \renewcommand\arraystretch{1.8}
-  \begin{tabular}{|c|c|c|c|}
-    \hline
-    类型                        & 原函数                                              & 导函数                       & 备注                                           \\
-    \hline
-    常值函数                    & $C$                                                 & $0$                          & $C\in \mathbb{R}$                              \\
-    \hline
-    \multirow{3}{*}{幂函数}     & $x^m$                                               & $mx^{m - 1}$                 & $m \in \mathbb{N}$                             \\
-                                & $x^{-m}$                                            & $-mx^{-m - 1}$               & $m \in \mathbb{N},x \ne 0$                     \\
-                                & $x^\mu$                                             & $\mu x^{\mu - 1}$            & $\mu \in \mathbb{R}, x > 0$                    \\
-    \hline
-    \multirow{2}{*}{指数函数}   & $e^x$                                               & $e^x$                        &                                                \\
-                                & $a^x$                                               & $a^x\ln a$                   & $a > 0, a \ne 1$                               \\
-    \hline
-    \multirow{2}{*}{对数函数}   & $\ln |x|$                                           & $\dfrac{1}{x}$               & $x \ne 0$                                      \\[8pt]
-                                & $\log_a|x|$                                         & $\dfrac{1}{x\ln a}$          & $a > 0, a \ne 1, x \ne 0$                      \\[5pt]
-    \hline
-    \multirow{4}{*}{三角函数}   & $\sin x$                                            & $\cos x$                     &                                                \\
-                                & $\cos x$                                            & $-\sin x$                    &                                                \\
-                                & $\tan x$                                            & $\dfrac{1}{\cos^{2}x}$       & $x \ne k\pi + \dfrac{\pi}{2}, k\in \mathbb{Z}$ \\
-                                & $\cot x$                                            & $-\dfrac{1}{\sin^{2}x}$      & $x \ne k\pi, k\in \mathbb{Z}$                  \\[5pt]
-    \hline
-    \multirow{4}{*}{反三角函数} & $\arcsin x$                                         & $\dfrac{1}{\sqrt{1 - x^2}}$  & $|x| < 1$                                      \\
-                                & $\arccos x$                                         & $-\dfrac{1}{\sqrt{1 - x^2}}$ & $|x| < 1$                                      \\
-                                & $\arctan x$                                         & $\dfrac{1}{1 + x^2}$         &                                                \\
-                                & $\mathrm{arccot}\, x$                               & $-\dfrac{1}{1 + x^2}$        &                                                \\[5pt]
-    \hline
-    \multirow{3}{*}{双曲函数}   & $\sinh x$                                           & $\cosh x$                    &                                                \\
-                                & $\cosh x$                                           & $\sinh x$                    &                                                \\
-                                & $\tanh x$                                           & $\dfrac{1}{\cosh^{2}x}$      &                                                \\[5pt]
-    \hline
-    \multirow{3}{*}{反双曲函数} & $\ln (x + \sqrt{x^2 + 1})$                          & $\dfrac{1}{\sqrt{x^2 + 1}}$  &                                                \\
-                                & $\ln (x + \sqrt{x^2 - 1})$                          & $\dfrac{1}{\sqrt{x^2 - 1}}$  & $x \geqslant 1$                                \\
-                                & $\dfrac{1}{2}\ln \left(\dfrac{1 + x}{1 - x}\right)$ & $\dfrac{1}{1 - x^2}$         & $|x| < 1$                                      \\[5pt]
-    \hline
-  \end{tabular}
+    \centering
+    \caption{初等函数导函数表}
+    \renewcommand\arraystretch{1.8}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        类型                        & 原函数                                              & 导函数                       & 备注                                           \\
+        \hline
+        常值函数                    & $C$                                                 & $0$                          & $C\in \mathbb{R}$                              \\
+        \hline
+        \multirow{3}{*}{幂函数}     & $x^m$                                               & $mx^{m - 1}$                 & $m \in \mathbb{N}$                             \\
+                                    & $x^{-m}$                                            & $-mx^{-m - 1}$               & $m \in \mathbb{N},x \ne 0$                     \\
+                                    & $x^\mu$                                             & $\mu x^{\mu - 1}$            & $\mu \in \mathbb{R}, x > 0$                    \\
+        \hline
+        \multirow{2}{*}{指数函数}   & $e^x$                                               & $e^x$                        &                                                \\
+                                    & $a^x$                                               & $a^x\ln a$                   & $a > 0, a \ne 1$                               \\
+        \hline
+        \multirow{2}{*}{对数函数}   & $\ln |x|$                                           & $\dfrac{1}{x}$               & $x \ne 0$                                      \\[8pt]
+                                    & $\log_a|x|$                                         & $\dfrac{1}{x\ln a}$          & $a > 0, a \ne 1, x \ne 0$                      \\[5pt]
+        \hline
+        \multirow{4}{*}{三角函数}   & $\sin x$                                            & $\cos x$                     &                                                \\
+                                    & $\cos x$                                            & $-\sin x$                    &                                                \\
+                                    & $\tan x$                                            & $\dfrac{1}{\cos^{2}x}$       & $x \ne k\pi + \dfrac{\pi}{2}, k\in \mathbb{Z}$ \\
+                                    & $\cot x$                                            & $-\dfrac{1}{\sin^{2}x}$      & $x \ne k\pi, k\in \mathbb{Z}$                  \\[5pt]
+        \hline
+        \multirow{4}{*}{反三角函数} & $\arcsin x$                                         & $\dfrac{1}{\sqrt{1 - x^2}}$  & $|x| < 1$                                      \\
+                                    & $\arccos x$                                         & $-\dfrac{1}{\sqrt{1 - x^2}}$ & $|x| < 1$                                      \\
+                                    & $\arctan x$                                         & $\dfrac{1}{1 + x^2}$         &                                                \\
+                                    & $\mathrm{arccot}\, x$                               & $-\dfrac{1}{1 + x^2}$        &                                                \\[5pt]
+        \hline
+        \multirow{3}{*}{双曲函数}   & $\sinh x$                                           & $\cosh x$                    &                                                \\
+                                    & $\cosh x$                                           & $\sinh x$                    &                                                \\
+                                    & $\tanh x$                                           & $\dfrac{1}{\cosh^{2}x}$      &                                                \\[5pt]
+        \hline
+        \multirow{3}{*}{反双曲函数} & $\ln (x + \sqrt{x^2 + 1})$                          & $\dfrac{1}{\sqrt{x^2 + 1}}$  &                                                \\
+                                    & $\ln (x + \sqrt{x^2 - 1})$                          & $\dfrac{1}{\sqrt{x^2 - 1}}$  & $x \geqslant 1$                                \\
+                                    & $\dfrac{1}{2}\ln \left(\dfrac{1 + x}{1 - x}\right)$ & $\dfrac{1}{1 - x^2}$         & $|x| < 1$                                      \\[5pt]
+        \hline
+    \end{tabular}
 \end{table}
 
 \begin{definition}{高阶导数}
-  设函数 $f$ 在区间 $I$ 上可导，则 $f'(x)\,(\forall \in I)$ 称为 $f(x)$ 的导函数。若 $f'(x)$ 在 $I$ 上仍可导，则 $f'(x)$ 的导函数称为 $f(x)$ 的二阶导函数（second order derivative），记为 $f''(x)$。以此类推，定义 $f(x)$ 的 $n$ 阶导函数（$n$-order derivatve），记为 $f^{(n)}(x)$。
+    设函数 $f$ 在区间 $I$ 上可导，则 $f'(x)\,(\forall \in I)$ 称为 $f(x)$ 的导函数。若 $f'(x)$ 在 $I$ 上仍可导，则 $f'(x)$ 的导函数称为 $f(x)$ 的二阶导函数（second order derivative），记为 $f''(x)$。以此类推，定义 $f(x)$ 的 $n$ 阶导函数（$n$-order derivatve），记为 $f^{(n)}(x)$。
 \end{definition}
 
 
 \begin{definition}{光滑函数}
-  设区间 $I$。所有在 $I$ 上连续的函数组成的集合记为 $C(I)$ 或 $C^0(I)$。所有在 $I$ 上 $n$ 次连续可导的函数组成的集合记为 $C^{(n)}(I)$。所有在 $I$ 上任意次可导的函数组成的集合记为 $C^\infty(I)$。这样的函数称为 $I$ 上的光滑函数（smooth function）。在不强调区间 $I$ 时可以记为 $C^{(n)}$。
+    设区间 $I$。所有在 $I$ 上连续的函数组成的集合记为 $C(I)$ 或 $C^0(I)$。所有在 $I$ 上 $n$ 次连续可导的函数组成的集合记为 $C^{(n)}(I)$。所有在 $I$ 上任意次可导的函数组成的集合记为 $C^\infty(I)$。这样的函数称为 $I$ 上的光滑函数（smooth function）。在不强调区间 $I$ 时可以记为 $C^{(n)}$。
 \end{definition}
 
 \begin{theorem}{Leibniz 公式}
-  设函数 $f, g \in C^{(n)}(I)$，则 $fg \in C^{(n)}(I)$，且
-  \[(fg)^{(n)} = \sum_{k = 0}^{n} \mathrm{C}_{n}^{k}f^{(n - k)}g^{(k)} \]
+    设函数 $f, g \in C^{(n)}(I)$，则 $fg \in C^{(n)}(I)$，且
+    \[(fg)^{(n)} = \sum_{k = 0}^{n} \mathrm{C}_{n}^{k}f^{(n - k)}g^{(k)} \]
 
-  规定 $f^{(0)} = f, g^{(0)} = g$。
+    规定 $f^{(0)} = f, g^{(0)} = g$。
 \end{theorem}
 %——————————————————————————————————%
 
 \section{中值定理}
 
 \begin{definition}{极大值和极小值}
-  设函数 $f:(a,b)\to \mathbb{R}$。
-  \begin{enumerate}
-    \item 若对点 $x_0 \in (a,b)$ 存在 $\delta > 0$，使得 $\Delta = (x_0 - \delta,x_0 + \delta) \subseteq (a,b)$，并且当 $x \in \Delta$ 时，$f(x_0)\geqslant f(x)$，那么称 $f(x_0)$ 是 $f$ 在 $(a,b)$ 上的局部极大值（local maximum），$x_0$ 称为 $f$ 的极大值点（local maximum point）。
-    \item 若对点 $x_0 \in (a,b)$ 存在 $\delta > 0$，使得 $\Delta = (x_0 - \delta,x_0 + \delta) \subseteq (a,b)$，并且当 $x \in \Delta$ 时，$f(x_0)\leqslant f(x)$，那么称 $f(x_0)$ 是 $f$ 在 $(a,b)$ 上的极小值（local minimum），$x_0$ 称为 $f$ 的极小值点（local minimum point）。
-  \end{enumerate}
-  局部极大值和局部极小值统称为局部极值（local extremum），局部极大值点和局部极小值点统称为局部极值点（local extremum point）。
+    设函数 $f:(a,b)\to \mathbb{R}$。
+    \begin{enumerate}
+        \item 若对点 $x_0 \in (a,b)$ 存在 $\delta > 0$，使得 $\Delta = (x_0 - \delta,x_0 + \delta) \subseteq (a,b)$，并且当 $x \in \Delta$ 时，$f(x_0)\geqslant f(x)$，那么称 $f(x_0)$ 是 $f$ 在 $(a,b)$ 上的局部极大值（local maximum），$x_0$ 称为 $f$ 的极大值点（local maximum point）。
+        \item 若对点 $x_0 \in (a,b)$ 存在 $\delta > 0$，使得 $\Delta = (x_0 - \delta,x_0 + \delta) \subseteq (a,b)$，并且当 $x \in \Delta$ 时，$f(x_0)\leqslant f(x)$，那么称 $f(x_0)$ 是 $f$ 在 $(a,b)$ 上的极小值（local minimum），$x_0$ 称为 $f$ 的极小值点（local minimum point）。
+    \end{enumerate}
+    局部极大值和局部极小值统称为局部极值（local extremum），局部极大值点和局部极小值点统称为局部极值点（local extremum point）。
 \end{definition}
 
 \begin{theorem}{Fermat 引理}
-  若函数 $f:(a,b)\to \mathbb{R}$ 在其局部极值点 $x_0 \in (a,b)$ 处可导，则必有 $f'(x) = 0$。
+    若函数 $f:(a,b)\to \mathbb{R}$ 在其局部极值点 $x_0 \in (a,b)$ 处可导，则必有 $f'(x) = 0$。
 \end{theorem}
 
 \begin{definition}{驻点}
-  满足 $x_0 \in (a,b)$ 且 $f'(x) = 0$ 的点 $x_0$ 称为函数 $f$ 的驻点（critical point）。
+    满足 $x_0 \in (a,b)$ 且 $f'(x) = 0$ 的点 $x_0$ 称为函数 $f$ 的驻点（critical point）。
 \end{definition}
 
 \begin{theorem}{Rolle 中值定理}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $f(a) = f(b)$，则存在点 $\xi \in (a,b)$，使得 $f'(\xi) = 0$。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $f(a) = f(b)$，则存在点 $\xi \in (a,b)$，使得 $f'(\xi) = 0$。
 \end{theorem}
 
 \begin{lemma}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $\lambda(a) = 1, \lambda(b) = 0$，则必存在点 $\xi \in (a,b)$，使得
-  \[f'(\xi) = \lambda'(\xi)(f(a) - f(b))\]
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $\lambda(a) = 1, \lambda(b) = 0$，则必存在点 $\xi \in (a,b)$，使得
+    \[f'(\xi) = \lambda'(\xi)(f(a) - f(b))\]
 \end{lemma}
 
 \begin{theorem}{Lagrange 中值定理}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则存在点 $\xi \in (a,b)$，使得
-  \[\frac{f(b) - f(a)}{b - a} = f'(\xi)\]
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则存在点 $\xi \in (a,b)$，使得
+    \[\frac{f(b) - f(a)}{b - a} = f'(\xi)\]
 \end{theorem}
 
 \begin{corollary}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上为常数的充分必要条件是 $f' = 0$ 在 $(a,b)$ 上成立。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上为常数的充分必要条件是 $f' = 0$ 在 $(a,b)$ 上成立。
 \end{corollary}
 
 \begin{theorem}{Cauchy 中值定理}
-  设函数 $f$ 和 $g$ 在区间 $[a,b]$ 上连续，在区间 $(a,b)$ 上可导，且当 $x \in (a,b)$ 时，$g'(x) \ne 0$，此时必存在一点 $\xi \in (a,b)$，使得
-  \[\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)}\]
+    设函数 $f$ 和 $g$ 在区间 $[a,b]$ 上连续，在区间 $(a,b)$ 上可导，且当 $x \in (a,b)$ 时，$g'(x) \ne 0$，此时必存在一点 $\xi \in (a,b)$，使得
+    \[\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)}\]
 \end{theorem}
 
 \begin{theorem}{Darbux 定理}
-  若 $f$ 在 $[a,b]$ 上可导，则：
-  \begin{enumerate}
-    \item 导函数 $f'$ 可以取到 $f'(a)$ 与 $f'(b)$ 之间的一切值；
-    \item $f'$ 没有第一类间断点。
-  \end{enumerate}
+    若 $f$ 在 $[a,b]$ 上可导，则：
+    \begin{enumerate}
+        \item 导函数 $f'$ 可以取到 $f'(a)$ 与 $f'(b)$ 之间的一切值；
+        \item $f'$ 没有第一类间断点。
+    \end{enumerate}
 \end{theorem}
 
 
@@ -203,108 +203,108 @@
 \subsection{单调性}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上递增（递减）的充分必要条件是 $f' \geqslant 0\, (\leqslant 0)$ 在区间 $(a,b)$ 上成立。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上递增（递减）的充分必要条件是 $f' \geqslant 0\, (\leqslant 0)$ 在区间 $(a,b)$ 上成立。
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，若 $f' > 0\, (f' < 0)$ 在 $(a,b)$ 上成立，则 $f$ 在 $[a,b]$ 上是严格递增（严格递减）的。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，若 $f' > 0\, (f' < 0)$ 在 $(a,b)$ 上成立，则 $f$ 在 $[a,b]$ 上是严格递增（严格递减）的。
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内除了有限个点以外，有正（负）的导数，则 $f$ 在 $[a,b]$ 上严格递增（严格递减）。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内除了有限个点以外，有正（负）的导数，则 $f$ 在 $[a,b]$ 上严格递增（严格递减）。
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上严格递增（严格递减）的充分必要条件是
-  \begin{enumerate}
-    \item 当 $x \in (a,b)$ 时，$f' \geqslant 0\, (\leqslant 0)$；
-    \item 在 $(a,b)$ 的任意开子区间上，$f' \ne 0$。
-  \end{enumerate}
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上严格递增（严格递减）的充分必要条件是
+    \begin{enumerate}
+        \item 当 $x \in (a,b)$ 时，$f' \geqslant 0\, (\leqslant 0)$；
+        \item 在 $(a,b)$ 的任意开子区间上，$f' \ne 0$。
+    \end{enumerate}
 \end{theorem}
 
 \subsection{极值}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，$x_0 \in (a,b)$。
-  \begin{enumerate}
-    \item 若 $\exists \delta > 0$，使得在 $(x_0 - \delta,x_0)$ 上 $f' > 0$，而在 $x_0,x_0 + \delta$ 上 $f' < 0$，则 $f(x_0)$ 是 $f$ 的一个严格极大值。即当 $0 < |x - x_0| < \delta$ 时，$f(x) < f(x_0)$。
-    \item 若 $\exists \delta > 0$，使得在 $(x_0 - \delta,x_0)$ 上 $f' < 0$，而在 $x_0,x_0 + \delta$ 上 $f' > 0$，则 $f(x_0)$ 是 $f$ 的一个严格极大值。即当 $0 < |x - x_0| < \delta$ 时，$f(x) > f(x_0)$。
-  \end{enumerate}
+    设函数 $f$ 在 $[a,b]$ 上连续，$x_0 \in (a,b)$。
+    \begin{enumerate}
+        \item 若 $\exists \delta > 0$，使得在 $(x_0 - \delta,x_0)$ 上 $f' > 0$，而在 $x_0,x_0 + \delta$ 上 $f' < 0$，则 $f(x_0)$ 是 $f$ 的一个严格极大值。即当 $0 < |x - x_0| < \delta$ 时，$f(x) < f(x_0)$。
+        \item 若 $\exists \delta > 0$，使得在 $(x_0 - \delta,x_0)$ 上 $f' < 0$，而在 $x_0,x_0 + \delta$ 上 $f' > 0$，则 $f(x_0)$ 是 $f$ 的一个严格极大值。即当 $0 < |x - x_0| < \delta$ 时，$f(x) > f(x_0)$。
+    \end{enumerate}
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，$x_0 \in (a,b)$ 是 $f$ 的一个驻点。设 $f''$ 存在，则
-  \begin{enumerate}
-    \item 当 $f''(x_0) < 0$ 时，$f(x_0)$ 是 $f$ 的一个严格极大值；
-    \item 当 $f''(x_0) > 0$ 时，$f(x_0)$ 是 $f$ 的一个严格极小值；
-  \end{enumerate}
+    设函数 $f$ 在 $[a,b]$ 上连续，$x_0 \in (a,b)$ 是 $f$ 的一个驻点。设 $f''$ 存在，则
+    \begin{enumerate}
+        \item 当 $f''(x_0) < 0$ 时，$f(x_0)$ 是 $f$ 的一个严格极大值；
+        \item 当 $f''(x_0) > 0$ 时，$f(x_0)$ 是 $f$ 的一个严格极小值；
+    \end{enumerate}
 \end{theorem}
 
 \subsection{凸性}
 
 \begin{definition}
-  设函数 $f$ 在区间 $I$ 上有定义。若对 $\forall x_1,x_2 \in I, x_1 \ne x_2$，以及对 $\forall \lambda_1 \lambda_2 > 0$，且 $\lambda_1 + \lambda_2 = 1$ 都有
-  \[f(\lambda_{1}x_1 + \lambda_{2}x_2) \leqslant \lambda_{1}f(x_1) + \lambda_{2}f(x_2)\]
-  则称 $f$ 是 $I$ 上的凸函数（convec function）。
+    设函数 $f$ 在区间 $I$ 上有定义。若对 $\forall x_1,x_2 \in I, x_1 \ne x_2$，以及对 $\forall \lambda_1 \lambda_2 > 0$，且 $\lambda_1 + \lambda_2 = 1$ 都有
+    \[f(\lambda_{1}x_1 + \lambda_{2}x_2) \leqslant \lambda_{1}f(x_1) + \lambda_{2}f(x_2)\]
+    则称 $f$ 是 $I$ 上的凸函数（convec function）。
 
-  如果上述不等式对任意 $x_1 \ne x_2$ 以及 $\lambda_1,\lambda_2 > 0(\lambda_1 + \lambda_2 = 1)$ 不等号总成立，则 $f$ 上 $I$ 上的严格凸函数。
+    如果上述不等式对任意 $x_1 \ne x_2$ 以及 $\lambda_1,\lambda_2 > 0(\lambda_1 + \lambda_2 = 1)$ 不等号总成立，则 $f$ 上 $I$ 上的严格凸函数。
 \end{definition}
 
 \begin{theorem}{Jensen 不等式}
-  设函数 $f$ 是区间 $I$ 上的凸函数，则对 $\forall x_1,x_2, \ldots ,x_n \in I$ 及 $\lambda_1,\lambda_2, \ldots ,\lambda_n > 0$，且 $\lambda_1 + \lambda_2 + \cdots + \lambda_n = 1$ 都有
-  \[f(\sum_{i = 1}^{n}\lambda_{i}x_i) \leqslant \sum_{i = 1}^{n}\lambda_{i}f(x_i)\]
-  上面的不等式称为 Jensen 不等式。
+    设函数 $f$ 是区间 $I$ 上的凸函数，则对 $\forall x_1,x_2, \ldots ,x_n \in I$ 及 $\lambda_1,\lambda_2, \ldots ,\lambda_n > 0$，且 $\lambda_1 + \lambda_2 + \cdots + \lambda_n = 1$ 都有
+    \[f(\sum_{i = 1}^{n}\lambda_{i}x_i) \leqslant \sum_{i = 1}^{n}\lambda_{i}f(x_i)\]
+    上面的不等式称为 Jensen 不等式。
 
-  若 $f$ 是 $I$ 上的严格凸函数，则当 $x_1,x_2, \ldots ,x_n$ 不全相等时，有
-  \[f(\sum_{i = 1}^{n}\lambda_{i}x_i) < \sum_{i = 1}^{n}\lambda_{i}f(x_i)\]
+    若 $f$ 是 $I$ 上的严格凸函数，则当 $x_1,x_2, \ldots ,x_n$ 不全相等时，有
+    \[f(\sum_{i = 1}^{n}\lambda_{i}x_i) < \sum_{i = 1}^{n}\lambda_{i}f(x_i)\]
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 是区间 $I$ 上的凸函数，则对 $\forall x_1,x_2, \ldots ,x_n \in I$ 及 $\beta_1,\beta_2, \ldots ,\beta_n >0$，有
-  \[f(\sum_{i = 1}^{n}\beta_{i}x_{i}/\sum_{i = 1}^{n}\beta_i) \leqslant \frac{\displaystyle \sum_{i = 1}^{n}\beta_{i}f(x_i)}{\displaystyle \sum_{i = 1}^{n}\beta_i}\]
-  上面的不等式也可以称为 Jensen 不等式。
+    设函数 $f$ 是区间 $I$ 上的凸函数，则对 $\forall x_1,x_2, \ldots ,x_n \in I$ 及 $\beta_1,\beta_2, \ldots ,\beta_n >0$，有
+    \[f(\sum_{i = 1}^{n}\beta_{i}x_{i}/\sum_{i = 1}^{n}\beta_i) \leqslant \frac{\displaystyle \sum_{i = 1}^{n}\beta_{i}f(x_i)}{\displaystyle \sum_{i = 1}^{n}\beta_i}\]
+    上面的不等式也可以称为 Jensen 不等式。
 
-  如果 $f$ 是严格凸函数，则当 $x_1,x_2, \ldots ,x_n$ 不全相等时，上面的不等式取严格的不等号。
+    如果 $f$ 是严格凸函数，则当 $x_1,x_2, \ldots ,x_n$ 不全相等时，上面的不等式取严格的不等号。
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 是区间 $I$ 上的凸函数，当且仅当对任意 $(x_1,x_2) \subseteq I$ 及对任意 $x \in (x_1,x_2)$，有
-  \[\frac{f(x) - f(x_1)}{x - x_1} \leqslant \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leqslant \frac{f(x_2) - f(x)}{x_2 - x}\]
-  $f$ 是 $I$ 上的严格凸函数，当且仅当上式中出现的都是严格的不等号。
+    设函数 $f$ 是区间 $I$ 上的凸函数，当且仅当对任意 $(x_1,x_2) \subseteq I$ 及对任意 $x \in (x_1,x_2)$，有
+    \[\frac{f(x) - f(x_1)}{x - x_1} \leqslant \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leqslant \frac{f(x_2) - f(x)}{x_2 - x}\]
+    $f$ 是 $I$ 上的严格凸函数，当且仅当上式中出现的都是严格的不等号。
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上为凸函数（严格凸函数）的充分必要条件是 $f'$ 在 $(a,b)$ 上递增（严格递增）。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则 $f$ 在 $[a,b]$ 上为凸函数（严格凸函数）的充分必要条件是 $f'$ 在 $(a,b)$ 上递增（严格递增）。
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上有二阶导数，则 $f$ 在 $[a,b]$ 上为凸函数的充分必要条件是 $f'' \geqslant 0$ 在 $(a,b)$ 上成立。
+    设函数 $f$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上有二阶导数，则 $f$ 在 $[a,b]$ 上为凸函数的充分必要条件是 $f'' \geqslant 0$ 在 $(a,b)$ 上成立。
 
-  $f$ 在 $[a,b]$ 上为严格凸函数的充分必要条件是 $f'' \geqslant 0$ 在 $(a,b)$ 上成立，且在 $(a,b)$ 的任意开子区间内 $f''$ 不恒等于 $0$。
+    $f$ 在 $[a,b]$ 上为严格凸函数的充分必要条件是 $f'' \geqslant 0$ 在 $(a,b)$ 上成立，且在 $(a,b)$ 的任意开子区间内 $f''$ 不恒等于 $0$。
 \end{theorem}
 %——————————————————————————————————%
 
 \section{L'Hospital 法则}
 
 \begin{theorem}
-  设函数 $f,g$ 在 $(a,b)$ 上可导，且 $g(x) \ne 0$ 对 $x \in (a,b)$ 成立。设
-  \[\lim_{x \to a^{+}}f(x) = \lim_{x \to a^{+}}g(x) = 0\]
-  若极限  $\displaystyle \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}$ 存在，或为 $\infty$，则
-  \[\lim_{x \to a^{+}}\frac{f(x)}{g(x)} = \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}\]
+    设函数 $f,g$ 在 $(a,b)$ 上可导，且 $g(x) \ne 0$ 对 $x \in (a,b)$ 成立。设
+    \[\lim_{x \to a^{+}}f(x) = \lim_{x \to a^{+}}g(x) = 0\]
+    若极限  $\displaystyle \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}$ 存在，或为 $\infty$，则
+    \[\lim_{x \to a^{+}}\frac{f(x)}{g(x)} = \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}\]
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f,g$ 在 $(a,+\infty)$ 上可导，且 $g(x) \ne 0$ 对 $x \in (a,+\infty)$ 成立。并且
-  \[\lim_{x \to +\infty}f(x) = \lim_{x \to +\infty}g(x) = 0\]
-  若极限 $\displaystyle \lim_{x \to +\infty}\frac{f'(x)}{g'(x)}$ 存在，或为 $\infty$，则
-  \[\lim_{x \to +\infty}\frac{f(x)}{g(x)} = \lim_{x \to +\infty}\frac{f'(x)}{g'(x)}\]
+    设函数 $f,g$ 在 $(a,+\infty)$ 上可导，且 $g(x) \ne 0$ 对 $x \in (a,+\infty)$ 成立。并且
+    \[\lim_{x \to +\infty}f(x) = \lim_{x \to +\infty}g(x) = 0\]
+    若极限 $\displaystyle \lim_{x \to +\infty}\frac{f'(x)}{g'(x)}$ 存在，或为 $\infty$，则
+    \[\lim_{x \to +\infty}\frac{f(x)}{g(x)} = \lim_{x \to +\infty}\frac{f'(x)}{g'(x)}\]
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f,g$ 在 $(a,b)$ 上可导，$g(x) \ne 0$，且
-  \[ \lim_{x \to a^{+}}g(x) = \infty\]
-  若极限  $\displaystyle \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}$ 存在，或为 $\infty$，则
-  \[\lim_{x \to a^{+}}\frac{f(x)}{g(x)} = \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}\]
+    设函数 $f,g$ 在 $(a,b)$ 上可导，$g(x) \ne 0$，且
+    \[ \lim_{x \to a^{+}}g(x) = \infty\]
+    若极限  $\displaystyle \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}$ 存在，或为 $\infty$，则
+    \[\lim_{x \to a^{+}}\frac{f(x)}{g(x)} = \lim_{x \to a^{+}}\frac{f'(x)}{g'(x)}\]
 \end{theorem}
 
 
@@ -316,29 +316,29 @@
 \[\lim_{\Delta x\to 0}\frac{\Delta f(x_0)}{\Delta x} = f'(x_0) \iff \frac{\Delta f(x_0)}{\Delta x} - f'(x_0) = o(1),\, \Delta x\to 0\]
 则得
 \begin{equation}
-  \Delta f(x_0) = f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
+    \Delta f(x_0) = f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
 \end{equation}
 或写成
 \begin{equation}
-  f(x_0 + \Delta x) - f(x_0) = f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
+    f(x_0 + \Delta x) - f(x_0) = f'(x_0)\Delta x + o(\Delta x),\, \Delta x\to 0
 \end{equation}
 这两个等式都可称为函数的\textbf{无穷小增量公式}。$f'(x_0)\Delta x$ 称为 $\Delta f(x)$ 的线性主部，它的系数恰是 $f(x)$ 在 $x_0$ 处的导数。
 
 \begin{definition}
-  设函数 $f$ 在 $x_0$ 处的一个邻域 $N(x_0)$ 上有定义。若存在 $\lambda\in \mathbb{R}$ 使得
-  \[\Delta f(x_0) = \lambda\Delta x + o(\Delta x),\, \Delta x\to 0\]
-  则称函数 $f$ 在 $x_0$ 处可微（differentiable）。关于 $\Delta x$ 的线性函数 $\lambda\Delta x$ 称为函数 $f$ 在 $x_0$ 处的微分（differential），记为
-  \[\mathrm{d}f(x_0) = \lambda\Delta x\]
-  其中 $\lambda = f'(x_0)$。特别地，对于正比例函数 $g(x) = x$，由于 $g'(x) = 1$，故
-  \[\mathrm{d}g(x) = \mathrm{d}x = \Delta x\]
-  于是 $\mathrm{d}f(x_0) = f'(x_0)\Delta x$。
+    设函数 $f$ 在 $x_0$ 处的一个邻域 $N(x_0)$ 上有定义。若存在 $\lambda\in \mathbb{R}$ 使得
+    \[\Delta f(x_0) = \lambda\Delta x + o(\Delta x),\, \Delta x\to 0\]
+    则称函数 $f$ 在 $x_0$ 处可微（differentiable）。关于 $\Delta x$ 的线性函数 $\lambda\Delta x$ 称为函数 $f$ 在 $x_0$ 处的微分（differential），记为
+    \[\mathrm{d}f(x_0) = \lambda\Delta x\]
+    其中 $\lambda = f'(x_0)$。特别地，对于正比例函数 $g(x) = x$，由于 $g'(x) = 1$，故
+    \[\mathrm{d}g(x) = \mathrm{d}x = \Delta x\]
+    于是 $\mathrm{d}f(x_0) = f'(x_0)\Delta x$。
 \end{definition}
 
 对一元函数来说，可导和可微等价，但多元函数并非如此。
 
 由于 $\mathrm{d}f(x) = f'(x)\mathrm{d}x$，故导数可以记为
 \begin{equation}
-  f'(x) = \frac{\mathrm{d}f(x)}{\mathrm{d}x}
+    f'(x) = \frac{\mathrm{d}f(x)}{\mathrm{d}x}
 \end{equation}
 
 左边称为 Lagrange 记号，右边称为 Leibniz 记号。
@@ -351,13 +351,13 @@
 函数微分的几何意义：函数 $f$ 在 $x_0$ 处的微分就是曲线 $y = f(x)$ 在 $x_0$ 处的“切线函数”的增量。
 
 \begin{theorem}
-  函数微分的四则运算
-  \begin{enumerate}
-    \item $\mathrm{d}(f \pm g) = \mathrm{d}f \pm \mathrm{d}g$；
-    \item $\mathrm{d}(fg) = g\mathrm{d}f + f\mathrm{d}g$；
-    \item $\mathrm{d}(cf) = c\mathrm{d}f$，其中 $c$ 为常数；
-    \item $\mathrm{d}\left(\dfrac{f}{g}\right) = \dfrac{g\mathrm{d}f - f\mathrm{d}g}{g^2}$，其中 $g \ne 0$。
-  \end{enumerate}
+    函数微分的四则运算
+    \begin{enumerate}
+        \item $\mathrm{d}(f \pm g) = \mathrm{d}f \pm \mathrm{d}g$；
+        \item $\mathrm{d}(fg) = g\mathrm{d}f + f\mathrm{d}g$；
+        \item $\mathrm{d}(cf) = c\mathrm{d}f$，其中 $c$ 为常数；
+        \item $\mathrm{d}\left(\dfrac{f}{g}\right) = \dfrac{g\mathrm{d}f - f\mathrm{d}g}{g^2}$，其中 $g \ne 0$。
+    \end{enumerate}
 \end{theorem}
 
 设函数 $y = f(x)$，$y$ 的二阶微分记为 $\mathrm{d}^2$，则
@@ -370,71 +370,71 @@
 \[f^{(n)}(x) = \frac{\mathrm{d}^{n}y}{\mathrm{d}x^n}\]
 
 \begin{proposition}{一阶微分形式的不变性}
-  设 $y = f(x), x = \varphi(t)$，且 $\varphi(t)$ 在 $f$ 的定义域内。定义复合函数 $y = f \circ \varphi(t)$，此时自变量是 $t$。则
-  \[\mathrm{d}y = (f\circ\varphi)'(t)\mathrm{d}t = f'(x)\varphi'(t)\mathrm{d}t\]
-  又 $\mathrm{d}x = \varphi'(t)\mathrm{d}t$，得
-  \[\mathrm{d}y = f'(x)\mathrm{d}x\]
-  于是上式对中间变量 $x$ 成立。而当 $x$ 是自变量时上式自然成立。这种对中间变量和自变量都成立的性质称为一阶微分形式的不变性。
+    设 $y = f(x), x = \varphi(t)$，且 $\varphi(t)$ 在 $f$ 的定义域内。定义复合函数 $y = f \circ \varphi(t)$，此时自变量是 $t$。则
+    \[\mathrm{d}y = (f\circ\varphi)'(t)\mathrm{d}t = f'(x)\varphi'(t)\mathrm{d}t\]
+    又 $\mathrm{d}x = \varphi'(t)\mathrm{d}t$，得
+    \[\mathrm{d}y = f'(x)\mathrm{d}x\]
+    于是上式对中间变量 $x$ 成立。而当 $x$ 是自变量时上式自然成立。这种对中间变量和自变量都成立的性质称为一阶微分形式的不变性。
 \end{proposition}
 %——————————————————————————————————%
 
 \section{Taylor 定理}
 
 \begin{definition}
-  设函数 $f$ 在点 $x_0$ 处有直到 $n$ 阶的导数，$n$ 为任意给定的正整数。令
-  \[T_n(f,x_0;x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n\]
-  称 $T_n(f,x_0;x)$ 为 $f$ 在 $x_0$ 处的 $n$ 次 Taylor 多项式。
+    设函数 $f$ 在点 $x_0$ 处有直到 $n$ 阶的导数，$n$ 为任意给定的正整数。令
+    \[T_n(f,x_0;x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n\]
+    称 $T_n(f,x_0;x)$ 为 $f$ 在 $x_0$ 处的 $n$ 次 Taylor 多项式。
 \end{definition}
 
 \begin{theorem}{带 Peano 余项的 Taylor 定理}
-  设函数 $f$ 在点 $x_0$ 处有直到 $n$ 阶的导数，则有函数 $f$ 的 Taylor 展开式
-  \[f(x) = T_n(f,x_0;x) + o((x - x_0)^n)\quad (x \to x_0)\]
-  令
-  \[R_n(x) = f(x) - T_n(f,x_0;x)\]
-  称 $R_n$ 为余项。若
-  \[\lim_{x \to x_0}\frac{R_n(x)}{(x - x_0)^n} = 0\]
-  称 $R_n$ 为 Peano 余项。
+    设函数 $f$ 在点 $x_0$ 处有直到 $n$ 阶的导数，则有函数 $f$ 的 Taylor 展开式
+    \[f(x) = T_n(f,x_0;x) + o((x - x_0)^n)\quad (x \to x_0)\]
+    令
+    \[R_n(x) = f(x) - T_n(f,x_0;x)\]
+    称 $R_n$ 为余项。若
+    \[\lim_{x \to x_0}\frac{R_n(x)}{(x - x_0)^n} = 0\]
+    称 $R_n$ 为 Peano 余项。
 \end{theorem}
 
 \begin{definition}
-  设函数 $f$ 在点 $x_0 = 0$ 处有直到 $n$ 阶的导数，令
-  \[T_n(f,0;x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n\]
-  称 $T_n(f,0;x)$ 为 $f$ 的 $n$ 次 Maclaurin 多项式。
+    设函数 $f$ 在点 $x_0 = 0$ 处有直到 $n$ 阶的导数，令
+    \[T_n(f,0;x) = f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n\]
+    称 $T_n(f,0;x)$ 为 $f$ 的 $n$ 次 Maclaurin 多项式。
 \end{definition}
 
 \begin{theorem}{带 Peano 余项的 Maclaurin 定理}
-  设函数 $f$ 在点 $x_0 = 0$ 处有直到 $n$ 阶的导数，则有 Maclaurin 展开式
-  \[f(x) = T_n(f,0;x) + o(x^n)\]
+    设函数 $f$ 在点 $x_0 = 0$ 处有直到 $n$ 阶的导数，则有 Maclaurin 展开式
+    \[f(x) = T_n(f,0;x) + o(x^n)\]
 \end{theorem}
 
 \begin{theorem}
-  设函数 $f$ 在点 $x_0$ 处有直到 $k$ 阶的导数，且
-  \[f'(x_0) = f''(x_0) = \cdots = f^{(k - 1)}(x_0) = 0,\, f^{(k)}(x_0) \ne 0\]
-  则：
-  \begin{enumerate}
-    \item 当 $k$ 为奇数时，$x_0$ 不是 $f$ 的极值点。
-    \item 当 $k$ 为偶数时，若 $f^{(k)}(x_0) > 0$，则 $x_0$ 是 $f$ 的严格极小值点；若 $f^{(k)}(x_0) < 0$，则 $x_0$ 是 $f$ 的严格极大值点。
-  \end{enumerate}
+    设函数 $f$ 在点 $x_0$ 处有直到 $k$ 阶的导数，且
+    \[f'(x_0) = f''(x_0) = \cdots = f^{(k - 1)}(x_0) = 0,\, f^{(k)}(x_0) \ne 0\]
+    则：
+    \begin{enumerate}
+        \item 当 $k$ 为奇数时，$x_0$ 不是 $f$ 的极值点。
+        \item 当 $k$ 为偶数时，若 $f^{(k)}(x_0) > 0$，则 $x_0$ 是 $f$ 的严格极小值点；若 $f^{(k)}(x_0) < 0$，则 $x_0$ 是 $f$ 的严格极大值点。
+    \end{enumerate}
 \end{theorem}
 
 \begin{theorem}{带 Lagrange 余项和 Cauchy 余项的 Taylor 定理}
-  设函数 $f$ 在开区间 $(a,b)$ 上有 $n + 1$ 阶导数，$x_0,x$ 是 $(a,b)$ 中的任意两点，则
-  \[f(x) = T_n(f,x_0;x) + R_n(x)\]
-  其中 $R_n(x)$ 为 Lagrange 余项
-  \[R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!}(x - x_0)^{n + 1}\]
-  或 Cauchy 余项
-  \[R_n(x) = \frac{f^{(n + 1)}(\xi)}{n!}(x - \xi)^n(x - x_0)\]
+    设函数 $f$ 在开区间 $(a,b)$ 上有 $n + 1$ 阶导数，$x_0,x$ 是 $(a,b)$ 中的任意两点，则
+    \[f(x) = T_n(f,x_0;x) + R_n(x)\]
+    其中 $R_n(x)$ 为 Lagrange 余项
+    \[R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!}(x - x_0)^{n + 1}\]
+    或 Cauchy 余项
+    \[R_n(x) = \frac{f^{(n + 1)}(\xi)}{n!}(x - \xi)^n(x - x_0)\]
 \end{theorem}
 
 \begin{definition}{线性插值}
-  设函数 $f:[a,b] \to \mathbb{R}$。由两点 $(a,f(a))$ 和 $(b,f(b))$ 决定的线性函数 $l$，即
-  \[l(x) = \frac{b - x}{b -a}f(a) + \frac{x - a}{b - a}f(b)\]
-  $l$ 称为 $f$ 在区间 $[a,b]$ 上的线性插值。
+    设函数 $f:[a,b] \to \mathbb{R}$。由两点 $(a,f(a))$ 和 $(b,f(b))$ 决定的线性函数 $l$，即
+    \[l(x) = \frac{b - x}{b -a}f(a) + \frac{x - a}{b - a}f(b)\]
+    $l$ 称为 $f$ 在区间 $[a,b]$ 上的线性插值。
 \end{definition}
 
 \begin{theorem}
-  设函数 $f$ 是 $[a,b]$ 上的连续函数，在 $(a,b)$ 上有二阶导数，$l$ 是由两点 $(a,f(a))$ 和 $(b,f(b))$ 决定的线性函数。若 $|f''|$ 在 $(a,b)$ 上的上界为 $M$，则对 $\forall x \in [a,b]$，有
-  \[|f(x) - l(x)| \leqslant \frac{M}{8}(b - a)^2\]
+    设函数 $f$ 是 $[a,b]$ 上的连续函数，在 $(a,b)$ 上有二阶导数，$l$ 是由两点 $(a,f(a))$ 和 $(b,f(b))$ 决定的线性函数。若 $|f''|$ 在 $(a,b)$ 上的上界为 $M$，则对 $\forall x \in [a,b]$，有
+    \[|f(x) - l(x)| \leqslant \frac{M}{8}(b - a)^2\]
 \end{theorem}
 
 %——————————————————————————————————%

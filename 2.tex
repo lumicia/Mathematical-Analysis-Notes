@@ -1,0 +1,471 @@
+\chapter{极限}
+
+%——————————————————————————————————%
+
+\section{数列极限}
+
+数列指一组由无限个数形成的排列，记为 $\{a_n\}$。
+
+若数列在 $n$ 变得越来越大时，通项 $a_n$ 越来越接近某个常数 $a$，则称 $\{a_n\}$ 是收敛数列。
+
+\begin{definition}{数列极限的定义}
+    设数列 $\{a_n\}$，$a \in \mathbb{R}$。若对 $\forall \varepsilon > 0, \exists N \in \mathbb{N}^*$，使得当 $n > N$ 时，有
+    \[|a_n - a| < \varepsilon\]
+    则称数列 $\{a_n\}$ 在 $n$ 趋于无穷大时以 $a$ 为极限，记为
+    \[\lim_{n \to \infty} a_n = a\]
+    简记为 $a_n \to a(n \to \infty)$。也称数列 $\{a_n\}$ 收敛于 $a$。
+
+    存在极限的数列称为收敛数列，否则称为发散数列。
+\end{definition}
+
+\hfill
+
+\begin{example}
+    对 $\forall \alpha > 0$，有
+    \[\lim_{n \to \infty}\frac{1}{n^{\alpha}} = 0\]
+\end{example}
+
+\hfill
+
+\begin{example}
+    当 $|q| < 1$ 时，有
+    \[\lim_{n \to \infty}q^n = 0\]
+\end{example}
+
+\hfill
+
+\begin{example}
+    \[\lim_{n \to \infty}n^{\frac{1}{n}} = 1\]
+\end{example}
+
+\hfill
+
+\begin{definition}{邻域}
+    对 $a \in \mathbb{R}, r > 0 \in \mathbb{R}$，以 $a$ 为中心，$r$ 为半径的邻域
+    \[B_r(a) := \{ x \in \mathbb{R} : |x - a| < r\}\]
+\end{definition}
+
+\begin{definition}{用邻域定义数列极限}
+    数列 $\{a_n\}$ 收敛于 $a$ 可以表示为：$\forall \varepsilon > 0,\exists N \in \mathbb{N}^*$，除有限项 $a_1,a_2, \ldots ,a_N$ 以外的所有项都位于邻域 $B_r(a)$ 中。
+\end{definition}
+
+\begin{theorem}
+    数列的极限唯一。
+\end{theorem}
+
+\begin{definition}{有界数列}
+    设数列 $\{a_n\}$。
+    \begin{enumerate}
+        \item 若 $\exists A \in \mathbb{R}$，使得 $a_n \leqslant A$ 对 $\forall n \in \mathbb{N}^*$ 成立，则称 $\{a_n\}$ 有上界，$A$ 是 $\{a_n\}$ 的一个上界。
+        \item 若 $\exists a \in \mathbb{R}$，使得 $a_n \geqslant a$ 对 $\forall n \in \mathbb{N}^*$ 成立，则称 $\{a_n\}$ 有下界，$a$ 是 $\{a_n\}$ 的一个下界。
+    \end{enumerate}
+    既有上界又有下界的数列称为有界数列。
+\end{definition}
+
+\begin{theorem}
+    收敛数列是有界数列。
+\end{theorem}
+
+\begin{definition}{数列的子列}
+    设数列 $\{a_n\}, k_i \in \mathbb{N}^*(i = 1,2,3, \ldots)$，且满足 $k_1 < k_2 < k_3 < \cdots$，则数列 $\{a_{k_n}\}$ 称为 $\{a_n\}$ 的子列。
+\end{definition}
+
+\begin{theorem}
+    设收敛数列 $\{a_n\}$ 的极限为 $a$，则 $\{a_n\}$ 的任一子列都收敛于 $a$。
+\end{theorem}
+
+\begin{corollary}
+    数列 $\{a_n\}$ 收敛的充分必要条件是 $\{a_n\}$ 的偶数项子列 $\{a_{2n}\}$ 和奇数项子列 $\{a_{2n - 1}\}$ 都收敛，且极限相同。
+\end{corollary}
+
+\begin{theorem}{极限的四则运算}
+    设收敛数列 $\{a_n\}$ 和 $\{b_n\}$。
+    \begin{enumerate}[itemsep=0.5em]
+        \item $\displaystyle \lim_{n \to \infty}(a_n \pm b_n) = \lim_{n \to \infty}a_n \pm \lim_{n \to \infty}b_n$；
+        \item $\displaystyle \lim_{n \to \infty}a_{n}b_{n} = \lim_{n \to \infty}a_n \cdot \lim_{n \to \infty}b_n$；
+        \item $\displaystyle \lim_{n \to \infty}ca_n = c\lim_{n \to \infty}a_n, c\in \mathbb{R}$；
+        \item $\displaystyle \lim_{n \to \infty}\frac{a_n}{b_n} = \frac{\displaystyle \lim_{n \to \infty}a_n}{\displaystyle \lim_{n \to \infty}b_n}$，其中 $\displaystyle \lim_{n \to \infty}b_n \ne 0$；
+        \item $\displaystyle \lim_{n \to \infty}|a_n| = |\lim_{n \to \infty}a_n|$。
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}{无穷小数列}
+    若数列 $\{a_n\}$ 的极限为 $0$，则称 $\{a_n\}$ 为无穷小数列，简称无穷小。
+\end{definition}
+
+\begin{theorem}{无穷小的性质}
+    \begin{enumerate}
+        \item $\{a_n\}$ 为无穷小的充分必要条件是 $\{|a_n|\}$ 为无穷小；
+        \item 两个无穷小之和（之差）仍为无穷小；
+        \item 若 $\{a_n\}$ 为无穷小，$\{c_n\}$ 为有界数列则 $\{c_{n}a_{n}\}$ 也为无穷小；
+        \item 设 $0 \leqslant a_n \leqslant b_n(n \in \mathbb{N}^{*})$，若 $\{b_n\}$ 为无穷小，则 $\{a_n\}$ 也为无穷小。
+        \item $\displaystyle \lim_{n \to \infty}a_n = a$ 的充分必要条件是 $\{a_n - a\}$ 为无穷小。
+    \end{enumerate}
+\end{theorem}
+
+\hfill
+
+\begin{example}
+    若收敛数列 $\{a_n\}$ 的极限为 $a$，则
+    \[\lim_{n \to \infty}\frac{a_1 + a_2 + \cdots + a_n}{n} = a\]
+\end{example}
+
+\hfill
+
+\begin{theorem}{夹逼原理}
+    设 $a_n \leqslant b_n \leqslant  c_n(n \in \mathbb{N}^{*})$，若 $\displaystyle \lim_{n \to \infty}a_n = \lim_{n \to \infty}c_n = a$，则
+    \[\lim_{n \to \infty}b_n = a\]
+\end{theorem}
+
+\begin{theorem}
+    \begin{enumerate}
+        \item 设 $\displaystyle \lim_{n \to \infty}a_n = a, \alpha, \beta$ 满足 $\alpha < a < \beta$，则当 $n$ 充分大时，有 $a_n > \alpha$；同理当 $n$ 充分大时，有 $a_n < \beta$。
+        \item 设 $\displaystyle \lim_{n \to \infty}a_n = a, \lim_{n \to \infty}b_n = b$，且 $a < b$，则当 $n$ 充分大时，一定有 $a_n < b_n$。
+        \item 设 $\displaystyle \lim_{n \to \infty}a_n = a, \lim_{n \to \infty}b_n = b$，并且当 $n$ 充分大时有 $a_n \leqslant  b_n$，则 $a \leqslant b$。
+
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}{数列极限的推广}
+    设数列 $\{a_n\}$，
+    \begin{enumerate}
+        \item 若 $\{a_n\}$ 满足对 $\forall A > 0, \exists N \in \mathbb{N}^{*}$，使得当 $n > N$ 时，有 $a_n > A$，则称数列 $\{a_n\}$ 趋向于 $+\infty$（正无穷大），记为
+              \[\lim_{n \to \infty}a_n = +\infty\]
+        \item 若对 $\forall A > 0, \exists N \in \mathbb{N}^{*}$，使得当 $n > N$ 时，有 $a_n < -A$，则称数列 $\{a_n\}$ 趋向于 $-\infty$（负无穷大），记为
+              \[\lim_{n \to \infty}a_n = -\infty\]
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    若 $\displaystyle \lim_{n \to \infty}|a_n| = +\infty$，则称数列 $\{a_n\}$ 趋向于 $\infty$，记为 $\displaystyle \lim_{n \to \infty}a_n = \infty$。
+    极限为 $+\infty,-\infty$ 或 $\infty$ 的数列 $\{a_n\}$ 都统称为无穷大。
+\end{definition}
+
+\begin{theorem}{无穷大的性质}
+    \begin{enumerate}
+        \item 若 $\{a_n\}$ 是无穷大，则 $\{a_n\}$ 必然无界（注意逆命题不成立）。
+        \item 从无界数列中一定能选出一个子列是无穷大。
+        \item 若 $\displaystyle \lim_{n \to \infty}a_n = +\infty$（或 $-\infty,\infty$），则对 $\{a_n\}$ 的任意子列 $\{a_{k_n}\}$ 也有
+              \[\lim_{n \to \infty}a_{k_n} = +\infty\ \text{（或}\ -\infty,\infty\text{）}\]
+        \item 若 $\displaystyle \lim_{n \to \infty}a_n = +\infty,\lim_{n \to \infty}b_n = +\infty$，则
+              \[\lim_{n \to \infty}(a_n + b_n) = +\infty \\
+                  \lim_{n \to \infty}(a_{n}b_{n}) = +\infty\]
+              对 $a_n - b_n$ 和 $\dfrac{a_n}{b_n}$ 不成立。
+        \item $\{a_n\}$ 是无穷大的充分必要条件是 $\left\{\dfrac{1}{a_n}\right\}$ 是无穷小。
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}{扩充的实数集}
+    将 $+\infty, -\infty$ 放入实数集 $\mathbb{R}$ 中，得到扩充的实数集
+    \[\mathbb{R}_{\infty} = \mathbb{R} \cup \{-\infty, +\infty\}\]
+\end{definition}
+
+\begin{definition}{单调数列}
+    设数列 $\{a_n\}$。
+    \begin{enumerate}
+        \item 若 $\{a_n\}$ 满足 $a_n \leqslant a_{n + 1}\quad (n=1,2, \ldots)$，则称 $\{a_n\}$ 为递增数列；
+        \item 若 $\{a_n\}$ 满足 $a_n < a_{n + 1}\quad (n=1,2, \ldots)$，则称 $\{a_n\}$ 为严格递增数列；
+        \item 若 $\{a_n\}$ 满足 $a_n \geqslant a_{n + 1}\quad (n=1,2, \ldots)$，则称 $\{a_n\}$ 为递减数列；
+        \item 若 $\{a_n\}$ 满足 $a_n > a_{n + 1}\quad (n=1,2, \ldots)$，则称 $\{a_n\}$ 为严格递减数列；
+    \end{enumerate}
+    递增或递减的数列统称为单调数列。
+\end{definition}
+
+\begin{theorem}{单调有界定理}
+    单调有界的数列一定有极限。
+\end{theorem}
+
+\begin{theorem}{闭区间套定理}
+    设一列闭区间 $I_n = [a_n, b_n](n = 1,2, \ldots)$。若 $I_n \supseteq I_{n + 1}(n = 1,2, \ldots)$，且 $\displaystyle \lim_{n \to \infty}(b_n - a_n) = 0$，则存在唯一的 $c \in [a_n, b_n](n = 1,2, \ldots)$，其中
+    \[c = \lim_{n \to \infty}a_n = \lim_{n \to \infty}b_n\]
+\end{theorem}
+
+\begin{theorem}{自然对数的底 e}
+    \[\mathrm{e} = \lim_{n \to \infty}\left(1 + \frac{1}{n}\right)^{n} = \lim_{n \to \infty}\left(1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}\right)\quad (n \in \mathbb{N}^{*})\]
+\end{theorem}
+
+\begin{theorem}
+    自然对数的底 $\mathrm{e}$ 是无理数。
+\end{theorem}
+
+\hfill
+
+\begin{example}
+    \[\lim_{n \to \infty}\left(1 - \frac{1}{n}\right)^{n} = \frac{1}{e}\]
+\end{example}
+
+\hfill
+
+\begin{example}
+    \[\lim_{n \to \infty}\left(1 + \frac{2}{n}\right)^{n} = e^2\]
+\end{example}
+
+\hfill
+
+\begin{example}
+    Euler 常数 $\gamma$：
+    \[\gamma = \lim_{n \to \infty}\left( 1 + \frac{1}{2} + \cdots + \frac{1}{n} - \ln(n + 1) \right)\quad (n \in \mathbb{N}^{*})\]
+\end{example}
+
+\begin{definition}{基本列}
+    设实数列 $\{a_n\}$。对 $\forall \varepsilon > 0$，若 $\exists N \in \mathbb{N}^{*}$，使得当 $m, n \in \mathbb{N}^{*}$ 且 $m, n > N$ 时，有
+    \[|a_m - a_n| < \varepsilon\]
+    则称数列 $\{a_n\}$ 是基本列或 Cauchy 列。
+
+    若 $m > n$，令 $m = n + p$，则基本列的等价定义：对 $\forall \varepsilon > 0$，若 $\exists N \in \mathbb{N}^{*}$，使得当 $n > N$ 时，有
+    \[|a_{n + p} - a_{n}| < \varepsilon\]
+    对 $\forall p \in \mathbb{N}^{*}$ 成立，则称 $\{a_n\}$ 是基本列。
+\end{definition}
+
+\begin{lemma}
+    从任一数列中必定可以选出一个单调子列。
+\end{lemma}
+
+\begin{theorem}{Bolzano-Weierstrass 定理}
+    从任何有界数列中必定可选出一个收敛的子列。
+\end{theorem}
+
+\begin{remark}
+    Bolzano-Weierstrass 定理又称为列紧性定理、致密性定理、聚点定理等。
+\end{remark}
+
+\begin{theorem}{Cauchy 收敛原理}
+    数列 $\{a_n\}$ 收敛的充分必要条件是 $\{a_n\}$ 是基本列。
+\end{theorem}
+
+\begin{definition}{上界和下界}
+    设由实数组成的集合 $E$。
+    \begin{enumerate}
+        \item 若 $\exists B \in \mathbb{R}$，使得对 $\exists x \in E$，有 $x \leqslant B$，称 $B$ 是 $E$ 的一个上界。
+        \item 若 $\exists A \in \mathbb{R}$，使得对 $\exists x \in E$，有 $x \geqslant A$，称 $A$ 是 $E$ 的一个下界。
+    \end{enumerate}
+    既有上界又有下界的集合称为有界集。
+\end{definition}
+
+\begin{definition}{上确界和下确界}
+    设非空有上界的集合 $E$。若 $\beta \in \mathbb{R}$ 满足
+    \begin{enumerate}
+        \item 对 $\forall x \in E$，有 $x \leqslant \beta$；
+        \item 对 $\forall \varepsilon > 0$，必定可找到一个 $x_{\varepsilon} \in E$，使得 $x_{\varepsilon} > \beta - \varepsilon$。
+    \end{enumerate}
+    则称 $\beta$ 为集合 $E$ 的上确界，记为 $\beta = \sup E$。$\beta$ 是 $E$ 的最小上界。
+
+    设非空有下界的集合 $E$。若 $\alpha \in \mathbb{R}$ 满足
+    \begin{enumerate}
+        \item 对 $\forall x \in E$，有 $x \geqslant \alpha$；
+        \item 对 $\forall \varepsilon > 0$，必定可找到一个 $y_{\varepsilon} \in E$，使得 $y_{\varepsilon} < \alpha + \varepsilon$。
+    \end{enumerate}
+    则称 $\alpha$ 为集合 $E$ 的下确界，记为 $\alpha = \inf E$。$\alpha$ 是 $E$ 的最大下界。
+
+\end{definition}
+
+\begin{theorem}{确界原理}
+    非空的有上界（下界）的集合必有上确界（下确界）。
+\end{theorem}
+
+\begin{definition}{开覆盖}
+    设集合 $E \in \mathbb{R}$，开区间族 $\{I_{\lambda} : \lambda \in \Lambda\}$，其中 $\Lambda$ 是一个指标集。若
+    \[E \subseteq \bigcup_{\lambda \in \Lambda} I_{\lambda}\]
+    则称 $\{I_{\lambda} : \lambda \in \Lambda\}$ 是 $E$ 的一个开覆盖，记为 $C_E$。
+
+    若 $E$ 的一个开覆盖 $C_{E}^{'} \subseteq C_{E}$，则称 $C_{E}^{'}$ 是 $C_E$ 的子覆盖。若 $C_{E}^{'}$ 只含有有限个开区间，则称 $C_{E}^{'}$ 是有限子覆盖。
+\end{definition}
+
+\begin{theorem}{Heine-Borel 定理}
+    设有限闭区间 $[a,b]$，则 $[a,b]$ 的任一开覆盖 $\{I_{\lambda} : \lambda \in \Lambda\}$ 都存在一个有限子开覆盖。
+\end{theorem}
+
+\begin{definition}{极限点}
+    数列 $\{a_n\}$ 的收敛子列 $\{a_{k_n}\}$ 的极限称为 $\{a_n\}$ 的极限点。
+\end{definition}
+
+\begin{remark}
+    收敛数列只有一个极限点；有界发散数列有若干乃至无穷个极限点；无界发散数列除有限个极限点以外，还能以 $+\infty$ 或 $-\infty$ 为极限点。
+\end{remark}
+
+\begin{definition}{上极限和下极限}
+    设数列 $\{a_n\}$，由 $\{a_n\}$ 全体极限点组成的集合 $E$。$\{a_n\}$ 的上极限和下极限分别记为
+    \begin{align*}
+        \sup E & = \limsup_{n \to \infty} a_n \\
+        \inf E & = \liminf_{n \to \infty} a_n
+    \end{align*}
+    $\sup E$ 也可以记为 $a^{*}$ 或 $\displaystyle \varlimsup_{n \to \infty} a_n$，$\inf E$ 也可以记为 $a_{*}$ 或 $\displaystyle \varliminf_{n \to \infty} a_n$
+\end{definition}
+
+\begin{theorem}
+    设数列 $\{a_n\}$，由 $\{a_n\}$ 全体极限点组成的集合 $E$。则对于上极限 $\sup E$，有
+    \begin{enumerate}
+        \item $\sup E \in E$；
+        \item 若 $x > \sup E$，则 $\exists N \in \mathbb{N}^{*}$，使得当 $n \geqslant N$ 时，有 $a_n < x$；
+        \item $\sup E$ 是唯一满足前两条性质的数。
+    \end{enumerate}
+    对于下极限 $\inf E$，有
+    \begin{enumerate}
+        \item $\inf E \in E$；
+        \item 若 $x < \inf E$，则 $\exists N \in \mathbb{N}^{*}$，使得当 $n \geqslant N$ 时，有 $a_n > x$；
+        \item $\inf E$ 是唯一满足前两条性质的数。
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  设数列 $\{a_n\}, \{b_n\}$。
+  \begin{enumerate}
+    \item $\displaystyle \liminf_{n \to \infty} a_n \leqslant \limsup_{n \to \infty} a_n$；
+    \item $\displaystyle \lim_{n \to \infty} a_n = a$ 当且仅当 $\displaystyle \liminf_{n \to \infty} a_n = \limsup_{n \to \infty} a_n = a$；
+    \item 若 $N \in \mathbb{N}^{*}$，当 $n > N$ 时有 $a_n \leqslant b_n$，则
+    \begin{align*}
+        \liminf_{n \to \infty} a_n & \leqslant \liminf_{n \to \infty} b_n \\
+        \limsup_{n \to \infty} a_n & \leqslant \limsup_{n \to \infty} b_n
+    \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  设数列 $\{a_n\}$。则
+  \begin{enumerate}[itemsep=0.5em]
+    \item $\displaystyle \left\{\inf_{k \geqslant n} a_k\right\}$ 是递增数列，$\displaystyle \left\{\sup_{k \geqslant n} a_k\right\}$ 是递减数列。
+    \item $\displaystyle \lim_{n \to \infty}\inf_{k \geqslant n} a_k = \inf E$，$\displaystyle \lim_{n \to \infty}\sup_{k \geqslant n} a_k = \sup E$。
+  \end{enumerate}
+\end{theorem}
+
+\hfill
+
+\begin{example}
+  \begin{gather*}
+    \liminf_{n \to \infty} a_n + \liminf_{n \to \infty} b_n \leqslant \liminf_{n \to \infty} (a_n + b_n) \leqslant \liminf_{n \to \infty} a_n + \limsup_{n \to \infty} b_n \\
+    \liminf_{n \to \infty} a_n + \limsup_{n \to \infty} b_n \leqslant \limsup_{n \to \infty} (a_n + b_n) \leqslant \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n
+  \end{gather*}
+\end{example}
+
+\hfill
+
+\begin{definition}{Toeplitz 矩阵}
+  设无限矩阵 $T = (t_{nk})(n, k = 1,2, \ldots)$，若 $T$ 满足
+  \begin{enumerate}
+    \item $\exists M \in \mathbb{R}, \displaystyle \sum_{k = 1}^{\infty} |t_{nk}| \leqslant M$；
+    \item $\displaystyle \lim_{n \to \infty}\sum_{k = 1}^{\infty} t_{nk} = 1$；
+    \item $\forall k \in \mathbb{N}^{*}$，有 $\displaystyle \lim_{n \to \infty} t_{nk} = 0$。
+  \end{enumerate}
+  则称 $T$ 为 Toeplitz 矩阵。设数列 $\{a_n\}$。令
+  \[x_n = \sum_{k = 1}^{n} t_{nk}a_{k}\]
+  则 $x_n$ 称为关于 $T$ 的 Toeplitz 变换。
+\end{definition}
+
+\begin{theorem}{Toeplitz 定理}
+  设 $n, k \in \mathbb{N}^{*}$ 时有 $t_{nk} \geqslant 0$，且 $\displaystyle \sum_{k = 1}^{n} t_{nk} = 1, \lim_{n \to \infty} t_{nk} = 0$。若 $\displaystyle \lim_{n \to \infty} a_n = a$，令
+  \[x_n = \sum_{k = 1}^{n} t_{nk}a_{k}\]
+  则
+  \[\lim_{n \to \infty} x_n = a\]
+\end{theorem}
+
+\begin{theorem}{Stolz 定理}
+  设 $\{b_n\}$ 是严格递增且趋于 $+\infty$ 的数列。若
+  \[\lim_{n \to \infty}\frac{a_{n} - a_{n - 1}}{b_{n} - b_{n - 1}} = A\]
+  则
+  \[\lim_{n \to \infty}\frac{a_n}{b_n} = A\]
+  其中 $A$ 可以是 $+\infty$ 或 $-\infty$。
+\end{theorem}
+
+\begin{remark}
+  Stolz 定理的逆命题不成立。
+\end{remark}
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
+%——————————————————————————————————%
+
+\section{}
+
+
+
+
+
+
