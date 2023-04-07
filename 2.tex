@@ -799,6 +799,144 @@
 
 \section{连续函数}
 
+\begin{definition}
+    设函数 $f: [a, b] \to \mathbb{R}$。函数 $f$ 在点 $x_0 \in (a, b)$ 连续，若
+    \[\lim_{x \to x_0}f(x) = f(x_0)\]
+    即对 $\forall \varepsilon > 0$，$\exists \delta > 0$，使得当 $|x - x_0| < \delta$ 时，有
+    \[|f(x) - f(x_0)| < \varepsilon\]
+\end{definition}
+
+\begin{remark}
+    若函数 $f$ 在 $x_0$ 处连续，则 $f$ 在 $x_0$ 处必定有极限，且极限值等于 $f(x_0)$。因此 $f$ 在 $x_0$ 处必须有定义。
+\end{remark}
+
+\begin{remark}
+  函数 $f$ 在 $x_0$ 处连续也可以表示为 $\displaystyle \lim_{x \to x_0}f(x) = f(\lim_{x \to x_0}x)$，即连续函数的极限符号可以与函数符号交换。
+\end{remark}
+
+\hfill
+
+\begin{example}
+    Dirichlet 函数 $D(x)$ 在每一点都不连续。
+\end{example}
+
+\hfill
+
+\begin{definition}
+    若 $\displaystyle \lim_{x \to x_{0}^{-}}f(x) = f(x_0)$，则称函数 $f$ 在点 $x_0$ 处左连续。
+
+    若 $\displaystyle \lim_{x \to x_{0}^{+}}f(x) = f(x_0)$，则称函数 $f$ 在点 $x_0$ 处右连续。
+\end{definition}
+
+\begin{theorem}
+    函数 $f$ 在 $x_0$ 处连续当且仅当 $\displaystyle \lim_{x \to x_{0}^{-}}f(x) = \lim_{x \to x_{0}^{+}} = f(x_0)$。
+\end{theorem}
+
+\begin{theorem}
+    若函数 $f, g$ 在 $x_0$ 处连续，则 $f \pm g$ 和 $fg$ 在 $x_0$ 处连续；若 $g(x_0) \neq 0$，则 $\dfrac{f}{g}$ 也在 $x_0$ 处连续。
+\end{theorem}
+
+\begin{theorem}
+    若函数 $f$ 在 $x_0$ 处连续，则 $|f(x)|$ 在 $x_0$ 处连续。
+\end{theorem}
+
+\begin{theorem}{复合函数的连续性}
+    设函数 $g$ 在 $t_0$ 处连续，函数 $f$ 在 $x_0 = g(t_0)$ 处连续，则复合函数 $f \circ g$ 在 $t_0$ 处连续。
+\end{theorem}
+
+\begin{definition}
+    设开区间 $I$，例如 $(a, b), (a, +\infty), (-\infty, b), (-\infty, +\infty)$。若函数 $f$ 在 $I$ 上的每一点都连续，则称 $f$ 在 $I$ 上连续。
+
+    设 $I = [a, b]$。则 $f$ 在 $I$ 上连续，若 $f$ 在 $(a, b)$ 上连续，且在点 $a$ 处右连续，点 $b$ 处左连续。也称 $f$ 是 $I$ 上的连续函数。
+
+    无论 $I$ 是开或闭的、有限或无穷的，用 $C(I)$ 记 $I$ 上连续函数的全体。
+\end{definition}
+
+\begin{theorem}
+  设函数 $f$ 是区间 $I$ 上严格递增（递减）的连续函数，则 $f^{-1}$ 是 $f(I)$ 上的严格递增（递减）函数。
+\end{theorem}
+
+\begin{theorem}
+  初等函数在它们各自的定义域上都是连续的。
+\end{theorem}
+
+\begin{definition}
+  若函数 $f$ 在 $x_0$ 处连续，则称 $x_0$ 是 $f$ 的连续点，否则称为间断点。
+\end{definition}
+
+\begin{definition}
+  设 $x_0$ 是 $f$ 的间断点。
+  \begin{enumerate}
+    \item 若 $\displaystyle \lim_{x \to x_{0}^{-}}f(x_0), \lim_{x \to x_{0}^{+}}f(x_0)$ 存在且是有限的数，但二者不相等，则称 $x_0$ 是 $f$ 的跳跃点。二者之差的绝对值 $|\displaystyle \lim_{x \to x_{0}^{+}}f(x_0) - \lim_{x \to x_{0^{-}}}f(x)| > 0$ 称为 $f$ 在 $x_0$ 处的跳跃。
+    \item 若 $\displaystyle \lim_{x \to x_{0}^{-}}f(x_0), \lim_{x \to x_{0}^{+}}f(x_0)$ 存在且是有限的数，并且二者相等但不等于 $f(x_0)$，则称 $x_0$ 是 $f$ 的可去间断点。
+    \item 若 $\displaystyle \lim_{x \to x_{0}^{-}}f(x_0), \lim_{x \to x_{0}^{+}}f(x_0)$ 二者中至少有一个不存在或不是有限的数，则称 $x_0$ 是 $f$ 的第二类间断点。
+  \end{enumerate}
+  跳跃点和可去间断点统称为第一类间断点。
+\end{definition}
+
+\begin{theorem}{Froda 定理}
+  设 $f$ 是 $(a, b)$ 上的递增（递减）函数，则 $f$ 的间断点一定是跳跃点，且跳跃点集是至多可数的。
+\end{theorem}
+
+\hfill
+
+\begin{example}
+  \[\lim_{x \to 0}\frac{\ln (1 + x)}{x} = 1\]
+\end{example}
+
+\hfill
+
+\begin{example}
+  \[\lim_{x \to 0}\frac{a^x - 1}{x} = \ln a\quad (a > 0)\]
+\end{example}
+
+\hfill
+
+\begin{example}
+  \[\lim_{x \to 0}\frac{(1 + x)^{\alpha} - 1}{x} = \alpha\quad (\alpha \in \mathbb{R})\]
+\end{example}
+
+\hfill
+
+\begin{definition}{函数的一致连续性}
+  设区间 $I$，函数 $f: I \to \mathbb{R}$。若对 $\forall \varepsilon > 0$，$\exists \delta > 0$，使得当 $x_1, x_2 \in I$ 且 $|x_1 - x_2| < \delta$ 时，有 $|f(x_1) - f(x_2)| < \varepsilon$，则称 $f$ 在区间 $I$ 上是一致连续的。
+\end{definition}
+
+\begin{remark}
+  若 $f$ 在 $I$ 上一致连续，则 $f$ 在 $I$ 上的每一点都是连续的，即 $f$ 在 $I$ 上连续。
+\end{remark}
+
+\begin{definition}
+  函数 $f$ 在区间 $I$ 上不是一致连续的，当且仅当 $\exists \varepsilon_0 > 0$，对 $\forall n \in \mathbb{N}^{*}$，都可以在 $I$ 中找到两个点，记为 $s_n, t_n$，使得虽然有 $|s_n - t_n| < \dfrac{1}{n}$，但
+  \[|f(s_n) - f(t_n)| \geqslant \varepsilon_0\]
+\end{definition}
+
+\begin{theorem}
+  设函数 $f$ 在 $[a, b]$ 上连续，则 $f$ 在 $[a, b]$ 上必定一致连续。
+\end{theorem}
+
+\begin{theorem}
+  有界闭区间上的连续函数必定在该区间上有界。
+\end{theorem}
+
+\begin{theorem}
+  设 $f$ 在 $[a, b]$ 上连续。记
+  \[M = \sup_{x \in [a, b]} f(x),\quad m = \inf_{x \in [a, b]} f(x)\]
+  则必定存在 $x', x'' \in [a, b]$，使得
+  \[f(x') = M,\quad f(x'') = m\]
+\end{theorem}
+
+\begin{theorem}{零值定理}
+  设 $f$ 在 $[a, b]$ 上连续。若 $f(a)f(b) < 0$，则必定存在点 $c \in (a, b)$，使得 $f(c) = 0$。
+\end{theorem}
+
+\begin{theorem}{介值定理}
+  设函数 $f$ 是 $[a, b]$ 上非常值的连续函数，$\gamma$ 是介于 $f(a)$ 和 $f(b)$ 之间的任意实数，则必定存在 $c \in (a, b)$，使得 $f(c) = \gamma$。
+\end{theorem}
+
+\begin{corollary}
+  设非常值的函数 $f$ 在 $I = [a, b]$ 上连续，则 $f$ 的值域 $f(I)$ 是一个闭区间。若 $f$ 在 $[a, b]$ 上的最大值和最小值分别为 $M$ 和 $m$，则 $f(I) = [m, M]$。
+\end{corollary}
 
 
 
