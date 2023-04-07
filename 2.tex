@@ -42,11 +42,11 @@
 
 \begin{definition}{邻域}
     对 $a \in \mathbb{R}, r > 0 \in \mathbb{R}$，以 $a$ 为中心，$r$ 为半径的邻域
-    \[B_r(a) := \{ x \in \mathbb{R} : |x - a| < r\}\]
+    \[N_r(a) := \{ x \in \mathbb{R} : |x - a| < r\}\]
 \end{definition}
 
 \begin{definition}{用邻域定义数列极限}
-    数列 $\{a_n\}$ 收敛于 $a$ 可以表示为：$\forall \varepsilon > 0,\exists N \in \mathbb{N}^*$，除有限项 $a_1,a_2, \ldots ,a_N$ 以外的所有项都位于邻域 $B_r(a)$ 中。
+    数列 $\{a_n\}$ 收敛于 $a$ 可以表示为：$\forall \varepsilon > 0,\exists N \in \mathbb{N}^*$，除有限项 $a_1,a_2, \ldots ,a_N$ 以外的所有项都位于邻域 $N_r(a)$ 中。
 \end{definition}
 
 \begin{theorem}
@@ -168,7 +168,7 @@
         \item 若 $\{a_n\}$ 满足 $a_n \geqslant a_{n + 1}\quad (n=1,2, \ldots)$，则称 $\{a_n\}$ 为递减数列；
         \item 若 $\{a_n\}$ 满足 $a_n > a_{n + 1}\quad (n=1,2, \ldots)$，则称 $\{a_n\}$ 为严格递减数列；
     \end{enumerate}
-    递增或递减的数列统称为单调数列。
+    （严格）递增或递减的数列统称为（严格）单调数列。
 \end{definition}
 
 \begin{theorem}{单调有界定理}
@@ -308,71 +308,496 @@
 \end{theorem}
 
 \begin{theorem}
-  设数列 $\{a_n\}, \{b_n\}$。
-  \begin{enumerate}
-    \item $\displaystyle \liminf_{n \to \infty} a_n \leqslant \limsup_{n \to \infty} a_n$；
-    \item $\displaystyle \lim_{n \to \infty} a_n = a$ 当且仅当 $\displaystyle \liminf_{n \to \infty} a_n = \limsup_{n \to \infty} a_n = a$；
-    \item 若 $N \in \mathbb{N}^{*}$，当 $n > N$ 时有 $a_n \leqslant b_n$，则
-    \begin{align*}
-        \liminf_{n \to \infty} a_n & \leqslant \liminf_{n \to \infty} b_n \\
-        \limsup_{n \to \infty} a_n & \leqslant \limsup_{n \to \infty} b_n
-    \end{align*}
-  \end{enumerate}
+    设数列 $\{a_n\}, \{b_n\}$。
+    \begin{enumerate}
+        \item $\displaystyle \liminf_{n \to \infty} a_n \leqslant \limsup_{n \to \infty} a_n$；
+        \item $\displaystyle \lim_{n \to \infty} a_n = a$ 当且仅当 $\displaystyle \liminf_{n \to \infty} a_n = \limsup_{n \to \infty} a_n = a$；
+        \item 若 $N \in \mathbb{N}^{*}$，当 $n > N$ 时有 $a_n \leqslant b_n$，则
+              \begin{align*}
+                  \liminf_{n \to \infty} a_n & \leqslant \liminf_{n \to \infty} b_n \\
+                  \limsup_{n \to \infty} a_n & \leqslant \limsup_{n \to \infty} b_n
+              \end{align*}
+    \end{enumerate}
 \end{theorem}
 
 \begin{theorem}
-  设数列 $\{a_n\}$。则
-  \begin{enumerate}[itemsep=0.5em]
-    \item $\displaystyle \left\{\inf_{k \geqslant n} a_k\right\}$ 是递增数列，$\displaystyle \left\{\sup_{k \geqslant n} a_k\right\}$ 是递减数列。
-    \item $\displaystyle \lim_{n \to \infty}\inf_{k \geqslant n} a_k = \inf E$，$\displaystyle \lim_{n \to \infty}\sup_{k \geqslant n} a_k = \sup E$。
-  \end{enumerate}
+    设数列 $\{a_n\}$。则
+    \begin{enumerate}[itemsep=0.5em]
+        \item $\displaystyle \left\{\inf_{k \geqslant n} a_k\right\}$ 是递增数列，$\displaystyle \left\{\sup_{k \geqslant n} a_k\right\}$ 是递减数列。
+        \item $\displaystyle \lim_{n \to \infty}\inf_{k \geqslant n} a_k = \inf E$，$\displaystyle \lim_{n \to \infty}\sup_{k \geqslant n} a_k = \sup E$。
+    \end{enumerate}
 \end{theorem}
 
 \hfill
 
 \begin{example}
-  \begin{gather*}
-    \liminf_{n \to \infty} a_n + \liminf_{n \to \infty} b_n \leqslant \liminf_{n \to \infty} (a_n + b_n) \leqslant \liminf_{n \to \infty} a_n + \limsup_{n \to \infty} b_n \\
-    \liminf_{n \to \infty} a_n + \limsup_{n \to \infty} b_n \leqslant \limsup_{n \to \infty} (a_n + b_n) \leqslant \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n
-  \end{gather*}
+    \begin{gather*}
+        \liminf_{n \to \infty} a_n + \liminf_{n \to \infty} b_n \leqslant \liminf_{n \to \infty} (a_n + b_n) \leqslant \liminf_{n \to \infty} a_n + \limsup_{n \to \infty} b_n \\
+        \liminf_{n \to \infty} a_n + \limsup_{n \to \infty} b_n \leqslant \limsup_{n \to \infty} (a_n + b_n) \leqslant \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n
+    \end{gather*}
 \end{example}
 
 \hfill
 
 \begin{definition}{Toeplitz 矩阵}
-  设无限矩阵 $T = (t_{nk})(n, k = 1,2, \ldots)$，若 $T$ 满足
-  \begin{enumerate}
-    \item $\exists M \in \mathbb{R}, \displaystyle \sum_{k = 1}^{\infty} |t_{nk}| \leqslant M$；
-    \item $\displaystyle \lim_{n \to \infty}\sum_{k = 1}^{\infty} t_{nk} = 1$；
-    \item $\forall k \in \mathbb{N}^{*}$，有 $\displaystyle \lim_{n \to \infty} t_{nk} = 0$。
-  \end{enumerate}
-  则称 $T$ 为 Toeplitz 矩阵。设数列 $\{a_n\}$。令
-  \[x_n = \sum_{k = 1}^{n} t_{nk}a_{k}\]
-  则 $x_n$ 称为关于 $T$ 的 Toeplitz 变换。
+    设无限矩阵 $T = (t_{nk})(n, k = 1,2, \ldots)$，若 $T$ 满足
+    \begin{enumerate}
+        \item $\exists M \in \mathbb{R}, \displaystyle \sum_{k = 1}^{\infty} |t_{nk}| \leqslant M$；
+        \item $\displaystyle \lim_{n \to \infty}\sum_{k = 1}^{\infty} t_{nk} = 1$；
+        \item $\forall k \in \mathbb{N}^{*}$，有 $\displaystyle \lim_{n \to \infty} t_{nk} = 0$。
+    \end{enumerate}
+    则称 $T$ 为 Toeplitz 矩阵。设数列 $\{a_n\}$。令
+    \[x_n = \sum_{k = 1}^{n} t_{nk}a_{k}\]
+    则 $x_n$ 称为关于 $T$ 的 Toeplitz 变换。
 \end{definition}
 
 \begin{theorem}{Toeplitz 定理}
-  设 $n, k \in \mathbb{N}^{*}$ 时有 $t_{nk} \geqslant 0$，且 $\displaystyle \sum_{k = 1}^{n} t_{nk} = 1, \lim_{n \to \infty} t_{nk} = 0$。若 $\displaystyle \lim_{n \to \infty} a_n = a$，令
-  \[x_n = \sum_{k = 1}^{n} t_{nk}a_{k}\]
-  则
-  \[\lim_{n \to \infty} x_n = a\]
+    设 $n, k \in \mathbb{N}^{*}$ 时有 $t_{nk} \geqslant 0$，且 $\displaystyle \sum_{k = 1}^{n} t_{nk} = 1, \lim_{n \to \infty} t_{nk} = 0$。若 $\displaystyle \lim_{n \to \infty} a_n = a$，令
+    \[x_n = \sum_{k = 1}^{n} t_{nk}a_{k}\]
+    则
+    \[\lim_{n \to \infty} x_n = a\]
 \end{theorem}
 
 \begin{theorem}{Stolz 定理}
-  设 $\{b_n\}$ 是严格递增且趋于 $+\infty$ 的数列。若
-  \[\lim_{n \to \infty}\frac{a_{n} - a_{n - 1}}{b_{n} - b_{n - 1}} = A\]
-  则
-  \[\lim_{n \to \infty}\frac{a_n}{b_n} = A\]
-  其中 $A$ 可以是 $+\infty$ 或 $-\infty$。
+    设 $\{b_n\}$ 是严格递增且趋于 $+\infty$ 的数列。若
+    \[\lim_{n \to \infty}\frac{a_{n} - a_{n - 1}}{b_{n} - b_{n - 1}} = A\]
+    则
+    \[\lim_{n \to \infty}\frac{a_n}{b_n} = A\]
+    其中 $A$ 可以是 $+\infty$ 或 $-\infty$。
 \end{theorem}
 
 \begin{remark}
-  Stolz 定理的逆命题不成立。
+    Stolz 定理的逆命题不成立。
 \end{remark}
 
 %——————————————————————————————————%
 
-\section{}
+\section{函数}
+
+\begin{definition}
+    设集合 $A, B$。若 $f$ 是一种规律，使得对 $A$ 中的每个元素 $x$，$B$ 中都有唯一确定的元素 $f(x)$ 与之对应，则称 $f$ 是从 $A$ 到 $B$ 的映射，表示为
+    \[f : A \to B\]
+    集合 $A$ 称为映射 $f$ 的定义域；$f(x) \in B$ 称为 $x$ 在映射 $f$ 下的像或 $f$ 在 $x$ 上的值。
+\end{definition}
+
+\begin{definition}
+    设映射 $f : A \to B$，且 $g : A \to B$。若对 $\forall x \in A$，均有 $f(x) = g(x)$，则称 $f$ 和 $g$ 相等，记为 $f = g$。
+\end{definition}
+
+\begin{definition}
+    设映射 $f : A \to B$。若 $f(A) = B$，则称 $f$ 是从 $A$ 到 $B$ 上的满射，即 $B$ 中的任何元素都是 $A$ 中某一元素在 $f$ 下的像。
+\end{definition}
+
+\begin{definition}
+    设映射 $f : A \to B$。若当 $x, y \in A$ 且 $x \ne y$ 时，有 $f(x) \ne f(y)$，则称 $f$ 为单射。
+\end{definition}
+
+\begin{remark}
+    单射的等价定义：若 $f(x) = f(y)$，则 $x = y$。
+\end{remark}
+
+\begin{definition}
+    若映射 $f : A \to B$ 既是满射又是单射，则称 $f$ 是双射或一一对应。
+\end{definition}
+
+\begin{definition}
+    设双射 $f : A \to B$，定义 $f$ 的逆映射 $f^{-1} : B \to A$。
+\end{definition}
+
+\begin{definition}
+    设映射 $f : A \to B$，$F \subseteq B$，则 $A$ 的子集
+    \[f^{-1}(F) = \{ x \in A: f(x) \in F \}\]
+    称为 $F$ 的原像或逆像。
+\end{definition}
+
+\begin{definition}
+    设映射 $f : B \to C$，映射 $g$ 的定义域为 $A$。当 $x \in A = g^{-1}(B)$ 时，定义映射
+    \[f \circ g(x) = f(g(x))\]
+    则 $f \circ g: A \to C$ 称为映射 $f$ 与 $g$ 的复合。
+\end{definition}
+
+\begin{proposition}
+    设映射 $f, g, h$ 都是从 $A$ 到 $A$ 的映射，$x \in A$，则
+    \[f \circ (g \circ h)(x) = f(g \circ h(x)) = f(g(h(x))) = f \circ g(h(x)) = (f \circ g) \circ h(x)\]
+    因此 $f \circ (g \circ h)$ 可以简写为 $f \circ g \circ h$。
+\end{proposition}
+
+\begin{definition}
+    设映射 $f: A \to A$，则 $f$ 的 $n$ 次复合 $f \circ f \circ \cdots \circ f$ 可以简记为 $f^{n}$。
+\end{definition}
+
+\begin{definition}
+    若集合 $A$ 到自身的映射 $I_A(x) = x$ 对 $\forall x \in A$ 成立，则称 $I_A$ 为 $A$ 上的恒等映射。一个集合的 $I_A$ 是唯一存在的。
+\end{definition}
+
+\begin{definition}
+    设集合 $A, B$。若存在从 $A$ 到 $B$ 的一一对应，则称集合 $A$ 和 $B$ 有相同的势或基数。此时称 $A$ 与 $B$ 等价，记为 $A \simeq B$。
+\end{definition}
+
+\begin{proposition}
+    等价关系的性质
+    \begin{enumerate}
+        \item $A \simeq A$；
+        \item 若 $A \simeq B$，则 $B \simeq A$；
+        \item 若 $A \simeq B$，且 $B \simeq C$，则 $A \simeq C$。
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+    设全体正整数的集合 $\mathbb{N}^{*}$。令
+    \[N_n = \{ 1,2, \ldots ,n \}\]
+    \begin{enumerate}
+        \item 若 $\exists n \in \mathbb{N}^{*}$，使得集合 $A \simeq N_n$，则 $A$ 称为有限集。$\varnothing$ 也称为有限集。
+        \item 若集合 $A$ 不是有限集，则称 $A$ 为无限集。
+        \item 若 $A \simeq \mathbb{N}^{*}$，，则称 $A$ 为可数集。
+        \item 若 $A$ 既不是有限集，也不是可数集，则称 $A$ 为不可数集。
+        \item 若 $A$ 是有限集或可数集，则称 $A$ 为至多可数集。
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    可数集 $A$ 的每一个无限子集都是可数集。
+\end{theorem}
+
+\begin{theorem}
+    设至多可数集族 $\{ E_n (n = 1,2,3, \ldots) \}$，令
+    \[S = \bigcup_{n = 1}^{\infty} E_n \]
+    则 $S$ 是至多可数集。
+\end{theorem}
+
+\begin{theorem}
+    $\mathbb{R}$ 中的全体有理数是可数的。
+\end{theorem}
+
+\begin{theorem}
+    $[0, 1]$ 上的全体实数是不可数的。
+\end{theorem}
+
+\begin{proposition}
+    平面直角坐标系中横纵坐标均为有理数的点 $(x, y)$ 称为有理点。则平面上的全体有理点组成的集合是可数集。
+\end{proposition}
+
+\begin{proposition}
+    若复数 $x$ 满足多项式方程
+    \[a_{0}x^{n} + a_{1}x^{n - 1} + \cdots + a_{n - 1}x + a_{n} = 0\]
+    其中 $a_0 \neq 0, a_1, \ldots , a_n$ 都是整数，则 $x$ 称为代数数。则代数数全体是可数集。
+\end{proposition}
+
+\begin{definition}
+    设映射 $f: X \to Y$。若集合 $X$ 和 $Y$ 都是由实数组成的集合，则 $f$ 称为函数。
+\end{definition}
+
+\begin{definition}
+    设函数 $f$ 和 $g$ 的定义域分别为 $A$ 和 $B$。则在集合 $A \cup B$ 上可以定义 $f$ 和 $g$ 的四则运算。令 $x \in A \cup B$。
+    \begin{enumerate}[itemsep=0.5em]
+        \item $(f \pm g)(x) = f(x) \pm g(x)$；
+        \item $(fg)(x) = f(x)g(x)$；
+        \item $\left( \dfrac{f}{g} \right)(x) = \dfrac{f(x)}{g(x)}$。
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    若函数 $f: X \to Y$ 是一一对应，则 $f$ 的逆映射 $f^{-1}: Y \to X$，称 $f^{-1}$ 为 $f$ 的反函数。若
+    \[y = f(x)\quad (x \in X)\]
+    则
+    \[x = f^{-1}(y)\quad (y \in Y)\]
+    从而
+    \begin{gather*}
+        f \circ f^{-1}(y) = f(x) = y\quad (y \in Y) \\
+        f^{-1} \circ f(x) = f^{-1}(y) = x\quad (x \in X)
+    \end{gather*}
+    因此 $f \circ f^{-1}$ 是 $Y$ 上的恒等映射，$f^{-1} \circ f$ 是 $X$ 上的恒等映射。
+\end{definition}
+
+\begin{definition}
+    函数 $f: X \to Y$ 称为 $X$ 上的递增（递减）函数，若对 $\forall x_1, x_2 \in X$，只要 $x_1 < x_2$，便有 $f(x_1) \leqslant f(x_2)(f(x_1) \geqslant f(x_2))$。
+
+    函数 $f: X \to Y$ 称为 $X$ 上的严格递增（递减）函数，若对 $\forall x_1, x_2 \in X$，只要 $x_1 < x_2$，便有 $f(x_1) < f(x_2)(f(x_1) > f(x_2))$。
+
+    在 $X$ 上的（严格）递增或递减的函数统称为（严格）单调函数。
+\end{definition}
+
+\begin{theorem}
+    设函数 $f$ 在定义域 $X$ 上是严格递增（递减）的，则反函数 $f^{-1}$ 必定存在，$f^{-1}$ 的定义域为 $f(X)$，且 $f^{-1}$ 在定义域上也是严格递增（递减）的。
+\end{theorem}
+
+
+%——————————————————————————————————%
+
+\section{函数极限}
+
+\begin{definition}
+    若 $a \in \mathbb{R}, r \in \mathbb{R}^{+}$，则以 $a$ 为中心，$r$ 为半径的去心邻域
+    \[\check{N}_{r}(a) = N_{r}(a)\setminus \{ a \}\]
+\end{definition}
+
+\begin{definition}
+    设函数 $f$ 在 $x_0$ 的去心邻域 $\check{N}_{r}(x_0)$ 上有定义。设实数 $a$。若对 $\forall \varepsilon > 0$，$\exists \delta > 0$，使得对 $x \in \check{N}_{\delta}(x_0)$，均有
+    \[|f(x) - a| < \varepsilon\]
+    则称当 $x$ 趋于点 $x_0$ 时函数 $f(x)$ 有极限 $a$。
+\end{definition}
+
+\begin{definition}
+    设 $a \in \mathbb{R}$。则以 $a$ 为中心，$r$ 为半径的左邻域
+    \[N_{r}^{-}(a) = (a - r, a)\]
+    右邻域
+    \[N_{r}^{+}(a) = (a, a + r)\]
+\end{definition}
+
+\begin{definition}
+    设实数 $a$。
+    \begin{enumerate}
+        \item 设函数 $f$ 在 $x_0$ 的左邻域 $N_{r}^{-}(x_0)$ 上有定义。若对 $\forall \varepsilon > 0$，$\exists \delta > 0$，使得对 $x \in \check{N}_{\delta}^{-}(x_0)$，均有
+              \[|f(x) - a| < \varepsilon\]
+              则称 $a$ 为 $f$ 在 $x_0$ 处的左极限，表示为
+              \[a = \lim_{x \to x_{0}^{-}}f(x)\]
+        \item 设函数 $f$ 在 $x_0$ 的右邻域 $N_{r}^{+}(x_0)$ 上有定义。若对 $\forall \varepsilon > 0$，$\exists \delta > 0$，使得对 $x \in \check{N}_{\delta}^{+}(x_0)$，均有
+              \[|f(x) - a| < \varepsilon\]
+              则称 $a$ 为 $f$ 在 $x_0$ 处的右极限，表示为
+              \[a = \lim_{x \to x_{0}^{+}}f(x)\]
+    \end{enumerate}
+    左极限和右极限统称为单侧极限。
+\end{definition}
+
+\begin{theorem}
+    设函数 $f$ 在 $\check{N}(x_0)$ 有定义。则 $\displaystyle \lim_{x \to x_0}f(x)$ 存在当且仅当
+    \[\lim_{x \to x_{0}^{-}}f(x) = \lim_{x \to x_{0}^{+}}f(x)\]
+    且 $\displaystyle \lim_{x \to x_0}f(x) = \lim_{x \to x_{0}^{-}}f(x) = \lim_{x \to x_{0}^{+}}f(x)$。
+\end{theorem}
+
+\begin{theorem}{Heine 定理}
+    函数 $f$ 在 $x_0$ 处有极限 $a$ 的充分必要条件是，对任意收敛于 $x_0$ 的数列 $\{ x_n \neq x_0: n = 1,2,3, \ldots \}$，数列 $\{ f(x_n) \}$ 有极限 $a$。
+\end{theorem}
+
+\begin{theorem}
+    若极限 $\displaystyle \lim_{x \to x_0}$ 存在，则它是唯一的。
+\end{theorem}
+
+\begin{theorem}
+    若函数 $f$ 在 $x_0$ 处有极限，则 $\exists M > 0, \delta > 0$，使得当 $x \in \check{N}_{\delta}(x_0)$ 时，有
+    \[|f(x)| < M\]
+\end{theorem}
+
+\begin{theorem}
+    设 $\displaystyle \lim_{x \to x_0}f(x)$ 与 $\displaystyle \lim_{x \to x_0}g(x)$ 存在。则
+    \begin{enumerate}[itemsep=0.5em]
+        \item $\displaystyle \lim_{x \to x_0}(f \pm g)(x) = \lim_{x \to x_0}f(x) \pm \lim_{x \to x_0}g(x)$；
+        \item $\displaystyle \lim_{x \to x_0}fg(x) = \lim_{x \to x_0}f(x) \cdot \lim_{x \to x_0}g(x)$；
+        \item $\displaystyle \lim_{x \to x_0}\frac{f}{g}(x) = \frac{\displaystyle \lim_{x \to x_0}f(x)}{\displaystyle \lim_{x \to x_0}g(x)}$，其中 $\displaystyle \lim_{x \to x_0}g(x) \neq 0$。
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}{夹逼原理}
+    设函数 $f, g, h$ 在 $\check{N}(x_0)$ 有定义，且满足
+    \[f(x) \leqslant h(x) \leqslant g(x)\]
+    若 $\displaystyle \lim_{x \to x_0}f(x) = \lim_{x \to x_0}g(x) = a$，则 $\displaystyle \lim_{x \to x_0}h(x) = a$。
+\end{theorem}
+
+\begin{theorem}
+    设 $\displaystyle \lim_{x \to x_0}f(x)$ 和 $\displaystyle \lim_{x \to x_0}g(x)$ 存在。
+    \begin{enumerate}
+        \item 若 $\exists r > 0$，使得当 $x \in \check{N}_{r}(x_0)$ 时，有 $f(x) \leqslant g(x)$，则
+              \[\lim_{x \to x_0}f(x) \leqslant \lim_{x \to x_0}g(x)\]
+        \item 若 $\displaystyle \lim_{x \to x_0}f(x) < \lim_{x \to x_0}g(x)$，则存在 $\exists r > 0$，使得当 $x \in \check{N}_{r}(x_0)$ 时，
+              \[f(x) < g(x)\]
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}{Cauchy 收敛原理}
+    设函数 $f$ 在 $\check{N}_{r}(x_0)$ 有定义。则 $f(x)$ 有极限的充分必要条件是，对 $\forall \varepsilon > 0, \exists \delta > 0$，使得当 $x_1, x_2 \in \check{N}_{\delta}(x_0)$ 时，有
+    \[|f(x_1) - f(x_2)| < \varepsilon\]
+\end{theorem}
+
+\begin{theorem}{复合函数的极限}
+    设函数 $f$ 和 $g$。若 $\displaystyle \lim_{x \to x_0}f(x) = a, \lim_{t \to t_0}g(t) = x_0$，且在 $t_0$ 的某个邻域 $N_r(t_0)$ 内 $g(t) \neq x_0$，则
+    \[\lim_{t \to t_0}f(g(t)) = a\]
+\end{theorem}
+
+\hfill
+
+\begin{example}
+    \[\lim_{x \to 0}\frac{\sin x}{x} = 1\]
+\end{example}
+
+\hfill
+
+\begin{example}{（Dirichlet 函数）}
+    定义函数 $D: \mathbb{R} \to \{ 0, 1 \}$ 为
+    \[
+        D(x) = \begin{cases}
+            1,\quad x \in \mathbb{Q} \\
+            0,\quad x \notin \mathbb{Q}
+        \end{cases}
+    \]
+
+    则对 $\forall x_0 \in \mathbb{R}$，$\displaystyle \lim_{x \to x_0}D(x)$ 不存在。
+\end{example}
+
+\hfill
+
+\begin{example}{（Riemann 函数）}
+    定义函数 $R(x)$ 为
+    \[
+        R(x) = \begin{cases}
+            1,\quad x = 0                                         \\
+            \dfrac{1}{q},\quad x = \dfrac{p}{q}(q > 0, p \perp q) \\
+            0,\quad x \notin \mathbb{Q}
+        \end{cases}
+    \]
+
+    对任意 $x_0 \in \mathbb{R}$，$\displaystyle \lim_{x \to x_0}R(x) = 0$。
+\end{example}
+
+\begin{definition}
+    设实数 $a$。
+    \begin{enumerate}
+        \item $\forall \varepsilon > 0, \exists A > 0$，当 $|x| > A$ 时，有
+              \[|f(x) - a| < \varepsilon\]
+              则称 $x$ 趋于无穷时，函数 $f$ 有极限 $a$。记为 $\displaystyle \lim_{x \to \infty}f(x) = a$。
+        \item $\forall \varepsilon > 0, \exists A > 0$，当 $x < -A$ 时，有
+              \[|f(x) - a| < \varepsilon\]
+              则称 $x$ 趋于负无穷时，函数 $f$ 有极限 $a$。记为 $\displaystyle \lim_{x \to -\infty}f(x) = a$。
+        \item $\forall \varepsilon > 0, \exists A > 0$，当 $x > A$ 时，有
+              \[|f(x) - a| < \varepsilon\]
+              则称 $x$ 趋于正无穷时，函数 $f$ 有极限 $a$。记为 $\displaystyle \lim_{x \to +\infty}f(x) = a$。
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    $\displaystyle \lim_{x \to \infty}f(x) = a$ 当且仅当 $\displaystyle \lim_{x \to -\infty}f(x) = \lim_{x \to +\infty} = a$。
+\end{theorem}
+
+\hfill
+
+\begin{example}
+    \[\lim_{x \to \infty}\left(1 + \frac{1}{x}\right)^{x} = e\]
+\end{example}
+
+\hfill
+
+\begin{definition}
+    设 $x_0 \in \mathbb{R}$。$f$ 在 $\check{N}(x_0)$ 有定义。
+    \begin{enumerate}
+        \item 若对 $\forall A > 0$，$\exists \delta > 0$，使得当 $x \in \check{N}_{\delta}(x_0)$ 时，有 $|f(x)| > A$，则称 $x$ 趋于 $x_0$ 时，函数 $f$ 趋于无穷大，记为
+              \[\lim_{x \to x_0}f(x) = \infty\]
+        \item 若对 $\forall A > 0$，$\exists \delta > 0$，使得当 $x \in \check{N}_{\delta}(x_0)$ 时，有 $f(x) < -A$，则称 $x$ 趋于 $x_0$ 时，函数 $f$ 趋于负无穷大，记为
+              \[\lim_{x \to x_{0}^{-}}f(x) = -\infty\]
+        \item 若对 $\forall A > 0$，$\exists \delta > 0$，使得当 $x \in \check{N}_{\delta}(x_0)$ 时，有 $f(x) > A$，则称 $x$ 趋于 $x_0$ 时，函数 $f$ 趋于正无穷大，记为
+              \[\lim_{x \to x_{0}^{+}}f(x) = +\infty\]
+        \item 若对 $\forall A > 0$，$\exists \delta > 0$，使得当 $|x| > \delta$ 时，有 $|f(x)| > A$，则称 $x$ 趋于无穷时，函数 $f$ 趋于无穷大，记为
+              \[\lim_{x \to \infty}f(x) = \infty\]
+        \item 若对 $\forall A > 0$，$\exists \delta > 0$，使得当 $x < -\delta$ 时，有 $f(x) < -A$，则称 $x$ 趋于负无穷时，函数 $f$ 趋于负无穷大，记为
+              \[\lim_{x \to -\infty}f(x) = -\infty\]
+        \item 若对 $\forall A > 0$，$\exists \delta > 0$，使得当 $x > \delta$ 时，有 $f(x) > A$，则称 $x$ 趋于正无穷时，函数 $f$ 趋于正无穷大，记为
+              \[\lim_{x \to +\infty}f(x) = +\infty\]
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    若某一极限过程中，$\lim f(x) =  0$，则称该过程中 $f$ 是一个无穷小。
+\end{definition}
+
+\begin{theorem}
+    无穷大的倒数是无穷小；不取零值的无穷小的倒数是无穷大。
+\end{theorem}
+
+\begin{definition}
+    设当 $x \to x_0$ 时，$f$ 和 $g$ 都是无穷小，且 $g$ 在 $\check{N}(x_0)$ 不取零值。
+    \begin{enumerate}[itemsep=0.5em, topsep=0.5em]
+        \item 若 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = 0$，则称 $f$ 是比 $g$ 高阶的无穷小；
+        \item 若 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = a \neq 0$，则称 $f$ 是和 $g$ 同阶的无穷小；
+        \item 若 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = 1$，则称 $f$ 是和 $g$ 等价的无穷小，记为
+              \[f \simeq g\quad (x \to x_0)\]
+    \end{enumerate}
+\end{definition}
+
+当 $x \to x_0$ 时，取 $x - x_0$ 为 $1$ 阶无穷小。设当 $x \to x_0$ 时，$f$ 是无穷小。若 $f$ 与 $(x - x_0)^{\alpha}$ 为同阶无穷小，则称 $f$ 为 $\alpha$ 阶无穷小。
+
+\begin{definition}
+    设当 $x \to x_0$ 时，$f$ 和 $g$ 都是无穷大，且 $g$ 在 $\check{N}(x_0)$ 不取零值。
+    \begin{enumerate}[itemsep=0.5em, topsep=0.5em]
+        \item 若 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = 0$，则称 $f$ 是比 $g$ 高阶的无穷大；
+        \item 若 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = a \neq 0$，则称 $f$ 是和 $g$ 同阶的无穷大；
+        \item 若 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = 1$，则称 $f$ 是和 $g$ 等价的无穷大，记为
+              \[f \simeq g\quad (x \to x_0)\]
+    \end{enumerate}
+\end{definition}
+
+当 $x \to x_0$ 时，取 $\dfrac{1}{x - x_0}$ 为 $1$ 阶无穷大。设当 $x \to x_0$ 时，$f$ 是无穷大。若 $f$ 与 $\left(\dfrac{1}{x - x_0}\right)^{\alpha}$ 为同阶无穷大，则称 $f$ 为 $\alpha$ 阶无穷大。
+
+当 $x \to \infty$ 时，取 $|x|$ 为 $1$ 阶无穷大。设当 $x \to \infty$ 时，$f$ 是无穷大。若 $f$ 与 $|x|^{\alpha}$ 为同阶无穷大，则称 $f$ 为 $\alpha$ 阶无穷大。
+
+\begin{remark}
+    不是每个无穷小或无穷大都可以定阶。
+\end{remark}
+
+\begin{theorem}
+    若当 $x \to x_0$（$x_0$ 可以是 $\pm \infty$）时，$f, g$ 是等价的无穷小或无穷大，则
+    \begin{enumerate}
+        \item $\displaystyle \lim_{x \to x_0}f(x)h(x) = \lim_{x \to x_0}g(x)h(x)$；
+        \item $\displaystyle \lim_{x \to x_0}\frac{f(x)}{h(x)} = \lim_{x \to x_0}\frac{g(x)}{h(x)}$。
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}{Landau 记号}
+    设函数 $f, g$ 在 $\check{N}(x_0)$ 有定义，且 $g(x) \neq 0$。
+    \begin{enumerate}
+        \item 若 $\exists M > 0$，使得当 $x \to x_0$ 时 $|f(x)| \leqslant M|g(x)|$ 成立，则记为
+              \[f(x) = O(g(x))\quad (x \to x_0)\]
+        \item 若当 $x \to x_0$ 时，$\dfrac{f(x)}{g(x)}$ 是无穷小，即 $\displaystyle \lim_{x \to x_0}\frac{f(x)}{g(x)} = 0$，则记为
+              \[f(x) = o(g(x))\quad (x \to x_0)\]
+    \end{enumerate}
+    特别地，$f(x) = O(1)(x \to x_0)$ 表示函数 $f$ 有界， $f(x) = o(1)(x \to x_0)$ 表示函数 $f$ 是无穷小。
+\end{definition}
+
+\begin{remark}
+    记号 $O(g(x))$ 和 $o(g(x))$ 只表示量的一种状态、一种类型，即左边的函数属于右边代表的类型。
+\end{remark}
+
+\begin{definition}
+    设函数 $f$ 在 $\check{N}_{\delta}(x_0)$ 有定义。令
+    \[E = \{ a \in \mathbb{R}_{\infty}: \exists x_n \in \check{N}_{\delta}(x_0), x_n \to x_0, \text{使得}\ f(x_n) \to a\}\]
+    这是一个非空集合。则 $f$ 当 $x \to x_0$ 的上极限
+    \[\sup E = \limsup_{x \to x_0}f(x)\]
+    下极限
+    \[\inf E = \liminf_{x \to x_0}f(x)\]
+\end{definition}
+
+\begin{remark}
+    对其他极限过程（$x \to x_{0}^{-}, x \to x_{0}^{+}, x \to -\infty, x \to +\infty, x \to \infty$）可类似地定义函数 $f$ 的上极限和下极限。
+\end{remark}
+
+\begin{theorem}
+    设函数 $f$ 在 $\check{N}_{\delta}(x_0)$ 有定义。对于函数上极限 $\sup E$，有
+    \begin{enumerate}
+        \item $\sup E \in E$；
+        \item 若 $y > \sup E$，则 $\exists \delta > 0$，使得当 $x \in \check{N}_{\delta}(x_0)$ 时 $f(x) < y$；
+        \item $\sup E$ 是唯一满足前两条性质的数。
+    \end{enumerate}
+    对于函数下极限 $\inf E$，有
+    \begin{enumerate}
+        \item $\inf E \in E$；
+        \item 若 $x < \inf E$，则 $\exists \delta > 0$，使得当 $x \in \check{N}_{\delta}(x_0)$ 时 $f(x) > x$；
+        \item $\inf E$ 是唯一满足前两条性质的数。
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    设函数 $f, g$ 在 $\check{N}_{\delta}(x_0)$ 有定义。则
+    \begin{enumerate}[itemsep=0.5em]
+        \item $\displaystyle \liminf_{x \to x_0}f(x) \leqslant \limsup_{x \to x_0}f(x)$；
+        \item $\displaystyle \lim_{x \to x_0}f(x) = a$ 当且仅当 $\displaystyle \liminf_{x \to x_0}f(x) = \limsup_{x \to x_0}f(x) = a$；
+        \item 若当 $x \in \check{N}_{\delta}(x_0)$ 时，有 $f(x) \leqslant g(x)$，则
+              \begin{gather*}
+                  \liminf_{x \to x_0}f(x) \leqslant \liminf_{x \to x_0}g(x) \\
+                  \limsup_{x \to x_0}f(x) \leqslant \limsup_{x \to x_0}g(x)
+              \end{gather*}
+    \end{enumerate}
+\end{theorem}
+
+%——————————————————————————————————%
+
+\section{连续函数}
 
 
 
@@ -380,92 +805,3 @@
 
 
 %——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
-%——————————————————————————————————%
-
-\section{}
-
-
-
-
-
-
