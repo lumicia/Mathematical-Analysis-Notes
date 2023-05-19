@@ -228,11 +228,11 @@
 \end{definition}
 
 \begin{remark}
-  常值函数在其定义域上是一致连续的。若 $D \subseteq \mathbb{R}^n$ 是有限点集，则任何映射 $\bm{f}: D \to \mathbb{R}^m$ 在 $D$ 上一致连续。
+    常值函数在其定义域上是一致连续的。若 $D \subseteq \mathbb{R}^n$ 是有限点集，则任何映射 $\bm{f}: D \to \mathbb{R}^m$ 在 $D$ 上一致连续。
 \end{remark}
 
 \begin{remark}
-  映射 $\bm{f}$ 在 $D$ 上一致连续当且仅当 $\bm{f}$ 的每个分量函数在 $D$ 上一致连续。
+    映射 $\bm{f}$ 在 $D$ 上一致连续当且仅当 $\bm{f}$ 的每个分量函数在 $D$ 上一致连续。
 \end{remark}
 
 \begin{theorem}
@@ -252,50 +252,126 @@
 \section{方向导数和偏导数}
 
 \begin{definition}
-  设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}$。$\mathbb{R}^n$ 中的任一单位向量 $\bm{u}$（$\bm{u}$ 满足 $\Vert \bm{u} \Vert = 1$）称为一个方向。给定一个点 $\bm{x}_0 \in D$ 和一个方向 $\bm{u}$，通过点 $\bm{x}_0$ 和 $\bm{x}_0 + \bm{u}$ 的直线称为过点 $\bm{x}_0$ 的具有方向 $\bm{u}$ 的直线，即由点集
-  \[
-      \{\bm{x}: \bm{x} = \bm{x}_0 + t \bm{u}, t \in \mathbb{R}\}
-  \]
-  组成的直线。
+    设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}$。$\mathbb{R}^n$ 中的任一单位向量 $\bm{u}$（$\bm{u}$ 满足 $\Vert \bm{u} \Vert = 1$）称为一个方向。给定一个点 $\bm{x}_0 \in D$ 和一个方向 $\bm{u}$，通过点 $\bm{x}_0$ 和 $\bm{x}_0 + \bm{u}$ 的直线称为过点 $\bm{x}_0$ 的具有方向 $\bm{u}$ 的直线，即由点集
+    \[
+        \{\bm{x}: \bm{x} = \bm{x}_0 + t \bm{u}, t \in \mathbb{R}\}
+    \]
+    组成的直线。
 \end{definition}
 
 \begin{definition}
-  设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}$，$\bm{u}$ 是一个方向，$\bm{x}_0 \in D$。若极限
-  \[
-      \lim_{t \to 0}\frac{f(\bm{x}_0 + t \bm{u}) - f(\bm{x}_0)}{t}
-  \]
-  存在且有限，则称该极限是函数 $f$ 在点 $\bm{x}_0$ 处沿方向 $\bm{u}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \bm{u}}(\bm{x}_0)$
+    设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}$，$\bm{u}$ 是一个方向，$\bm{x}_0 \in D$。若极限
+    \[
+        \lim_{t \to 0}\frac{f(\bm{x}_0 + t \bm{u}) - f(\bm{x}_0)}{t}
+    \]
+    存在且有限，则称该极限是函数 $f$ 在点 $\bm{x}_0$ 处沿方向 $\bm{u}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \bm{u}}(\bm{x}_0)$
 \end{definition}
 
 \begin{definition}
-  函数 $f$ 在点 $\bm{x}_0$ 处沿方向 $\bm{e}_i$ 的方向导数为 $f$ 在 $\bm{x}_0$ 处的第 $i$ 个一阶偏导数，记为
-  \[
-      \frac{\partial f}{\partial x_i}(\bm{x}_0) \quad \text{或} \quad \mathrm{D}_{i}f(\bm{x}_0)
-  \]
-  并称 $\mathrm{D}_i = \dfrac{\partial}{\partial x_i}$ 为第 $i$ 个偏微分算子（$i = 1, 2, \ldots, n$）。
+    函数 $f$ 在点 $\bm{x}_0$ 处沿方向 $\bm{e}_i$ 的方向导数为 $f$ 在 $\bm{x}_0$ 处的第 $i$ 个一阶偏导数，记为
+    \[
+        \frac{\partial f}{\partial x_i}(\bm{x}_0) \quad \text{或} \quad \mathrm{D}_{i}f(\bm{x}_0)
+    \]
+    并称 $\mathrm{D}_i = \dfrac{\partial}{\partial x_i}$ 为第 $i$ 个偏微分算子（$i = 1, 2, \ldots, n$）。
 \end{definition}
 
 \begin{remark}
-  一般地，计算 $\mathrm{D}_{i}f(\bm{x}_0)$ 时，只需对第 $i$ 个变数求导，同时将其余变数视为常数（$i = 1, 2, \ldots, n$）。
+    一般地，计算 $\mathrm{D}_{i}f(\bm{x}_0)$ 时，只需对第 $i$ 个变数求导，同时将其余变数视为常数（$i = 1, 2, \ldots, n$）。
 \end{remark}
 
 \begin{definition}
-  $\mathbb{R}^3$ 中的点集
-  \[
-      G(f) = \{(x, y, f(x, y)): (x, y) \in D\}
-  \]
-  称为函数 $f$ 的图像。
+    $\mathbb{R}^3$ 中的点集
+    \[
+        G(f) = \{(x, y, f(x, y)): (x, y) \in D\}
+    \]
+    称为函数 $f$ 的图像。
 \end{definition}
 
 
 
 %——————————————————————————————————%
 
-\section{}
+\section{多元函数的微分}
 
+\begin{definition}
+    设 $\bm{h} = (h_1, h_2, \ldots, h_n)$， $\lambda_1, \lambda_2, \ldots, \lambda_n$ 是不依赖于 $\bm{h}$ 的常数。若有
+    \[
+        f(\bm{x}_0 + \bm{h}) - f(\bm{x}_0) = \sum_{i = 1}^{n}\lambda_{i}h_{i} + o(\Vert \bm{h} \Vert) \quad (\Vert \bm{h} \Vert \to 0)
+    \]
+    则称函数 $f$ 在点 $\bm{x}_0$ 处可微，$\displaystyle \sum_{i = 1}^{n}\lambda_{i}h_{i}$ 称为 $f$ 在 $\bm{x}_0$ 处的微分，记为
+    \[
+        \mathrm{d}f(\bm{x}_0)(\bm{h}) = \sum_{i = 1}^{n}\lambda_{i}h_{i}
+    \]
+    若 $f$ 在开集 $D$ 上的每一点都可微，则称 $f$ 是 $D$ 上的可微函数。
+\end{definition}
 
+\begin{remark}
+    当函数 $f$ 在点 $\bm{x}_0$ 处可微时，$f$ 必定有所有的一阶偏导数，并且
+    \[
+        \mathrm{d}f(\bm{x}_0)(\bm{h}) = \sum_{i = 1}^{n}\frac{\partial f(\bm{x}_0)}{\partial x_i}h_i
+    \]
+\end{remark}
 
+\begin{theorem}
+    设函数 $f$ 在点 $\bm{x}_0$ 处可微，则 $f$ 必定在 $\bm{x}_0$ 处连续。
+\end{theorem}
 
+\begin{definition}
+    令
+    \[
+        \bm{J}f(x) = (\mathrm{D}_{1}f(\bm{x}), \mathrm{D}_{2}f(\bm{x}), \ldots, \mathrm{D}_{n}f(\bm{x}))
+    \]
+    将 $1 \times n$ 矩阵 $\bm{J}f(x)$ 称为函数 $f$ 在点 $\bm{x}$ 处的 Jacobi 矩阵，它相当于一元函数的一阶导数。
+\end{definition}
+
+\begin{remark}
+    将点 $\bm{x}$ 的分量写成列向量 $\bm{x} = (x_1, x_2, \ldots, x_n)^{\mathrm{T}}$，$\bm{x}$ 的改变量 $\bm{h}$ 写成 $n \times 1$ 矩阵 $\bm{h} = (h_1, h_2, \ldots, h_n)^{\mathrm{T}}$。于是函数的微分可以用矩阵乘法表示为
+    \[
+        \mathrm{d}f(\bm{x}_0)(\bm{h}) = \bm{J}f(\bm{x}_0)\bm{h}
+    \]
+\end{remark}
+
+\begin{remark}
+    函数 $f$ 的 Jacobi 矩阵也常记为 $\grad f$ 或 $\nabla f$，
+    \[
+        \grad f(\bm{x}) = \bm{J}f(\bm{x})
+    \]
+    称为数量函数 $f$ 的梯度。
+\end{remark}
+
+\begin{theorem}
+    函数 $f$ 在 $\bm{x}_0$ 处可微当且仅当
+    \[
+        f(\bm{x}_0 + \bm{h}) - f(\bm{x}_0) = \bm{J}f(\bm{x}_0)\bm{h} + \sum_{i = 1}^{n}\beta_{i}(\bm{h})h_{i}
+    \]
+    当 $\Vert \bm{h} \Vert \to 0$ 时，
+    \[
+        \beta_{i}(\bm{h}) \to 0 \quad (i = 1, 2, \ldots, n)
+    \]
+\end{theorem}
+
+\begin{definition}
+  设开集 $D \subseteq \mathbb{R}^n, \bm{x}_0 \in D$，包含点 $\bm{x}_0$ 的任一开集称为 $\bm{x}_0$ 的一个邻域。
+\end{definition}
+
+\begin{theorem}
+  设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}, \bm{x}_0 \in D$。若 $\mathrm{D}_{i}f(\bm{x})(i = 1, 2, \ldots, n)$ 在 $\bm{x}_0$ 的一个邻域中存在，且在点 $\bm{x}_0$ 处连续，则 $f$ 在点 $\bm{x}_0$ 处可微。
+\end{theorem}
+
+\begin{remark}
+  偏导数连续是函数可微的充分条件，但不是必要条件。
+\end{remark}
+
+\begin{theorem}
+  若 $f$ 在 $\bm{x}_0$ 处可微，则 $f$ 在 $\bm{x}_0$ 处的任意方向 $\bm{u} = (u_1, u_2, \ldots, u_m)$ 的方向导数都存在，且
+  \[
+      \frac{\partial f}{\partial \bm{u}}(\bm{x}_0) = \frac{\partial f}{\partial x_1}(\bm{x}_0)u_{1} + \cdots + \frac{\partial f}{\partial x_n}(\bm{x}_0)u_{n}
+  \]
+\end{theorem}
+
+\begin{remark}
+  设 $D$ 是 $\mathbb{R}^n$ 中的一个区域，$f: D \to \mathbb{R}$。若 $f$ 的各个偏导数都在 $D$ 上连续，则称 $f$ 在区域 $D$ 上连续可微。由 $D$ 上全体连续可微函数组成的集合记为 $C^{1}(D)$，由 $D$ 上全体连续函数组成的集合记为 $C(D)$ 或 $C^{0}(D)$。
+\end{remark}
 
 
 %——————————————————————————————————%
