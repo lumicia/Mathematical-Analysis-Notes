@@ -351,34 +351,76 @@
 \end{theorem}
 
 \begin{definition}
-  设开集 $D \subseteq \mathbb{R}^n, \bm{x}_0 \in D$，包含点 $\bm{x}_0$ 的任一开集称为 $\bm{x}_0$ 的一个邻域。
+    设开集 $D \subseteq \mathbb{R}^n, \bm{x}_0 \in D$，包含点 $\bm{x}_0$ 的任一开集称为 $\bm{x}_0$ 的一个邻域。
 \end{definition}
 
 \begin{theorem}
-  设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}, \bm{x}_0 \in D$。若 $\mathrm{D}_{i}f(\bm{x})(i = 1, 2, \ldots, n)$ 在 $\bm{x}_0$ 的一个邻域中存在，且在点 $\bm{x}_0$ 处连续，则 $f$ 在点 $\bm{x}_0$ 处可微。
+    设开集 $D \subseteq \mathbb{R}^n, f: D \to \mathbb{R}, \bm{x}_0 \in D$。若 $\mathrm{D}_{i}f(\bm{x})(i = 1, 2, \ldots, n)$ 在 $\bm{x}_0$ 的一个邻域中存在，且在点 $\bm{x}_0$ 处连续，则 $f$ 在点 $\bm{x}_0$ 处可微。
 \end{theorem}
 
 \begin{remark}
-  偏导数连续是函数可微的充分条件，但不是必要条件。
+    偏导数连续是函数可微的充分条件，但不是必要条件。
 \end{remark}
 
 \begin{theorem}
-  若 $f$ 在 $\bm{x}_0$ 处可微，则 $f$ 在 $\bm{x}_0$ 处的任意方向 $\bm{u} = (u_1, u_2, \ldots, u_m)$ 的方向导数都存在，且
-  \[
-      \frac{\partial f}{\partial \bm{u}}(\bm{x}_0) = \frac{\partial f}{\partial x_1}(\bm{x}_0)u_{1} + \cdots + \frac{\partial f}{\partial x_n}(\bm{x}_0)u_{n}
-  \]
+    若 $f$ 在 $\bm{x}_0$ 处可微，则 $f$ 在 $\bm{x}_0$ 处的任意方向 $\bm{u} = (u_1, u_2, \ldots, u_m)$ 的方向导数都存在，且
+    \[
+        \frac{\partial f}{\partial \bm{u}}(\bm{x}_0) = \frac{\partial f}{\partial x_1}(\bm{x}_0)u_{1} + \cdots + \frac{\partial f}{\partial x_n}(\bm{x}_0)u_{n}
+    \]
 \end{theorem}
 
 \begin{remark}
-  设 $D$ 是 $\mathbb{R}^n$ 中的一个区域，$f: D \to \mathbb{R}$。若 $f$ 的各个偏导数都在 $D$ 上连续，则称 $f$ 在区域 $D$ 上连续可微。由 $D$ 上全体连续可微函数组成的集合记为 $C^{1}(D)$，由 $D$ 上全体连续函数组成的集合记为 $C(D)$ 或 $C^{0}(D)$。
+    设 $D$ 是 $\mathbb{R}^n$ 中的一个区域，$f: D \to \mathbb{R}$。若 $f$ 的各个偏导数都在 $D$ 上连续，则称 $f$ 在区域 $D$ 上连续可微。由 $D$ 上全体连续可微函数组成的集合记为 $C^{1}(D)$，由 $D$ 上全体连续函数组成的集合记为 $C(D)$ 或 $C^{0}(D)$。
 \end{remark}
 
 
 %——————————————————————————————————%
 
-\section{}
+\section{映射的微分}
 
+\begin{definition}
+    若映射 $\bm{f}$ 满足
+    \[
+        \bm{f}(\bm{x}_0 + \bm{h}) - \bm{f}(\bm{x}_0) = \bm{Ah} + \bm{r}(\bm{h})
+    \]
+    其中 $\bm{A}$ 是 $m \times n$ 矩阵，它的元素不依赖于 $\bm{h}$，且
+    \[
+        \lim_{\bm{h} \to \bm{0}}\frac{\Vert \bm{r}(\bm{h}) \Vert }{\Vert \bm{h} \Vert } = 0
+    \]
+    则称映射 $\bm{f}$ 在点 $\bm{x}_0$ 处可微，$\bm{Ah}$ 称为 $\bm{f}$ 在点 $\bm{x}_0$ 处的微分，记为
+    \[
+        \mathrm{d}\bm{f}(\bm{x}_0) = \bm{Ah}
+    \]
+\end{definition}
 
+\begin{remark}
+  $\Vert \bm{r}(\bm{h}) \Vert$ 是 $m$ 维欧式空间中的范数，$\Vert \bm{h} \Vert$ 是 $n$ 维欧式空间中的范数。
+\end{remark}
+
+\begin{definition}
+    记
+    \[
+        \renewcommand\arraystretch{1.8}
+        \bm{J}\bm{f}(\bm{x}_0) = \begin{pmatrix}
+            \dfrac{\partial f_1(\bm{x}_0)}{\partial x_1} & \dfrac{\partial f_1(\bm{x}_0)}{\partial x_2} & \cdots & \dfrac{\partial f_1(\bm{x}_0)}{\partial x_n} \\
+            \dfrac{\partial f_2(\bm{x}_0)}{\partial x_1} & \dfrac{\partial f_2(\bm{x}_0)}{\partial x_2} & \cdots & \dfrac{\partial f_2(\bm{x}_0)}{\partial x_n} \\
+            \vdots                                       & \vdots                                       & \ddots & \vdots                                       \\
+            \dfrac{\partial f_m(\bm{x}_0)}{\partial x_1} & \dfrac{\partial f_m(\bm{x}_0)}{\partial x_2} & \cdots & \dfrac{\partial f_m(\bm{x}_0)}{\partial x_n}
+        \end{pmatrix}
+    \]
+    称为映射 $\bm{f}$ 在点 $\bm{x}_0$ 处的 Jacobi 矩阵，它是一个 $m \times n$ 矩阵。于是
+    \[
+        \mathrm{d}\bm{f}(\bm{x}_0) = \bm{J}\bm{f}(\bm{x}_0)\bm{h}
+    \]
+\end{definition}
+
+\begin{theorem}
+  若映射 $\bm{f}$ 在点 $\bm{x}_0$ 的某一邻域内存在 Jacobi 矩阵 $\bm{Jf}$，且 $\bm{Jf}$ 的各元素在点 $\bm{x}_0$ 处连续，则映射 $\bm{f}$ 在点 $\bm{x}_0$ 处可微。
+\end{theorem}
+
+\begin{definition}
+  设开集 $D \subseteq \mathbb{R}^n, \bm{f}: D \to \mathbb{R}^m$。若 $\bm{f}$ 在 $D$ 上的每一点处都连续，则记 $\bm{f} \in C(D)$；若 $\bm{Jf}$ 在 $D$ 上的每一点处都连续，则记 $\bm{f} \in C^{1}(D)$。
+\end{definition}
 
 
 
