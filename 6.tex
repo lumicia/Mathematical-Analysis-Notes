@@ -427,8 +427,29 @@
 
 %——————————————————————————————————%
 
-\section{}
+\section{复合求导}
 
+\begin{theorem}
+  设开集 $D \subseteq \mathbb{R}^n$，$\bm{g}: D \to \mathbb{R}^m$，$\bm{g}$ 在点 $\bm{x}_0$ 处可微。又设 $\bm{f}$ 把包含 $\bm{g}(D)$ 的一个开集映射至 $\mathbb{R}^l$，并且 $\bm{f}$ 在点 $\bm{g}(\bm{x}_0)$ 处可微，那么复合映射 $f \circ g$ 在点 $\bm{x}_0$ 处可微，且 
+  \[
+      \bm{J}(\bm{f} \circ \bm{g})(\bm{x}_0) = \bm{J}\bm{f}(\bm{g}(\bm{x}_0))\bm{J}\bm{g}(\bm{x}_0)
+  \]
+\end{theorem}
+
+\begin{corollary}
+  设 $z = f(y_1, y_2, \ldots, y_m)$ 是 $m$ 元可微函数，其中每个变量 $y_i(i = 1, 2, \ldots, m)$ 又是 $n$ 个变量 $(x_1, x_2, \ldots, x_n)$ 的可微函数：
+  \[
+      y_i = g_{i}(x_1, x_2, \ldots, x_n) \quad (i = 1, 2, \ldots, m)
+  \]
+  则复合函数
+  \[
+      z = f(g_{1}(x_1, x_2, \ldots, x_n), \ldots, g_{m}(x_1, x_2, \ldots, x_n))
+  \]
+  是 $n$ 个变量 $(x_1, x_2, \ldots, x_n)$ 的可微函数，且
+  \[
+      \frac{\partial z}{\partial x_j} = \frac{\partial f}{\partial y_1}\frac{\partial g_1}{\partial x_j} + \cdots + \frac{\partial f}{\partial y_m}\frac{\partial g_m}{\partial x_j} \quad (j = 1, 2, \ldots, n)
+  \]
+\end{corollary}
 
 
 
